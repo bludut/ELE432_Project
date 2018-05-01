@@ -99,16 +99,41 @@ architecture arch of Vga_Top_Design is
 			);
 	end component Vga_Test;
 	
+	----------------------------------------------------------------------
+	--	ROAD GENERATOR
+	----------------------------------------------------------------------
+	component Road_Generator is
+	Generic(
+				g_Total_Row : integer := 480;
+				g_Total_Column : integer := 640
+				);
+	Port(
+			i_Dist_Ena : in Std_logic;
+			i_Row_Num : in std_logic_vector (9 downto 0) ;
+			i_Column_Num : in std_logic_vector (9 downto 0);
+			i_Pos_X : in std_logic_vector(9 downto 0);
+			i_Pos_Y : in std_logic_vector(9 downto 0);
+			
+			o_Red : out std_logic_vector (7 downto 0);
+			o_Green : out std_logic_vector (7 downto 0);
+			o_Blue : out std_logic_vector (7 downto 0);
+			o_Disp_Ena : out std_logic
+			);
+	end component;
+
+
 	
 signal pixel_clk : std_logic;	
 signal disp_en : std_logic;
 signal row_count : integer;
 signal column_count : integer;
 
-signal DisplaySelect : std_logic;
+signal DisplaySelect : std_logic_vector(1 downto 0);
 signal Red_Test,Green_Test,Blue_Test : std_logic_vector(7 downto 0);
+signal Red_Road,Green_Road,Blue_Road : std_logic_vector(7 downto 0);
 
 signal X_Pos,Y_Pos : std_logic_vector(9 downto 0):= (others => '0');
+signal s_Road_Pos_Y : std_logic_vector(9 downto 0):= (others => '0');
 
 signal Refresh_Rate_Timer : unsigned(18 downto 0); -- 1100110100010100000
 signal RefreshClock: std_logic:='0';
@@ -171,23 +196,60 @@ u2 : component Vga_Test
 			o_Red 			=> Red_Test  ,
 			o_Green 			=> Green_Test  ,
 			o_Blue 			=> Blue_Test	,
-			o_Disp_Ena		=> DisplaySelect
+			o_Disp_Ena		=> DisplaySelect(0)
 	);
+	
+	
+	-- Road_Generator
+u3:component Road_Generator 
+	Generic map(
+				g_Total_Row => 480,
+				g_Total_Column => 640
+				)
+	Port map(
+			i_Dist_Ena => disp_en,
+			i_Row_Num => std_logic_vector(to_unsigned(row_count,10)),
+			i_Column_Num => std_logic_vector(to_unsigned(column_count,10)),
+			i_Pos_X => (others => '0'),
+			i_Pos_Y => s_Road_Pos_Y,
+			
+			o_Red => Red_Road,
+			o_Green => Green_Road,
+			o_Blue => Blue_Road,
+			o_Disp_Ena => DisplaySelect(1)
+			);
+
 	
 ------------------------------------------------------------------------------------------------------
 --					MULTIPLEXER
 ------------------------------------------------------------------------------------------------------	
 	
 -- RED Multiplexer 	
-		o_Red <= Red_Test when DisplaySelect= '1' else
+		o_Red <= Red_Test when DisplaySelect(0)= '1' else
+					Red_Road when DisplaySelect(1)= '1' else
 					(others=> '0');
 -- GREEN Multiplexer 	
-		o_Green <= Green_Test when DisplaySelect= '1' else
+		o_Green <= Green_Test when DisplaySelect(0)= '1' else
+					Green_Road when DisplaySelect(1)= '1' else
 		         (others=> '0');
 -- BLUE Multiplexer 	
-		o_Blue <= Blue_Test when DisplaySelect= '1' else
+		o_Blue <= Blue_Test when DisplaySelect(0)= '1' else
+					 Blue_Road when DisplaySelect(1)= '1' else
 				   (others=> '0');	
-					
+		
+------------------------------------------------------------------------------------------------------
+-- 	MAP SHIFTER
+------------------------------------------------------------------------------------------------------	
+Map_Shift_Proc : process(RefreshClock,i_VGA_Reset)
+begin
+	if(i_VGA_Reset = '1') then
+	   s_Road_Pos_Y <= (others => '0');
+	elsif( rising_edge(RefreshClock)) then
+	    s_Road_Pos_Y <= std_logic_vector(unsigned(s_Road_Pos_Y) + 1);
+	end if;
+	
+end process;
+		
 ------------------------------------------------------------------------------------------------------
 -- 	POSITION GENERATOR
 ------------------------------------------------------------------------------------------------------	
@@ -199,15 +261,15 @@ begin
 		Y_Pos <= (others => '0');
 	elsif( rising_edge(RefreshClock)) then
 		if(i_Btn_Up = '0') then
-			Y_Pos <= std_logic_vector(unsigned(Y_Pos)-1);
+			Y_Pos <= std_logic_vector(unsigned(Y_Pos)-3);
 		elsif(i_Btn_Down = '0') then
-			Y_Pos <= std_logic_vector(unsigned(Y_Pos)+1);
+			Y_Pos <= std_logic_vector(unsigned(Y_Pos)+3);
 		end if;
 		
 		if(i_Btn_Left = '0') then
-			X_Pos <= std_logic_vector(unsigned(X_Pos)-1);
+			X_Pos <= std_logic_vector(unsigned(X_Pos)-3);
 		elsif(i_Btn_Right = '0') then
-			X_Pos <= std_logic_vector(unsigned(X_Pos)+1);
+			X_Pos <= std_logic_vector(unsigned(X_Pos)+3);
 		end if;
 		
 	end if;  

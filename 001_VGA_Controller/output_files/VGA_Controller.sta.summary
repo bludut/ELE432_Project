@@ -3,24 +3,24 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1100mV 85C Model Setup 'u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
-Slack : -3.995
-TNS   : -3.995
+Slack : -3.904
+TNS   : -3.904
 
 Type  : Slow 1100mV 85C Model Setup 'RefreshClock'
-Slack : -1.871
-TNS   : -29.895
+Slack : -1.834
+TNS   : -41.924
 
 Type  : Slow 1100mV 85C Model Hold 'u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
-Slack : -0.285
-TNS   : -0.285
+Slack : -0.280
+TNS   : -0.280
 
 Type  : Slow 1100mV 85C Model Hold 'RefreshClock'
-Slack : 0.698
+Slack : 0.674
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'RefreshClock'
 Slack : -0.394
-TNS   : -10.350
+TNS   : -14.483
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'u0|pll_0|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]'
 Slack : 1.666
@@ -31,28 +31,28 @@ Slack : 9.900
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
-Slack : 19.301
+Slack : 19.294
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Setup 'u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
-Slack : -3.490
-TNS   : -3.490
+Slack : -3.399
+TNS   : -3.399
 
 Type  : Slow 1100mV 0C Model Setup 'RefreshClock'
-Slack : -1.937
-TNS   : -30.971
+Slack : -1.923
+TNS   : -43.532
 
 Type  : Slow 1100mV 0C Model Hold 'u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
-Slack : -0.777
-TNS   : -0.777
+Slack : -0.785
+TNS   : -0.785
 
 Type  : Slow 1100mV 0C Model Hold 'RefreshClock'
-Slack : 0.691
+Slack : 0.670
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'RefreshClock'
 Slack : -0.394
-TNS   : -10.290
+TNS   : -14.558
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'u0|pll_0|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]'
 Slack : 1.666
@@ -63,27 +63,27 @@ Slack : 9.926
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
-Slack : 19.246
+Slack : 19.247
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Setup 'u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
-Slack : -3.447
-TNS   : -3.447
+Slack : -3.476
+TNS   : -3.476
 
 Type  : Fast 1100mV 85C Model Setup 'RefreshClock'
-Slack : -0.671
-TNS   : -9.727
+Slack : -0.645
+TNS   : -13.640
 
 Type  : Fast 1100mV 85C Model Hold 'u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
-Slack : 0.182
+Slack : 0.184
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Hold 'RefreshClock'
-Slack : 0.365
+Slack : 0.350
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'RefreshClock'
-Slack : 0.121
+Slack : 0.090
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'u0|pll_0|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]'
@@ -95,27 +95,27 @@ Slack : 9.643
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
-Slack : 19.550
+Slack : 19.548
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Setup 'u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
-Slack : -2.581
-TNS   : -2.581
+Slack : -2.620
+TNS   : -2.620
 
 Type  : Fast 1100mV 0C Model Setup 'RefreshClock'
-Slack : -0.604
-TNS   : -8.764
+Slack : -0.589
+TNS   : -12.282
 
 Type  : Fast 1100mV 0C Model Hold 'u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
-Slack : -0.196
-TNS   : -0.196
+Slack : -0.130
+TNS   : -0.130
 
 Type  : Fast 1100mV 0C Model Hold 'RefreshClock'
-Slack : 0.332
+Slack : 0.321
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'RefreshClock'
-Slack : 0.132
+Slack : 0.105
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'u0|pll_0|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]'
@@ -127,7 +127,7 @@ Slack : 9.632
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
-Slack : 19.540
+Slack : 19.541
 TNS   : 0.000
 
 ------------------------------------------------------------

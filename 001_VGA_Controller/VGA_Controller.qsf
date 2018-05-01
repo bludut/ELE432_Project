@@ -98,4 +98,5 @@ set_location_assignment PIN_AA15 -to i_Btn_Down
 set_location_assignment PIN_W15 -to i_Btn_Left
 set_location_assignment PIN_Y16 -to i_Btn_Right
 set_global_assignment -name CDF_FILE output_files/Chain1.cdf
+set_global_assignment -name VHDL_FILE Road_Generator.vhd
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

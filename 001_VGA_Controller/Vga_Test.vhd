@@ -26,13 +26,28 @@ architecture arch of Vga_Test is
 	constant X_LENGTH : std_logic_vector(9 downto 0) := "00" & X"20";
 	constant Y_LENGTH : std_logic_vector(9 downto 0) := "00" & X"20";
 
+	signal s_Pos_Y,s_Pos_X : std_logic_vector(9 downto 0);
 begin
 	-- Mode select
 		process(i_Dist_Ena,i_Pos_Y,i_Pos_X,i_Row_Num,i_Column_Num)
 		begin
+		if(signed(i_Pos_Y) < 0 and std_logic_vector(abs(signed(i_Pos_Y))) <= Y_LENGTH) then
+			
+			s_Pos_Y <= (others => '0' );
+		else
+			s_Pos_Y <= i_Pos_Y;
+		end if;
+		
+		if(signed(i_Pos_X) < 0 and std_logic_vector(abs(signed(i_Pos_X))) <= X_LENGTH) then
+			s_Pos_X <= (others => '0' );
+		else
+			s_Pos_X <= i_Pos_X;
+		end if;
+		
+		
 			if(i_Dist_Ena = '1' and 
-				i_Row_Num <= (i_Pos_Y + Y_LENGTH)and i_Row_Num >= i_Pos_Y and
-				i_Column_Num <= (i_Pos_X + X_LENGTH)and i_Column_Num >= i_Pos_X) then
+				i_Row_Num <= (i_Pos_Y + Y_LENGTH)and i_Row_Num >= s_Pos_Y and
+				i_Column_Num <= (i_Pos_X + X_LENGTH)and i_Column_Num >= s_Pos_X) then
 					o_Disp_Ena <= '1';
 			else
 					o_Disp_Ena <= '0';

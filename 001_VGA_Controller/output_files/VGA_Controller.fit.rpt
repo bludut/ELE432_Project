@@ -1,5 +1,5 @@
 Fitter report for VGA_Controller
-Mon Apr 30 21:11:43 2018
+Tue May 01 12:19:17 2018
 Quartus II 64-Bit Version 14.1.0 Build 186 12/03/2014 SJ Web Edition
 
 
@@ -65,15 +65,15 @@ agreement for further details.
 +------------------------------------------------------------------------------+
 ; Fitter Summary                                                               ;
 +---------------------------------+--------------------------------------------+
-; Fitter Status                   ; Successful - Mon Apr 30 21:11:43 2018      ;
+; Fitter Status                   ; Successful - Tue May 01 12:19:17 2018      ;
 ; Quartus II 64-Bit Version       ; 14.1.0 Build 186 12/03/2014 SJ Web Edition ;
 ; Revision Name                   ; VGA_Controller                             ;
 ; Top-level Entity Name           ; Vga_Top_Design                             ;
 ; Family                          ; Cyclone V                                  ;
 ; Device                          ; 5CSEMA5F31C6                               ;
 ; Timing Models                   ; Final                                      ;
-; Logic utilization (in ALMs)     ; 86 / 32,070 ( < 1 % )                      ;
-; Total registers                 ; 84                                         ;
+; Logic utilization (in ALMs)     ; 140 / 32,070 ( < 1 % )                     ;
+; Total registers                 ; 97                                         ;
 ; Total pins                      ; 39 / 457 ( 9 % )                           ;
 ; Total virtual pins              ; 0                                          ;
 ; Total block memory bits         ; 0 / 4,065,280 ( 0 % )                      ;
@@ -146,15 +146,22 @@ agreement for further details.
 +----------------------------------------------------------------------------+---------------------------------------+---------------------------------------+
 
 
-Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
-+-------------------------------------+
-; Parallel Compilation                ;
-+----------------------------+--------+
-; Processors                 ; Number ;
-+----------------------------+--------+
-; Number detected on machine ; 8      ;
-; Maximum allowed            ; 1      ;
-+----------------------------+--------+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.26        ;
+; Maximum used               ; 2           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;  25.5%      ;
+;     Processors 3-4         ;   0.0%      ;
++----------------------------+-------------+
 
 
 +----------------------------------------------------+
@@ -200,7 +207,13 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; Node                                                                                    ; Action     ; Operation                                         ; Reason                     ; Node Port ; Node Port Name ; Destination Node                              ; Destination Port ; Destination Port Name ;
 +-----------------------------------------------------------------------------------------+------------+---------------------------------------------------+----------------------------+-----------+----------------+-----------------------------------------------+------------------+-----------------------+
 ; Pll_50_to_25:u0|Pll_50_to_25_pll_0:pll_0|altera_pll:altera_pll_i|outclk_wire[0]~CLKENA0 ; Created    ; Placement                                         ; Fitter Periphery Placement ;           ;                ;                                               ;                  ;                       ;
+; Vga_Controller:u1|o_Column_Count[1]                                                     ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; Vga_Controller:u1|o_Column_Count[1]~DUPLICATE ;                  ;                       ;
+; Vga_Controller:u1|o_Column_Count[2]                                                     ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; Vga_Controller:u1|o_Column_Count[2]~DUPLICATE ;                  ;                       ;
+; Vga_Controller:u1|o_Column_Count[3]                                                     ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; Vga_Controller:u1|o_Column_Count[3]~DUPLICATE ;                  ;                       ;
 ; Vga_Controller:u1|o_Column_Count[7]                                                     ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; Vga_Controller:u1|o_Column_Count[7]~DUPLICATE ;                  ;                       ;
+; Vga_Controller:u1|o_Column_Count[8]                                                     ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; Vga_Controller:u1|o_Column_Count[8]~DUPLICATE ;                  ;                       ;
+; Vga_Controller:u1|o_Column_Count[9]                                                     ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; Vga_Controller:u1|o_Column_Count[9]~DUPLICATE ;                  ;                       ;
+; s_Road_Pos_Y[0]                                                                         ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; s_Road_Pos_Y[0]~DUPLICATE                     ;                  ;                       ;
 +-----------------------------------------------------------------------------------------+------------+---------------------------------------------------+----------------------------+-----------+----------------+-----------------------------------------------+------------------+-----------------------+
 
 
@@ -210,8 +223,8 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; Type                ; Total [A + B]      ; From Design Partitions [A] ; From Rapid Recompile [B] ;
 +---------------------+--------------------+----------------------------+--------------------------+
 ; Placement (by node) ;                    ;                            ;                          ;
-;     -- Requested    ; 0.00 % ( 0 / 294 ) ; 0.00 % ( 0 / 294 )         ; 0.00 % ( 0 / 294 )       ;
-;     -- Achieved     ; 0.00 % ( 0 / 294 ) ; 0.00 % ( 0 / 294 )         ; 0.00 % ( 0 / 294 )       ;
+;     -- Requested    ; 0.00 % ( 0 / 396 ) ; 0.00 % ( 0 / 396 )         ; 0.00 % ( 0 / 396 )       ;
+;     -- Achieved     ; 0.00 % ( 0 / 396 ) ; 0.00 % ( 0 / 396 )         ; 0.00 % ( 0 / 396 )       ;
 ;                     ;                    ;                            ;                          ;
 ; Routing (by net)    ;                    ;                            ;                          ;
 ;     -- Requested    ; 0.00 % ( 0 / 0 )   ; 0.00 % ( 0 / 0 )           ; 0.00 % ( 0 / 0 )         ;
@@ -234,7 +247,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 ; Partition Name                 ; Preservation Achieved ; Preservation Level Used ; Netlist Type Used ; Preservation Method ; Notes ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
-; Top                            ; 0.00 % ( 0 / 283 )    ; N/A                     ; Source File       ; N/A                 ;       ;
+; Top                            ; 0.00 % ( 0 / 385 )    ; N/A                     ; Source File       ; N/A                 ;       ;
 ; hard_block:auto_generated_inst ; 0.00 % ( 0 / 11 )     ; N/A                     ; Source File       ; N/A                 ;       ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 
@@ -242,7 +255,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +--------------+
 ; Pin-Out File ;
 +--------------+
-The pin-out file can be found in C:/Users/FatihKaya/Desktop/FPGA_Project/001_VGA_Controller/output_files/VGA_Controller.pin.
+The pin-out file can be found in C:/Users/lenovo/Desktop/FPGA_Project/001_VGA_Controller/output_files/VGA_Controller.pin.
 
 
 +------------------------------------------------------------------------------------------+
@@ -250,40 +263,40 @@ The pin-out file can be found in C:/Users/FatihKaya/Desktop/FPGA_Project/001_VGA
 +-------------------------------------------------------------+--------------------+-------+
 ; Resource                                                    ; Usage              ; %     ;
 +-------------------------------------------------------------+--------------------+-------+
-; Logic utilization (ALMs needed / total ALMs on device)      ; 86 / 32,070        ; < 1 % ;
-; ALMs needed [=A-B+C]                                        ; 86                 ;       ;
-;     [A] ALMs used in final placement [=a+b+c+d]             ; 90 / 32,070        ; < 1 % ;
-;         [a] ALMs used for LUT logic and registers           ; 30                 ;       ;
-;         [b] ALMs used for LUT logic                         ; 48                 ;       ;
-;         [c] ALMs used for registers                         ; 12                 ;       ;
+; Logic utilization (ALMs needed / total ALMs on device)      ; 140 / 32,070       ; < 1 % ;
+; ALMs needed [=A-B+C]                                        ; 140                ;       ;
+;     [A] ALMs used in final placement [=a+b+c+d]             ; 144 / 32,070       ; < 1 % ;
+;         [a] ALMs used for LUT logic and registers           ; 32                 ;       ;
+;         [b] ALMs used for LUT logic                         ; 99                 ;       ;
+;         [c] ALMs used for registers                         ; 13                 ;       ;
 ;         [d] ALMs used for memory (up to half of total ALMs) ; 0                  ;       ;
-;     [B] Estimate of ALMs recoverable by dense packing       ; 5 / 32,070         ; < 1 % ;
-;     [C] Estimate of ALMs unavailable [=a+b+c+d]             ; 1 / 32,070         ; < 1 % ;
+;     [B] Estimate of ALMs recoverable by dense packing       ; 4 / 32,070         ; < 1 % ;
+;     [C] Estimate of ALMs unavailable [=a+b+c+d]             ; 0 / 32,070         ; 0 %   ;
 ;         [a] Due to location constrained logic               ; 0                  ;       ;
 ;         [b] Due to LAB-wide signal conflicts                ; 0                  ;       ;
-;         [c] Due to LAB input limits                         ; 1                  ;       ;
+;         [c] Due to LAB input limits                         ; 0                  ;       ;
 ;         [d] Due to virtual I/Os                             ; 0                  ;       ;
 ;                                                             ;                    ;       ;
 ; Difficulty packing design                                   ; Low                ;       ;
 ;                                                             ;                    ;       ;
-; Total LABs:  partially or completely used                   ; 11 / 3,207         ; < 1 % ;
-;     -- Logic LABs                                           ; 11                 ;       ;
+; Total LABs:  partially or completely used                   ; 21 / 3,207         ; < 1 % ;
+;     -- Logic LABs                                           ; 21                 ;       ;
 ;     -- Memory LABs (up to half of total LABs)               ; 0                  ;       ;
 ;                                                             ;                    ;       ;
-; Combinational ALUT usage for logic                          ; 128                ;       ;
+; Combinational ALUT usage for logic                          ; 223                ;       ;
 ;     -- 7 input functions                                    ; 0                  ;       ;
-;     -- 6 input functions                                    ; 31                 ;       ;
-;     -- 5 input functions                                    ; 17                 ;       ;
-;     -- 4 input functions                                    ; 12                 ;       ;
-;     -- <=3 input functions                                  ; 68                 ;       ;
-; Combinational ALUT usage for route-throughs                 ; 11                 ;       ;
-; Dedicated logic registers                                   ; 84                 ;       ;
+;     -- 6 input functions                                    ; 44                 ;       ;
+;     -- 5 input functions                                    ; 37                 ;       ;
+;     -- 4 input functions                                    ; 22                 ;       ;
+;     -- <=3 input functions                                  ; 120                ;       ;
+; Combinational ALUT usage for route-throughs                 ; 9                  ;       ;
+; Dedicated logic registers                                   ; 97                 ;       ;
 ;     -- By type:                                             ;                    ;       ;
-;         -- Primary logic registers                          ; 83 / 64,140        ; < 1 % ;
-;         -- Secondary logic registers                        ; 1 / 64,140         ; < 1 % ;
+;         -- Primary logic registers                          ; 90 / 64,140        ; < 1 % ;
+;         -- Secondary logic registers                        ; 7 / 64,140         ; < 1 % ;
 ;     -- By function:                                         ;                    ;       ;
-;         -- Design implementation registers                  ; 83                 ;       ;
-;         -- Routing optimization registers                   ; 1                  ;       ;
+;         -- Design implementation registers                  ; 90                 ;       ;
+;         -- Routing optimization registers                   ; 7                  ;       ;
 ;                                                             ;                    ;       ;
 ; Virtual pins                                                ; 0                  ;       ;
 ; I/O pins                                                    ; 39 / 457           ; 9 %   ;
@@ -339,103 +352,103 @@ The pin-out file can be found in C:/Users/FatihKaya/Desktop/FPGA_Project/001_VGA
 ; Impedance control blocks                                    ; 0 / 4              ; 0 %   ;
 ; Hard Memory Controllers                                     ; 0 / 2              ; 0 %   ;
 ; Average interconnect usage (total/H/V)                      ; 0.1% / 0.1% / 0.1% ;       ;
-; Peak interconnect usage (total/H/V)                         ; 1.2% / 1.2% / 0.9% ;       ;
-; Maximum fan-out                                             ; 84                 ;       ;
-; Highest non-global fan-out                                  ; 84                 ;       ;
-; Total fan-out                                               ; 926                ;       ;
-; Average fan-out                                             ; 3.03               ;       ;
+; Peak interconnect usage (total/H/V)                         ; 1.8% / 1.9% / 1.8% ;       ;
+; Maximum fan-out                                             ; 97                 ;       ;
+; Highest non-global fan-out                                  ; 97                 ;       ;
+; Total fan-out                                               ; 1345               ;       ;
+; Average fan-out                                             ; 3.26               ;       ;
 +-------------------------------------------------------------+--------------------+-------+
 
 
-+---------------------------------------------------------------------------------------------------------------------+
-; Fitter Partition Statistics                                                                                         ;
-+-------------------------------------------------------------+----------------------+--------------------------------+
-; Statistic                                                   ; Top                  ; hard_block:auto_generated_inst ;
-+-------------------------------------------------------------+----------------------+--------------------------------+
-; Logic utilization (ALMs needed / total ALMs on device)      ; 86 / 32070 ( < 1 % ) ; 0 / 32070 ( 0 % )              ;
-; ALMs needed [=A-B+C]                                        ; 86                   ; 0                              ;
-;     [A] ALMs used in final placement [=a+b+c+d]             ; 90 / 32070 ( < 1 % ) ; 0 / 32070 ( 0 % )              ;
-;         [a] ALMs used for LUT logic and registers           ; 30                   ; 0                              ;
-;         [b] ALMs used for LUT logic                         ; 48                   ; 0                              ;
-;         [c] ALMs used for registers                         ; 12                   ; 0                              ;
-;         [d] ALMs used for memory (up to half of total ALMs) ; 0                    ; 0                              ;
-;     [B] Estimate of ALMs recoverable by dense packing       ; 5 / 32070 ( < 1 % )  ; 0 / 32070 ( 0 % )              ;
-;     [C] Estimate of ALMs unavailable [=a+b+c+d]             ; 1 / 32070 ( < 1 % )  ; 0 / 32070 ( 0 % )              ;
-;         [a] Due to location constrained logic               ; 0                    ; 0                              ;
-;         [b] Due to LAB-wide signal conflicts                ; 0                    ; 0                              ;
-;         [c] Due to LAB input limits                         ; 1                    ; 0                              ;
-;         [d] Due to virtual I/Os                             ; 0                    ; 0                              ;
-;                                                             ;                      ;                                ;
-; Difficulty packing design                                   ; Low                  ; Low                            ;
-;                                                             ;                      ;                                ;
-; Total LABs:  partially or completely used                   ; 11 / 3207 ( < 1 % )  ; 0 / 3207 ( 0 % )               ;
-;     -- Logic LABs                                           ; 11                   ; 0                              ;
-;     -- Memory LABs (up to half of total LABs)               ; 0                    ; 0                              ;
-;                                                             ;                      ;                                ;
-; Combinational ALUT usage for logic                          ; 128                  ; 0                              ;
-;     -- 7 input functions                                    ; 0                    ; 0                              ;
-;     -- 6 input functions                                    ; 31                   ; 0                              ;
-;     -- 5 input functions                                    ; 17                   ; 0                              ;
-;     -- 4 input functions                                    ; 12                   ; 0                              ;
-;     -- <=3 input functions                                  ; 68                   ; 0                              ;
-; Combinational ALUT usage for route-throughs                 ; 11                   ; 0                              ;
-; Memory ALUT usage                                           ; 0                    ; 0                              ;
-;     -- 64-address deep                                      ; 0                    ; 0                              ;
-;     -- 32-address deep                                      ; 0                    ; 0                              ;
-;                                                             ;                      ;                                ;
-; Dedicated logic registers                                   ; 0                    ; 0                              ;
-;     -- By type:                                             ;                      ;                                ;
-;         -- Primary logic registers                          ; 83 / 64140 ( < 1 % ) ; 0 / 64140 ( 0 % )              ;
-;         -- Secondary logic registers                        ; 1 / 64140 ( < 1 % )  ; 0 / 64140 ( 0 % )              ;
-;     -- By function:                                         ;                      ;                                ;
-;         -- Design implementation registers                  ; 83                   ; 0                              ;
-;         -- Routing optimization registers                   ; 1                    ; 0                              ;
-;                                                             ;                      ;                                ;
-;                                                             ;                      ;                                ;
-; Virtual pins                                                ; 0                    ; 0                              ;
-; I/O pins                                                    ; 36                   ; 3                              ;
-; I/O registers                                               ; 0                    ; 0                              ;
-; Total block memory bits                                     ; 0                    ; 0                              ;
-; Total block memory implementation bits                      ; 0                    ; 0                              ;
-; Clock enable block                                          ; 0 / 116 ( 0 % )      ; 1 / 116 ( < 1 % )              ;
-; Fractional PLL                                              ; 0 / 6 ( 0 % )        ; 1 / 6 ( 16 % )                 ;
-; PLL Output Counter                                          ; 0 / 54 ( 0 % )       ; 1 / 54 ( 1 % )                 ;
-; PLL Reconfiguration Block                                   ; 0 / 6 ( 0 % )        ; 1 / 6 ( 16 % )                 ;
-; PLL Reference Clock Select Block                            ; 0 / 6 ( 0 % )        ; 1 / 6 ( 16 % )                 ;
-;                                                             ;                      ;                                ;
-; Connections                                                 ;                      ;                                ;
-;     -- Input Connections                                    ; 64                   ; 0                              ;
-;     -- Registered Input Connections                         ; 64                   ; 0                              ;
-;     -- Output Connections                                   ; 0                    ; 64                             ;
-;     -- Registered Output Connections                        ; 0                    ; 0                              ;
-;                                                             ;                      ;                                ;
-; Internal Connections                                        ;                      ;                                ;
-;     -- Total Connections                                    ; 913                  ; 100                            ;
-;     -- Registered Connections                               ; 361                  ; 0                              ;
-;                                                             ;                      ;                                ;
-; External Connections                                        ;                      ;                                ;
-;     -- Top                                                  ; 0                    ; 64                             ;
-;     -- hard_block:auto_generated_inst                       ; 64                   ; 0                              ;
-;                                                             ;                      ;                                ;
-; Partition Interface                                         ;                      ;                                ;
-;     -- Input Ports                                          ; 10                   ; 2                              ;
-;     -- Output Ports                                         ; 29                   ; 2                              ;
-;     -- Bidir Ports                                          ; 0                    ; 0                              ;
-;                                                             ;                      ;                                ;
-; Registered Ports                                            ;                      ;                                ;
-;     -- Registered Input Ports                               ; 0                    ; 0                              ;
-;     -- Registered Output Ports                              ; 0                    ; 0                              ;
-;                                                             ;                      ;                                ;
-; Port Connectivity                                           ;                      ;                                ;
-;     -- Input Ports driven by GND                            ; 0                    ; 0                              ;
-;     -- Output Ports driven by GND                           ; 0                    ; 0                              ;
-;     -- Input Ports driven by VCC                            ; 0                    ; 0                              ;
-;     -- Output Ports driven by VCC                           ; 0                    ; 0                              ;
-;     -- Input Ports with no Source                           ; 0                    ; 0                              ;
-;     -- Output Ports with no Source                          ; 0                    ; 0                              ;
-;     -- Input Ports with no Fanout                           ; 0                    ; 0                              ;
-;     -- Output Ports with no Fanout                          ; 0                    ; 0                              ;
-+-------------------------------------------------------------+----------------------+--------------------------------+
++----------------------------------------------------------------------------------------------------------------------+
+; Fitter Partition Statistics                                                                                          ;
++-------------------------------------------------------------+-----------------------+--------------------------------+
+; Statistic                                                   ; Top                   ; hard_block:auto_generated_inst ;
++-------------------------------------------------------------+-----------------------+--------------------------------+
+; Logic utilization (ALMs needed / total ALMs on device)      ; 140 / 32070 ( < 1 % ) ; 0 / 32070 ( 0 % )              ;
+; ALMs needed [=A-B+C]                                        ; 140                   ; 0                              ;
+;     [A] ALMs used in final placement [=a+b+c+d]             ; 144 / 32070 ( < 1 % ) ; 0 / 32070 ( 0 % )              ;
+;         [a] ALMs used for LUT logic and registers           ; 32                    ; 0                              ;
+;         [b] ALMs used for LUT logic                         ; 99                    ; 0                              ;
+;         [c] ALMs used for registers                         ; 13                    ; 0                              ;
+;         [d] ALMs used for memory (up to half of total ALMs) ; 0                     ; 0                              ;
+;     [B] Estimate of ALMs recoverable by dense packing       ; 4 / 32070 ( < 1 % )   ; 0 / 32070 ( 0 % )              ;
+;     [C] Estimate of ALMs unavailable [=a+b+c+d]             ; 0 / 32070 ( 0 % )     ; 0 / 32070 ( 0 % )              ;
+;         [a] Due to location constrained logic               ; 0                     ; 0                              ;
+;         [b] Due to LAB-wide signal conflicts                ; 0                     ; 0                              ;
+;         [c] Due to LAB input limits                         ; 0                     ; 0                              ;
+;         [d] Due to virtual I/Os                             ; 0                     ; 0                              ;
+;                                                             ;                       ;                                ;
+; Difficulty packing design                                   ; Low                   ; Low                            ;
+;                                                             ;                       ;                                ;
+; Total LABs:  partially or completely used                   ; 21 / 3207 ( < 1 % )   ; 0 / 3207 ( 0 % )               ;
+;     -- Logic LABs                                           ; 21                    ; 0                              ;
+;     -- Memory LABs (up to half of total LABs)               ; 0                     ; 0                              ;
+;                                                             ;                       ;                                ;
+; Combinational ALUT usage for logic                          ; 223                   ; 0                              ;
+;     -- 7 input functions                                    ; 0                     ; 0                              ;
+;     -- 6 input functions                                    ; 44                    ; 0                              ;
+;     -- 5 input functions                                    ; 37                    ; 0                              ;
+;     -- 4 input functions                                    ; 22                    ; 0                              ;
+;     -- <=3 input functions                                  ; 120                   ; 0                              ;
+; Combinational ALUT usage for route-throughs                 ; 9                     ; 0                              ;
+; Memory ALUT usage                                           ; 0                     ; 0                              ;
+;     -- 64-address deep                                      ; 0                     ; 0                              ;
+;     -- 32-address deep                                      ; 0                     ; 0                              ;
+;                                                             ;                       ;                                ;
+; Dedicated logic registers                                   ; 0                     ; 0                              ;
+;     -- By type:                                             ;                       ;                                ;
+;         -- Primary logic registers                          ; 90 / 64140 ( < 1 % )  ; 0 / 64140 ( 0 % )              ;
+;         -- Secondary logic registers                        ; 7 / 64140 ( < 1 % )   ; 0 / 64140 ( 0 % )              ;
+;     -- By function:                                         ;                       ;                                ;
+;         -- Design implementation registers                  ; 90                    ; 0                              ;
+;         -- Routing optimization registers                   ; 7                     ; 0                              ;
+;                                                             ;                       ;                                ;
+;                                                             ;                       ;                                ;
+; Virtual pins                                                ; 0                     ; 0                              ;
+; I/O pins                                                    ; 36                    ; 3                              ;
+; I/O registers                                               ; 0                     ; 0                              ;
+; Total block memory bits                                     ; 0                     ; 0                              ;
+; Total block memory implementation bits                      ; 0                     ; 0                              ;
+; Clock enable block                                          ; 0 / 116 ( 0 % )       ; 1 / 116 ( < 1 % )              ;
+; Fractional PLL                                              ; 0 / 6 ( 0 % )         ; 1 / 6 ( 16 % )                 ;
+; PLL Output Counter                                          ; 0 / 54 ( 0 % )        ; 1 / 54 ( 1 % )                 ;
+; PLL Reconfiguration Block                                   ; 0 / 6 ( 0 % )         ; 1 / 6 ( 16 % )                 ;
+; PLL Reference Clock Select Block                            ; 0 / 6 ( 0 % )         ; 1 / 6 ( 16 % )                 ;
+;                                                             ;                       ;                                ;
+; Connections                                                 ;                       ;                                ;
+;     -- Input Connections                                    ; 69                    ; 0                              ;
+;     -- Registered Input Connections                         ; 69                    ; 0                              ;
+;     -- Output Connections                                   ; 0                     ; 69                             ;
+;     -- Registered Output Connections                        ; 0                     ; 0                              ;
+;                                                             ;                       ;                                ;
+; Internal Connections                                        ;                       ;                                ;
+;     -- Total Connections                                    ; 1338                  ; 105                            ;
+;     -- Registered Connections                               ; 482                   ; 0                              ;
+;                                                             ;                       ;                                ;
+; External Connections                                        ;                       ;                                ;
+;     -- Top                                                  ; 0                     ; 69                             ;
+;     -- hard_block:auto_generated_inst                       ; 69                    ; 0                              ;
+;                                                             ;                       ;                                ;
+; Partition Interface                                         ;                       ;                                ;
+;     -- Input Ports                                          ; 10                    ; 2                              ;
+;     -- Output Ports                                         ; 29                    ; 2                              ;
+;     -- Bidir Ports                                          ; 0                     ; 0                              ;
+;                                                             ;                       ;                                ;
+; Registered Ports                                            ;                       ;                                ;
+;     -- Registered Input Ports                               ; 0                     ; 0                              ;
+;     -- Registered Output Ports                              ; 0                     ; 0                              ;
+;                                                             ;                       ;                                ;
+; Port Connectivity                                           ;                       ;                                ;
+;     -- Input Ports driven by GND                            ; 0                     ; 0                              ;
+;     -- Output Ports driven by GND                           ; 0                     ; 0                              ;
+;     -- Input Ports driven by VCC                            ; 0                     ; 0                              ;
+;     -- Output Ports driven by VCC                           ; 0                     ; 0                              ;
+;     -- Input Ports with no Source                           ; 0                     ; 0                              ;
+;     -- Output Ports with no Source                          ; 0                     ; 0                              ;
+;     -- Input Ports with no Fanout                           ; 0                     ; 0                              ;
+;     -- Output Ports with no Fanout                          ; 0                     ; 0                              ;
++-------------------------------------------------------------+-----------------------+--------------------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -452,7 +465,7 @@ The pin-out file can be found in C:/Users/FatihKaya/Desktop/FPGA_Project/001_VGA
 ; i_Mode[1]   ; AC12  ; 3A       ; 16           ; 0            ; 0            ; 0                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; User                 ;
 ; i_Mode[2]   ; AF9   ; 3A       ; 8            ; 0            ; 34           ; 0                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; User                 ;
 ; i_Rst       ; AD10  ; 3A       ; 4            ; 0            ; 17           ; 1                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; User                 ;
-; i_VGA_Reset ; AE12  ; 3A       ; 2            ; 0            ; 57           ; 84                    ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; User                 ;
+; i_VGA_Reset ; AE12  ; 3A       ; 2            ; 0            ; 57           ; 97                    ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; User                 ;
 +-------------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+-----------------+----------+--------------+--------------+-------------+---------------------------+----------------------+
 
 
@@ -1473,12 +1486,13 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 +------------------------------------+----------------------+----------------------------------+---------------------------------------------------+----------------------------------+----------------------+---------------------+---------------------------+---------------+-------------------+-------+------------+------+--------------+----------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node         ; ALMs needed [=A-B+C] ; [A] ALMs used in final placement ; [B] Estimate of ALMs recoverable by dense packing ; [C] Estimate of ALMs unavailable ; ALMs used for memory ; Combinational ALUTs ; Dedicated Logic Registers ; I/O Registers ; Block Memory Bits ; M10Ks ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                              ; Library Name ;
 +------------------------------------+----------------------+----------------------------------+---------------------------------------------------+----------------------------------+----------------------+---------------------+---------------------------+---------------+-------------------+-------+------------+------+--------------+----------------------------------------------------------------------------------+--------------+
-; |Vga_Top_Design                    ; 86.0 (30.3)          ; 89.0 (29.8)                      ; 4.0 (0.0)                                         ; 1.0 (0.6)                        ; 0.0 (0.0)            ; 128 (47)            ; 84 (40)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 39   ; 0            ; |Vga_Top_Design                                                                  ; work         ;
+; |Vga_Top_Design                    ; 140.0 (45.8)         ; 143.5 (46.5)                     ; 3.5 (0.8)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 223 (71)            ; 97 (48)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 39   ; 0            ; |Vga_Top_Design                                                                  ; work         ;
 ;    |Pll_50_to_25:u0|               ; 0.0 (0.0)            ; 0.0 (0.0)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 0 (0)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |Vga_Top_Design|Pll_50_to_25:u0                                                  ; pll_50_to_25 ;
 ;       |Pll_50_to_25_pll_0:pll_0|   ; 0.0 (0.0)            ; 0.0 (0.0)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 0 (0)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |Vga_Top_Design|Pll_50_to_25:u0|Pll_50_to_25_pll_0:pll_0                         ; Pll_50_to_25 ;
 ;          |altera_pll:altera_pll_i| ; 0.0 (0.0)            ; 0.0 (0.0)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 0 (0)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |Vga_Top_Design|Pll_50_to_25:u0|Pll_50_to_25_pll_0:pll_0|altera_pll:altera_pll_i ; work         ;
-;    |Vga_Controller:u1|             ; 34.3 (34.3)          ; 36.0 (36.0)                      ; 1.7 (1.7)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 46 (46)             ; 44 (44)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |Vga_Top_Design|Vga_Controller:u1                                                ; work         ;
-;    |Vga_Test:u2|                   ; 19.6 (19.6)          ; 23.3 (23.3)                      ; 4.1 (4.1)                                         ; 0.4 (0.4)                        ; 0.0 (0.0)            ; 35 (35)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |Vga_Top_Design|Vga_Test:u2                                                      ; work         ;
+;    |Road_Generator:u3|             ; 18.1 (18.1)          ; 18.1 (18.1)                      ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 37 (37)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |Vga_Top_Design|Road_Generator:u3                                                ; work         ;
+;    |Vga_Controller:u1|             ; 34.8 (34.8)          ; 37.3 (37.3)                      ; 2.5 (2.5)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 47 (47)             ; 49 (49)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |Vga_Top_Design|Vga_Controller:u1                                                ; work         ;
+;    |Vga_Test:u2|                   ; 40.7 (40.7)          ; 41.6 (41.6)                      ; 0.9 (0.9)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 68 (68)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |Vga_Top_Design|Vga_Test:u2                                                      ; work         ;
 +------------------------------------+----------------------+----------------------------------+---------------------------------------------------+----------------------------------+----------------------+---------------------+---------------------------+---------------+-------------------+-------+------------+------+--------------+----------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -1521,10 +1535,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; o_HS        ; Output   ; -- ; --   ; --   ; -- ; (0)  ; (31)  ; --     ; --                     ; --                       ;
 ; o_VS        ; Output   ; -- ; --   ; --   ; -- ; (0)  ; (31)  ; --     ; --                     ; --                       ;
 ; i_VGA_Reset ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
-; i_Btn_Up    ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
-; i_Btn_Down  ; Input    ; -- ; --   ; (0)  ; -- ; --   ; --    ; --     ; --                     ; --                       ;
-; i_Btn_Left  ; Input    ; -- ; --   ; (0)  ; -- ; --   ; --    ; --     ; --                     ; --                       ;
+; i_Btn_Left  ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
 ; i_Btn_Right ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
+; i_Btn_Up    ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
+; i_Btn_Down  ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
 ; i_Clk       ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
 ; i_Rst       ; Input    ; -- ; --   ; (0)  ; -- ; --   ; --    ; --     ; --                     ; --                       ;
 +-------------+----------+----+------+------+----+------+-------+--------+------------------------+--------------------------+
@@ -1539,7 +1553,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; i_Mode[1]                                                                                              ;                   ;         ;
 ; i_Mode[2]                                                                                              ;                   ;         ;
 ; i_VGA_Reset                                                                                            ;                   ;         ;
-;      - RefreshClock                                                                                    ; 0                 ; 0       ;
 ;      - Y_Pos[0]                                                                                        ; 0                 ; 0       ;
 ;      - Y_Pos[1]                                                                                        ; 0                 ; 0       ;
 ;      - Y_Pos[2]                                                                                        ; 0                 ; 0       ;
@@ -1565,25 +1578,25 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - Vga_Controller:u1|o_Disp_En                                                                     ; 0                 ; 0       ;
 ;      - Vga_Controller:u1|o_VS                                                                          ; 0                 ; 0       ;
 ;      - Vga_Controller:u1|o_HS                                                                          ; 0                 ; 0       ;
-;      - Refresh_Rate_Timer[1]                                                                           ; 0                 ; 0       ;
-;      - Refresh_Rate_Timer[12]                                                                          ; 0                 ; 0       ;
-;      - Refresh_Rate_Timer[13]                                                                          ; 0                 ; 0       ;
-;      - Refresh_Rate_Timer[16]                                                                          ; 0                 ; 0       ;
-;      - Refresh_Rate_Timer[17]                                                                          ; 0                 ; 0       ;
-;      - Refresh_Rate_Timer[18]                                                                          ; 0                 ; 0       ;
-;      - Refresh_Rate_Timer[0]                                                                           ; 0                 ; 0       ;
-;      - Refresh_Rate_Timer[8]                                                                           ; 0                 ; 0       ;
-;      - Refresh_Rate_Timer[14]                                                                          ; 0                 ; 0       ;
 ;      - Refresh_Rate_Timer[15]                                                                          ; 0                 ; 0       ;
-;      - Refresh_Rate_Timer[11]                                                                          ; 0                 ; 0       ;
-;      - Refresh_Rate_Timer[10]                                                                          ; 0                 ; 0       ;
-;      - Refresh_Rate_Timer[9]                                                                           ; 0                 ; 0       ;
 ;      - Refresh_Rate_Timer[7]                                                                           ; 0                 ; 0       ;
+;      - Refresh_Rate_Timer[8]                                                                           ; 0                 ; 0       ;
+;      - Refresh_Rate_Timer[9]                                                                           ; 0                 ; 0       ;
+;      - Refresh_Rate_Timer[10]                                                                          ; 0                 ; 0       ;
 ;      - Refresh_Rate_Timer[6]                                                                           ; 0                 ; 0       ;
+;      - Refresh_Rate_Timer[12]                                                                          ; 0                 ; 0       ;
+;      - Refresh_Rate_Timer[0]                                                                           ; 0                 ; 0       ;
+;      - Refresh_Rate_Timer[18]                                                                          ; 0                 ; 0       ;
+;      - Refresh_Rate_Timer[17]                                                                          ; 0                 ; 0       ;
+;      - Refresh_Rate_Timer[16]                                                                          ; 0                 ; 0       ;
+;      - Refresh_Rate_Timer[11]                                                                          ; 0                 ; 0       ;
+;      - Refresh_Rate_Timer[13]                                                                          ; 0                 ; 0       ;
+;      - Refresh_Rate_Timer[14]                                                                          ; 0                 ; 0       ;
 ;      - Refresh_Rate_Timer[5]                                                                           ; 0                 ; 0       ;
 ;      - Refresh_Rate_Timer[4]                                                                           ; 0                 ; 0       ;
 ;      - Refresh_Rate_Timer[3]                                                                           ; 0                 ; 0       ;
 ;      - Refresh_Rate_Timer[2]                                                                           ; 0                 ; 0       ;
+;      - Refresh_Rate_Timer[1]                                                                           ; 0                 ; 0       ;
 ;      - Vga_Controller:u1|o_Row_Count[9]                                                                ; 0                 ; 0       ;
 ;      - Vga_Controller:u1|o_Row_Count[8]                                                                ; 0                 ; 0       ;
 ;      - Vga_Controller:u1|o_Row_Count[7]                                                                ; 0                 ; 0       ;
@@ -1622,33 +1635,47 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - Vga_Controller:u1|v_Horiz_Count[2]                                                              ; 0                 ; 0       ;
 ;      - Vga_Controller:u1|v_Horiz_Count[1]                                                              ; 0                 ; 0       ;
 ;      - Vga_Controller:u1|v_Horiz_Count[0]                                                              ; 0                 ; 0       ;
+;      - s_Road_Pos_Y[6]                                                                                 ; 0                 ; 0       ;
+;      - RefreshClock                                                                                    ; 0                 ; 0       ;
+;      - s_Road_Pos_Y[5]                                                                                 ; 0                 ; 0       ;
+;      - s_Road_Pos_Y[4]                                                                                 ; 0                 ; 0       ;
+;      - s_Road_Pos_Y[3]                                                                                 ; 0                 ; 0       ;
+;      - s_Road_Pos_Y[2]                                                                                 ; 0                 ; 0       ;
+;      - s_Road_Pos_Y[1]                                                                                 ; 0                 ; 0       ;
+;      - s_Road_Pos_Y[0]                                                                                 ; 0                 ; 0       ;
+;      - Vga_Controller:u1|o_Column_Count[3]~DUPLICATE                                                   ; 0                 ; 0       ;
+;      - Vga_Controller:u1|o_Column_Count[2]~DUPLICATE                                                   ; 0                 ; 0       ;
+;      - Vga_Controller:u1|o_Column_Count[1]~DUPLICATE                                                   ; 0                 ; 0       ;
+;      - Vga_Controller:u1|o_Column_Count[8]~DUPLICATE                                                   ; 0                 ; 0       ;
+;      - Vga_Controller:u1|o_Column_Count[9]~DUPLICATE                                                   ; 0                 ; 0       ;
 ;      - Vga_Controller:u1|o_Column_Count[7]~DUPLICATE                                                   ; 0                 ; 0       ;
-; i_Btn_Up                                                                                               ;                   ;         ;
-;      - Add1~17                                                                                         ; 0                 ; 0       ;
-;      - Add1~29                                                                                         ; 0                 ; 0       ;
-;      - Add1~25                                                                                         ; 0                 ; 0       ;
-;      - Add1~1                                                                                          ; 0                 ; 0       ;
-;      - Add1~13                                                                                         ; 0                 ; 0       ;
-;      - Add1~9                                                                                          ; 0                 ; 0       ;
-;      - Add1~5                                                                                          ; 0                 ; 0       ;
-;      - Add1~37                                                                                         ; 0                 ; 0       ;
-;      - Add1~33                                                                                         ; 0                 ; 0       ;
-;      - Y_Pos[3]~0                                                                                      ; 0                 ; 0       ;
-; i_Btn_Down                                                                                             ;                   ;         ;
-;      - Y_Pos[3]~0                                                                                      ; 1                 ; 0       ;
+;      - s_Road_Pos_Y[0]~DUPLICATE                                                                       ; 0                 ; 0       ;
 ; i_Btn_Left                                                                                             ;                   ;         ;
-;      - Add3~17                                                                                         ; 1                 ; 0       ;
-;      - Add3~29                                                                                         ; 1                 ; 0       ;
-;      - Add3~25                                                                                         ; 1                 ; 0       ;
-;      - Add3~1                                                                                          ; 1                 ; 0       ;
-;      - Add3~13                                                                                         ; 1                 ; 0       ;
-;      - Add3~9                                                                                          ; 1                 ; 0       ;
-;      - Add3~5                                                                                          ; 1                 ; 0       ;
-;      - Add3~37                                                                                         ; 1                 ; 0       ;
-;      - Add3~33                                                                                         ; 1                 ; 0       ;
-;      - X_Pos[3]~0                                                                                      ; 1                 ; 0       ;
+;      - Add4~29                                                                                         ; 0                 ; 0       ;
+;      - Add4~25                                                                                         ; 0                 ; 0       ;
+;      - Add4~21                                                                                         ; 0                 ; 0       ;
+;      - Add4~17                                                                                         ; 0                 ; 0       ;
+;      - Add4~1                                                                                          ; 0                 ; 0       ;
+;      - Add4~13                                                                                         ; 0                 ; 0       ;
+;      - Add4~9                                                                                          ; 0                 ; 0       ;
+;      - Add4~37                                                                                         ; 0                 ; 0       ;
+;      - Add4~5                                                                                          ; 0                 ; 0       ;
+;      - X_Pos[3]~0                                                                                      ; 0                 ; 0       ;
 ; i_Btn_Right                                                                                            ;                   ;         ;
 ;      - X_Pos[3]~0                                                                                      ; 0                 ; 0       ;
+; i_Btn_Up                                                                                               ;                   ;         ;
+;      - Add2~29                                                                                         ; 0                 ; 0       ;
+;      - Add2~25                                                                                         ; 0                 ; 0       ;
+;      - Add2~21                                                                                         ; 0                 ; 0       ;
+;      - Add2~17                                                                                         ; 0                 ; 0       ;
+;      - Add2~1                                                                                          ; 0                 ; 0       ;
+;      - Add2~13                                                                                         ; 0                 ; 0       ;
+;      - Add2~9                                                                                          ; 0                 ; 0       ;
+;      - Add2~37                                                                                         ; 0                 ; 0       ;
+;      - Add2~5                                                                                          ; 0                 ; 0       ;
+;      - Y_Pos[6]~0                                                                                      ; 0                 ; 0       ;
+; i_Btn_Down                                                                                             ;                   ;         ;
+;      - Y_Pos[6]~0                                                                                      ; 0                 ; 0       ;
 ; i_Clk                                                                                                  ;                   ;         ;
 ; i_Rst                                                                                                  ;                   ;         ;
 ;      - Pll_50_to_25:u0|Pll_50_to_25_pll_0:pll_0|altera_pll:altera_pll_i|general[0].gpll~FRACTIONAL_PLL ; 1                 ; 0       ;
@@ -1660,16 +1687,16 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------------------------------------------------------------+----------------------------+---------+-------------------------+--------+----------------------+------------------+---------------------------+
 ; Name                                                                            ; Location                   ; Fan-Out ; Usage                   ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +---------------------------------------------------------------------------------+----------------------------+---------+-------------------------+--------+----------------------+------------------+---------------------------+
-; Equal0~3                                                                        ; MLABCELL_X34_Y2_N45        ; 19      ; Sync. clear             ; no     ; --                   ; --               ; --                        ;
-; Pll_50_to_25:u0|Pll_50_to_25_pll_0:pll_0|altera_pll:altera_pll_i|outclk_wire[0] ; PLLOUTPUTCOUNTER_X0_Y20_N1 ; 65      ; Clock                   ; yes    ; Global Clock         ; GCLK6            ; --                        ;
-; RefreshClock                                                                    ; FF_X36_Y2_N35              ; 21      ; Clock                   ; no     ; --                   ; --               ; --                        ;
-; Vga_Controller:u1|LessThan0~3                                                   ; LABCELL_X36_Y3_N3          ; 45      ; Sync. clear, Sync. load ; no     ; --                   ; --               ; --                        ;
-; Vga_Controller:u1|LessThan6~0                                                   ; LABCELL_X31_Y2_N12         ; 11      ; Clock enable            ; no     ; --                   ; --               ; --                        ;
-; Vga_Controller:u1|LessThan7~0                                                   ; LABCELL_X36_Y3_N6          ; 9       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
-; Vga_Controller:u1|v_Vert_Count~2                                                ; LABCELL_X36_Y3_N18         ; 24      ; Sync. clear             ; no     ; --                   ; --               ; --                        ;
-; X_Pos[3]~0                                                                      ; LABCELL_X36_Y2_N21         ; 10      ; Clock enable            ; no     ; --                   ; --               ; --                        ;
-; Y_Pos[3]~0                                                                      ; LABCELL_X37_Y2_N54         ; 10      ; Clock enable            ; no     ; --                   ; --               ; --                        ;
-; i_VGA_Reset                                                                     ; PIN_AE12                   ; 84      ; Async. clear            ; no     ; --                   ; --               ; --                        ;
+; Equal0~3                                                                        ; LABCELL_X27_Y63_N36        ; 19      ; Sync. clear             ; no     ; --                   ; --               ; --                        ;
+; Pll_50_to_25:u0|Pll_50_to_25_pll_0:pll_0|altera_pll:altera_pll_i|outclk_wire[0] ; PLLOUTPUTCOUNTER_X0_Y20_N1 ; 70      ; Clock                   ; yes    ; Global Clock         ; GCLK6            ; --                        ;
+; RefreshClock                                                                    ; FF_X31_Y63_N2              ; 29      ; Clock                   ; no     ; --                   ; --               ; --                        ;
+; Vga_Controller:u1|LessThan0~3                                                   ; MLABCELL_X28_Y66_N0        ; 50      ; Sync. clear, Sync. load ; no     ; --                   ; --               ; --                        ;
+; Vga_Controller:u1|LessThan6~0                                                   ; MLABCELL_X28_Y64_N54       ; 16      ; Clock enable            ; no     ; --                   ; --               ; --                        ;
+; Vga_Controller:u1|LessThan7~0                                                   ; MLABCELL_X28_Y64_N24       ; 9       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
+; Vga_Controller:u1|v_Vert_Count~3                                                ; MLABCELL_X28_Y64_N42       ; 24      ; Sync. clear             ; no     ; --                   ; --               ; --                        ;
+; X_Pos[3]~0                                                                      ; LABCELL_X36_Y58_N36        ; 10      ; Clock enable            ; no     ; --                   ; --               ; --                        ;
+; Y_Pos[6]~0                                                                      ; LABCELL_X35_Y59_N39        ; 10      ; Clock enable            ; no     ; --                   ; --               ; --                        ;
+; i_VGA_Reset                                                                     ; PIN_AE12                   ; 97      ; Async. clear            ; no     ; --                   ; --               ; --                        ;
 +---------------------------------------------------------------------------------+----------------------------+---------+-------------------------+--------+----------------------+------------------+---------------------------+
 
 
@@ -1678,7 +1705,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------------------------------------------------------------+----------------------------+---------+----------------------+------------------+---------------------------+
 ; Name                                                                            ; Location                   ; Fan-Out ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +---------------------------------------------------------------------------------+----------------------------+---------+----------------------+------------------+---------------------------+
-; Pll_50_to_25:u0|Pll_50_to_25_pll_0:pll_0|altera_pll:altera_pll_i|outclk_wire[0] ; PLLOUTPUTCOUNTER_X0_Y20_N1 ; 65      ; Global Clock         ; GCLK6            ; --                        ;
+; Pll_50_to_25:u0|Pll_50_to_25_pll_0:pll_0|altera_pll:altera_pll_i|outclk_wire[0] ; PLLOUTPUTCOUNTER_X0_Y20_N1 ; 70      ; Global Clock         ; GCLK6            ; --                        ;
 +---------------------------------------------------------------------------------+----------------------------+---------+----------------------+------------------+---------------------------+
 
 
@@ -1687,120 +1714,179 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-------------------------------------------------------------------------------------------------------------------+---------+
 ; Name                                                                                                              ; Fan-Out ;
 +-------------------------------------------------------------------------------------------------------------------+---------+
-; i_VGA_Reset~input                                                                                                 ; 84      ;
-; Vga_Controller:u1|LessThan0~3                                                                                     ; 45      ;
-; Vga_Controller:u1|v_Vert_Count~2                                                                                  ; 24      ;
-; RefreshClock                                                                                                      ; 21      ;
+; i_VGA_Reset~input                                                                                                 ; 97      ;
+; Vga_Controller:u1|LessThan0~3                                                                                     ; 50      ;
+; RefreshClock                                                                                                      ; 29      ;
+; Vga_Controller:u1|v_Vert_Count~3                                                                                  ; 24      ;
 ; Equal0~3                                                                                                          ; 19      ;
-; Vga_Controller:u1|LessThan6~0                                                                                     ; 11      ;
-; i_Btn_Left~input                                                                                                  ; 10      ;
+; Vga_Test:u2|o_Disp_Ena~3                                                                                          ; 17      ;
+; Vga_Test:u2|LessThan5~6                                                                                           ; 17      ;
+; Vga_Test:u2|LessThan7~6                                                                                           ; 17      ;
+; Road_Generator:u3|o_Disp_Ena~0                                                                                    ; 17      ;
+; Vga_Controller:u1|LessThan6~0                                                                                     ; 16      ;
+; Road_Generator:u3|process_0~11                                                                                    ; 16      ;
+; Road_Generator:u3|comb~0                                                                                          ; 16      ;
+; Y_Pos[9]                                                                                                          ; 16      ;
+; X_Pos[9]                                                                                                          ; 16      ;
 ; i_Btn_Up~input                                                                                                    ; 10      ;
+; i_Btn_Left~input                                                                                                  ; 10      ;
+; Y_Pos[6]~0                                                                                                        ; 10      ;
 ; X_Pos[3]~0                                                                                                        ; 10      ;
-; Y_Pos[3]~0                                                                                                        ; 10      ;
 ; Vga_Controller:u1|LessThan7~0                                                                                     ; 9       ;
-; Vga_Controller:u1|LessThan0~2                                                                                     ; 8       ;
-; Vga_Controller:u1|LessThan0~1                                                                                     ; 8       ;
-; Vga_Controller:u1|LessThan0~0                                                                                     ; 8       ;
-; Vga_Test:u2|o_Disp_Ena                                                                                            ; 8       ;
-; X_Pos[5]                                                                                                          ; 7       ;
-; X_Pos[6]                                                                                                          ; 7       ;
-; X_Pos[7]                                                                                                          ; 7       ;
-; X_Pos[8]                                                                                                          ; 6       ;
-; X_Pos[9]                                                                                                          ; 6       ;
-; Y_Pos[5]                                                                                                          ; 6       ;
-; Y_Pos[6]                                                                                                          ; 6       ;
-; Y_Pos[7]                                                                                                          ; 6       ;
-; Vga_Controller:u1|Add0~5                                                                                          ; 6       ;
-; Vga_Controller:u1|v_Vert_Count[5]                                                                                 ; 6       ;
+; Vga_Controller:u1|LessThan0~2                                                                                     ; 9       ;
+; Vga_Controller:u1|LessThan0~1                                                                                     ; 9       ;
+; Vga_Controller:u1|LessThan0~0                                                                                     ; 9       ;
+; X_Pos[6]                                                                                                          ; 9       ;
+; X_Pos[7]                                                                                                          ; 9       ;
+; o_Green~0                                                                                                         ; 8       ;
+; Y_Pos[6]                                                                                                          ; 8       ;
+; Y_Pos[7]                                                                                                          ; 8       ;
+; X_Pos[5]                                                                                                          ; 8       ;
+; Vga_Controller:u1|o_Column_Count[6]                                                                               ; 8       ;
+; Y_Pos[5]                                                                                                          ; 7       ;
+; X_Pos[8]                                                                                                          ; 7       ;
+; Vga_Controller:u1|o_Column_Count[0]                                                                               ; 7       ;
+; Vga_Controller:u1|o_Column_Count[5]                                                                               ; 7       ;
+; Y_Pos[8]                                                                                                          ; 6       ;
+; Vga_Test:u2|process_0~4                                                                                           ; 6       ;
+; Vga_Test:u2|process_0~0                                                                                           ; 6       ;
 ; Vga_Controller:u1|v_Vert_Count[6]                                                                                 ; 6       ;
 ; Vga_Controller:u1|v_Vert_Count[7]                                                                                 ; 6       ;
+; Vga_Controller:u1|v_Vert_Count[5]                                                                                 ; 6       ;
 ; Vga_Controller:u1|v_Vert_Count[8]                                                                                 ; 6       ;
-; Y_Pos[8]                                                                                                          ; 5       ;
-; Y_Pos[9]                                                                                                          ; 5       ;
-; Vga_Controller:u1|Add0~13                                                                                         ; 5       ;
-; Vga_Controller:u1|Add0~9                                                                                          ; 5       ;
+; Vga_Controller:u1|v_Vert_Count[9]                                                                                 ; 6       ;
+; Vga_Controller:u1|Add0~9                                                                                          ; 6       ;
+; Vga_Controller:u1|Add0~5                                                                                          ; 6       ;
+; Vga_Controller:u1|Add0~1                                                                                          ; 6       ;
+; Vga_Controller:u1|o_Column_Count[4]                                                                               ; 6       ;
+; Vga_Controller:u1|o_Column_Count[2]                                                                               ; 6       ;
+; Vga_Controller:u1|o_Column_Count[3]                                                                               ; 6       ;
+; Y_Pos[2]                                                                                                          ; 5       ;
+; Y_Pos[3]                                                                                                          ; 5       ;
+; X_Pos[2]                                                                                                          ; 5       ;
+; X_Pos[3]                                                                                                          ; 5       ;
+; Vga_Controller:u1|v_Vert_Count[4]                                                                                 ; 5       ;
 ; Vga_Controller:u1|v_Vert_Count[2]                                                                                 ; 5       ;
 ; Vga_Controller:u1|v_Vert_Count[3]                                                                                 ; 5       ;
-; Vga_Controller:u1|v_Vert_Count[9]                                                                                 ; 5       ;
-; Vga_Controller:u1|v_Vert_Count[4]                                                                                 ; 5       ;
+; Vga_Controller:u1|o_Row_Count[9]                                                                                  ; 5       ;
+; Vga_Controller:u1|o_Row_Count[6]                                                                                  ; 5       ;
+; Vga_Controller:u1|o_Column_Count[7]                                                                               ; 5       ;
 ; Vga_Controller:u1|o_Column_Count[9]                                                                               ; 5       ;
-; Vga_Controller:u1|v_Vert_Count~3                                                                                  ; 4       ;
-; X_Pos[2]                                                                                                          ; 4       ;
-; X_Pos[3]                                                                                                          ; 4       ;
-; Y_Pos[2]                                                                                                          ; 4       ;
-; Y_Pos[3]                                                                                                          ; 4       ;
+; Vga_Controller:u1|o_Column_Count[1]                                                                               ; 5       ;
+; Vga_Controller:u1|o_Column_Count[8]~DUPLICATE                                                                     ; 4       ;
+; Vga_Controller:u1|o_Row_Count[0]                                                                                  ; 4       ;
+; Y_Pos[0]                                                                                                          ; 4       ;
+; Y_Pos[1]                                                                                                          ; 4       ;
+; Y_Pos[4]                                                                                                          ; 4       ;
+; Vga_Test:u2|process_0~6                                                                                           ; 4       ;
+; X_Pos[0]                                                                                                          ; 4       ;
+; X_Pos[1]                                                                                                          ; 4       ;
+; X_Pos[4]                                                                                                          ; 4       ;
+; Vga_Test:u2|process_0~2                                                                                           ; 4       ;
+; Vga_Controller:u1|o_Disp_En                                                                                       ; 4       ;
+; Vga_Controller:u1|v_Vert_Count[1]                                                                                 ; 4       ;
+; Vga_Controller:u1|Add0~37                                                                                         ; 4       ;
+; Vga_Controller:u1|Add0~33                                                                                         ; 4       ;
+; Vga_Controller:u1|Add0~29                                                                                         ; 4       ;
 ; Vga_Controller:u1|Add0~21                                                                                         ; 4       ;
 ; Vga_Controller:u1|Add0~17                                                                                         ; 4       ;
-; Vga_Controller:u1|Add0~1                                                                                          ; 4       ;
-; Vga_Controller:u1|v_Vert_Count[1]                                                                                 ; 4       ;
-; Vga_Controller:u1|Add1~21                                                                                         ; 4       ;
+; Vga_Controller:u1|Add0~13                                                                                         ; 4       ;
 ; Vga_Controller:u1|Add1~17                                                                                         ; 4       ;
 ; Vga_Controller:u1|Add1~13                                                                                         ; 4       ;
 ; Vga_Controller:u1|Add1~9                                                                                          ; 4       ;
-; Vga_Controller:u1|o_Column_Count[8]                                                                               ; 4       ;
-; Vga_Controller:u1|o_Column_Count[5]                                                                               ; 4       ;
-; Vga_Controller:u1|o_Column_Count[6]                                                                               ; 4       ;
+; Vga_Controller:u1|Add1~5                                                                                          ; 4       ;
+; Vga_Controller:u1|Add1~1                                                                                          ; 4       ;
 ; Vga_Controller:u1|o_Row_Count[8]                                                                                  ; 4       ;
-; Vga_Controller:u1|o_Row_Count[9]                                                                                  ; 4       ;
-; Vga_Controller:u1|o_Row_Count[5]                                                                                  ; 4       ;
-; Vga_Controller:u1|o_Row_Count[6]                                                                                  ; 4       ;
+; Vga_Controller:u1|o_Row_Count[2]                                                                                  ; 4       ;
+; Vga_Controller:u1|o_Row_Count[3]                                                                                  ; 4       ;
 ; Vga_Controller:u1|o_Row_Count[7]                                                                                  ; 4       ;
+; Vga_Controller:u1|o_Row_Count[5]                                                                                  ; 4       ;
+; Vga_Controller:u1|o_Column_Count[8]                                                                               ; 4       ;
 ; Pll_50_to_25:u0|Pll_50_to_25_pll_0:pll_0|altera_pll:altera_pll_i|general[0].gpll~PLL_RECONFIG_O_SHIFT             ; 3       ;
 ; Vga_Controller:u1|process_0~1                                                                                     ; 3       ;
 ; Vga_Controller:u1|process_0~0                                                                                     ; 3       ;
-; Vga_Controller:u1|o_Column_Count[0]                                                                               ; 3       ;
-; X_Pos[0]                                                                                                          ; 3       ;
-; X_Pos[1]                                                                                                          ; 3       ;
-; X_Pos[4]                                                                                                          ; 3       ;
-; Vga_Test:u2|Add0~0                                                                                                ; 3       ;
-; Vga_Controller:u1|o_Row_Count[0]                                                                                  ; 3       ;
-; Y_Pos[0]                                                                                                          ; 3       ;
-; Y_Pos[1]                                                                                                          ; 3       ;
-; Y_Pos[4]                                                                                                          ; 3       ;
-; Refresh_Rate_Timer[2]                                                                                             ; 3       ;
-; Refresh_Rate_Timer[10]                                                                                            ; 3       ;
-; Vga_Controller:u1|Add0~37                                                                                         ; 3       ;
-; Vga_Controller:u1|Add0~33                                                                                         ; 3       ;
-; Vga_Controller:u1|Add0~29                                                                                         ; 3       ;
-; Vga_Controller:u1|Add0~25                                                                                         ; 3       ;
-; Vga_Controller:u1|Add1~37                                                                                         ; 3       ;
-; Vga_Controller:u1|Add1~33                                                                                         ; 3       ;
+; Vga_Controller:u1|v_Vert_Count~0                                                                                  ; 3       ;
+; Vga_Test:u2|Add2~0                                                                                                ; 3       ;
+; Road_Generator:u3|process_0~8                                                                                     ; 3       ;
+; Refresh_Rate_Timer[1]                                                                                             ; 3       ;
+; Refresh_Rate_Timer[11]                                                                                            ; 3       ;
 ; Vga_Controller:u1|v_Vert_Count[0]                                                                                 ; 3       ;
+; Vga_Controller:u1|Add1~33                                                                                         ; 3       ;
+; Vga_Controller:u1|Add1~29                                                                                         ; 3       ;
 ; Vga_Controller:u1|Add1~25                                                                                         ; 3       ;
-; Vga_Controller:u1|Add1~5                                                                                          ; 3       ;
-; Vga_Controller:u1|Add1~1                                                                                          ; 3       ;
-; Vga_Controller:u1|o_Column_Count[2]                                                                               ; 3       ;
-; Vga_Controller:u1|o_Column_Count[3]                                                                               ; 3       ;
-; Vga_Controller:u1|o_Row_Count[2]                                                                                  ; 3       ;
-; Vga_Controller:u1|o_Row_Count[3]                                                                                  ; 3       ;
+; Vga_Controller:u1|Add1~21                                                                                         ; 3       ;
+; Vga_Controller:u1|Add0~25                                                                                         ; 3       ;
+; Vga_Controller:u1|o_Row_Count[1]                                                                                  ; 3       ;
+; Vga_Controller:u1|o_Row_Count[4]                                                                                  ; 3       ;
+; Vga_Test:u2|Add0~37                                                                                               ; 3       ;
+; Vga_Test:u2|Add0~9                                                                                                ; 3       ;
+; Vga_Test:u2|Add0~5                                                                                                ; 3       ;
+; Vga_Test:u2|Add0~1                                                                                                ; 3       ;
+; Vga_Test:u2|Add1~37                                                                                               ; 3       ;
+; Vga_Test:u2|Add1~9                                                                                                ; 3       ;
+; Vga_Test:u2|Add1~5                                                                                                ; 3       ;
+; Vga_Test:u2|Add1~1                                                                                                ; 3       ;
+; Road_Generator:u3|Add0~1                                                                                          ; 3       ;
+; s_Road_Pos_Y[0]~DUPLICATE                                                                                         ; 2       ;
 ; Vga_Controller:u1|o_Column_Count[7]~DUPLICATE                                                                     ; 2       ;
+; Vga_Controller:u1|o_Column_Count[9]~DUPLICATE                                                                     ; 2       ;
+; Vga_Controller:u1|o_Column_Count[1]~DUPLICATE                                                                     ; 2       ;
+; Vga_Controller:u1|o_Column_Count[2]~DUPLICATE                                                                     ; 2       ;
+; Vga_Controller:u1|o_Column_Count[3]~DUPLICATE                                                                     ; 2       ;
 ; Pll_50_to_25:u0|Pll_50_to_25_pll_0:pll_0|altera_pll:altera_pll_i|general[0].gpll~PLL_RECONFIG_O_UP                ; 2       ;
 ; Pll_50_to_25:u0|Pll_50_to_25_pll_0:pll_0|altera_pll:altera_pll_i|general[0].gpll~FRACTIONAL_PLL_O_CNTNEN          ; 2       ;
+; Road_Generator:u3|o_Blue[7]                                                                                       ; 2       ;
+; Road_Generator:u3|o_Blue[6]                                                                                       ; 2       ;
+; Road_Generator:u3|o_Blue[5]                                                                                       ; 2       ;
+; Road_Generator:u3|o_Blue[4]                                                                                       ; 2       ;
+; Road_Generator:u3|o_Blue[3]                                                                                       ; 2       ;
+; Road_Generator:u3|o_Blue[2]                                                                                       ; 2       ;
+; Road_Generator:u3|o_Blue[1]                                                                                       ; 2       ;
+; Road_Generator:u3|o_Blue[0]                                                                                       ; 2       ;
+; Road_Generator:u3|o_Red[7]                                                                                        ; 2       ;
+; Road_Generator:u3|o_Red[6]                                                                                        ; 2       ;
+; Road_Generator:u3|o_Red[5]                                                                                        ; 2       ;
+; Road_Generator:u3|o_Red[4]                                                                                        ; 2       ;
+; Road_Generator:u3|o_Red[3]                                                                                        ; 2       ;
+; Road_Generator:u3|o_Red[2]                                                                                        ; 2       ;
+; Road_Generator:u3|o_Red[1]                                                                                        ; 2       ;
+; Road_Generator:u3|o_Red[0]                                                                                        ; 2       ;
+; s_Road_Pos_Y[0]~0                                                                                                 ; 2       ;
+; s_Road_Pos_Y[1]                                                                                                   ; 2       ;
+; s_Road_Pos_Y[2]                                                                                                   ; 2       ;
+; s_Road_Pos_Y[3]                                                                                                   ; 2       ;
+; s_Road_Pos_Y[4]                                                                                                   ; 2       ;
 ; Equal0~2                                                                                                          ; 2       ;
 ; Equal0~1                                                                                                          ; 2       ;
 ; Equal0~0                                                                                                          ; 2       ;
+; s_Road_Pos_Y[5]                                                                                                   ; 2       ;
 ; Vga_Controller:u1|v_Vert_Count~8                                                                                  ; 2       ;
-; Vga_Test:u2|Add1~0                                                                                                ; 2       ;
-; Vga_Test:u2|LessThan2~1                                                                                           ; 2       ;
-; Vga_Test:u2|LessThan0~1                                                                                           ; 2       ;
-; Refresh_Rate_Timer[11]                                                                                            ; 2       ;
-; Refresh_Rate_Timer[15]                                                                                            ; 2       ;
-; Refresh_Rate_Timer[14]                                                                                            ; 2       ;
-; Refresh_Rate_Timer[8]                                                                                             ; 2       ;
-; Refresh_Rate_Timer[0]                                                                                             ; 2       ;
-; Refresh_Rate_Timer[18]                                                                                            ; 2       ;
-; Refresh_Rate_Timer[17]                                                                                            ; 2       ;
+; s_Road_Pos_Y[6]                                                                                                   ; 2       ;
+; Vga_Test:u2|Add2~1                                                                                                ; 2       ;
+; Vga_Test:u2|Add3~0                                                                                                ; 2       ;
+; Road_Generator:u3|process_0~7                                                                                     ; 2       ;
+; Road_Generator:u3|process_0~4                                                                                     ; 2       ;
+; Road_Generator:u3|process_0~2                                                                                     ; 2       ;
+; Road_Generator:u3|process_0~1                                                                                     ; 2       ;
+; Road_Generator:u3|process_0~0                                                                                     ; 2       ;
 ; Refresh_Rate_Timer[16]                                                                                            ; 2       ;
-; Refresh_Rate_Timer[13]                                                                                            ; 2       ;
+; Refresh_Rate_Timer[17]                                                                                            ; 2       ;
+; Refresh_Rate_Timer[18]                                                                                            ; 2       ;
+; Refresh_Rate_Timer[0]                                                                                             ; 2       ;
 ; Refresh_Rate_Timer[12]                                                                                            ; 2       ;
-; Refresh_Rate_Timer[1]                                                                                             ; 2       ;
+; Refresh_Rate_Timer[6]                                                                                             ; 2       ;
+; Refresh_Rate_Timer[10]                                                                                            ; 2       ;
+; Refresh_Rate_Timer[9]                                                                                             ; 2       ;
+; Refresh_Rate_Timer[8]                                                                                             ; 2       ;
+; Refresh_Rate_Timer[7]                                                                                             ; 2       ;
+; Refresh_Rate_Timer[15]                                                                                            ; 2       ;
+; Refresh_Rate_Timer[2]                                                                                             ; 2       ;
 ; Refresh_Rate_Timer[3]                                                                                             ; 2       ;
 ; Refresh_Rate_Timer[4]                                                                                             ; 2       ;
 ; Refresh_Rate_Timer[5]                                                                                             ; 2       ;
-; Refresh_Rate_Timer[6]                                                                                             ; 2       ;
-; Refresh_Rate_Timer[7]                                                                                             ; 2       ;
-; Refresh_Rate_Timer[9]                                                                                             ; 2       ;
-; Vga_Controller:u1|Add1~29                                                                                         ; 2       ;
+; Refresh_Rate_Timer[14]                                                                                            ; 2       ;
+; Refresh_Rate_Timer[13]                                                                                            ; 2       ;
+; Vga_Controller:u1|Add1~37                                                                                         ; 2       ;
 ; Vga_Controller:u1|v_Horiz_Count[9]                                                                                ; 2       ;
 ; Vga_Controller:u1|v_Horiz_Count[8]                                                                                ; 2       ;
 ; Vga_Controller:u1|v_Horiz_Count[5]                                                                                ; 2       ;
@@ -1811,11 +1897,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Vga_Controller:u1|v_Horiz_Count[3]                                                                                ; 2       ;
 ; Vga_Controller:u1|v_Horiz_Count[4]                                                                                ; 2       ;
 ; Vga_Controller:u1|v_Horiz_Count[7]                                                                                ; 2       ;
-; Vga_Controller:u1|o_Column_Count[1]                                                                               ; 2       ;
-; Vga_Controller:u1|o_Column_Count[7]                                                                               ; 2       ;
-; Vga_Controller:u1|o_Column_Count[4]                                                                               ; 2       ;
-; Vga_Controller:u1|o_Row_Count[1]                                                                                  ; 2       ;
-; Vga_Controller:u1|o_Row_Count[4]                                                                                  ; 2       ;
 ; Pll_50_to_25:u0|Pll_50_to_25_pll_0:pll_0|altera_pll:altera_pll_i|general[0].gpll~PLL_RECONFIGSHIFTEN6             ; 1       ;
 ; Pll_50_to_25:u0|Pll_50_to_25_pll_0:pll_0|altera_pll:altera_pll_i|general[0].gpll~PLL_RECONFIG_O_SHIFTENM          ; 1       ;
 ; Pll_50_to_25:u0|Pll_50_to_25_pll_0:pll_0|altera_pll:altera_pll_i|general[0].gpll~PLL_REFCLK_SELECT_O_EXTSWITCHBUF ; 1       ;
@@ -1840,74 +1921,169 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Pll_50_to_25:u0|Pll_50_to_25_pll_0:pll_0|altera_pll:altera_pll_i|fboutclk_wire[0]                                 ; 1       ;
 ; i_Rst~input                                                                                                       ; 1       ;
 ; i_Clk~input                                                                                                       ; 1       ;
-; i_Btn_Right~input                                                                                                 ; 1       ;
 ; i_Btn_Down~input                                                                                                  ; 1       ;
+; i_Btn_Right~input                                                                                                 ; 1       ;
+; s_Road_Pos_Y[0]                                                                                                   ; 1       ;
 ; RefreshClock~0                                                                                                    ; 1       ;
+; Vga_Controller:u1|process_0~9                                                                                     ; 1       ;
 ; Vga_Controller:u1|process_0~8                                                                                     ; 1       ;
 ; Vga_Controller:u1|process_0~7                                                                                     ; 1       ;
 ; Vga_Controller:u1|process_0~6                                                                                     ; 1       ;
 ; Vga_Controller:u1|process_0~5                                                                                     ; 1       ;
 ; Vga_Controller:u1|process_0~4                                                                                     ; 1       ;
 ; Vga_Controller:u1|process_0~3                                                                                     ; 1       ;
-; Vga_Controller:u1|process_0~2                                                                                     ; 1       ;
-; Vga_Controller:u1|o_Column_Count[0]~0                                                                             ; 1       ;
 ; Vga_Controller:u1|o_Row_Count[0]~0                                                                                ; 1       ;
 ; Vga_Controller:u1|v_Vert_Count~7                                                                                  ; 1       ;
 ; Vga_Controller:u1|v_Vert_Count~6                                                                                  ; 1       ;
 ; Vga_Controller:u1|v_Vert_Count~5                                                                                  ; 1       ;
 ; Vga_Controller:u1|v_Vert_Count~4                                                                                  ; 1       ;
+; Vga_Controller:u1|o_Column_Count[0]~0                                                                             ; 1       ;
+; Vga_Controller:u1|process_0~2                                                                                     ; 1       ;
+; Vga_Controller:u1|v_Vert_Count~2                                                                                  ; 1       ;
 ; Vga_Controller:u1|v_Vert_Count~1                                                                                  ; 1       ;
-; Vga_Controller:u1|v_Vert_Count~0                                                                                  ; 1       ;
+; Road_Generator:u3|process_0~10                                                                                    ; 1       ;
+; Road_Generator:u3|process_0~9                                                                                     ; 1       ;
 ; Vga_Controller:u1|o_VS                                                                                            ; 1       ;
 ; Vga_Controller:u1|o_HS                                                                                            ; 1       ;
+; o_Blue~7                                                                                                          ; 1       ;
+; o_Blue~6                                                                                                          ; 1       ;
+; o_Blue~5                                                                                                          ; 1       ;
+; o_Blue~4                                                                                                          ; 1       ;
+; o_Blue~3                                                                                                          ; 1       ;
+; o_Blue~2                                                                                                          ; 1       ;
+; o_Blue~1                                                                                                          ; 1       ;
+; o_Blue~0                                                                                                          ; 1       ;
+; o_Red~7                                                                                                           ; 1       ;
+; o_Red~6                                                                                                           ; 1       ;
+; o_Red~5                                                                                                           ; 1       ;
+; o_Red~4                                                                                                           ; 1       ;
+; o_Red~3                                                                                                           ; 1       ;
+; o_Red~2                                                                                                           ; 1       ;
+; o_Red~1                                                                                                           ; 1       ;
+; o_Red~0                                                                                                           ; 1       ;
 ; Vga_Test:u2|o_Disp_Ena~2                                                                                          ; 1       ;
+; Vga_Test:u2|LessThan6~7                                                                                           ; 1       ;
+; Vga_Test:u2|LessThan4~7                                                                                           ; 1       ;
+; Vga_Test:u2|LessThan4~6                                                                                           ; 1       ;
+; Vga_Test:u2|LessThan4~5                                                                                           ; 1       ;
+; Vga_Test:u2|LessThan4~4                                                                                           ; 1       ;
+; Vga_Test:u2|LessThan4~3                                                                                           ; 1       ;
+; Vga_Test:u2|LessThan4~2                                                                                           ; 1       ;
+; Vga_Test:u2|LessThan4~1                                                                                           ; 1       ;
+; Vga_Test:u2|LessThan4~0                                                                                           ; 1       ;
+; Vga_Test:u2|LessThan6~6                                                                                           ; 1       ;
+; Vga_Test:u2|LessThan6~5                                                                                           ; 1       ;
+; Vga_Test:u2|Add3~1                                                                                                ; 1       ;
+; Vga_Test:u2|LessThan6~4                                                                                           ; 1       ;
+; Vga_Test:u2|LessThan6~3                                                                                           ; 1       ;
+; Vga_Test:u2|LessThan6~2                                                                                           ; 1       ;
+; Vga_Test:u2|LessThan6~1                                                                                           ; 1       ;
+; Vga_Test:u2|LessThan6~0                                                                                           ; 1       ;
 ; Vga_Test:u2|o_Disp_Ena~1                                                                                          ; 1       ;
-; Vga_Controller:u1|o_Disp_En                                                                                       ; 1       ;
 ; Vga_Test:u2|o_Disp_Ena~0                                                                                          ; 1       ;
-; Vga_Test:u2|LessThan3~6                                                                                           ; 1       ;
-; Vga_Test:u2|LessThan2~7                                                                                           ; 1       ;
-; Vga_Test:u2|LessThan0~7                                                                                           ; 1       ;
-; Vga_Test:u2|LessThan3~5                                                                                           ; 1       ;
-; Vga_Test:u2|LessThan3~4                                                                                           ; 1       ;
-; Vga_Test:u2|LessThan3~3                                                                                           ; 1       ;
-; Vga_Test:u2|LessThan3~2                                                                                           ; 1       ;
-; Vga_Test:u2|LessThan3~1                                                                                           ; 1       ;
-; Vga_Test:u2|LessThan3~0                                                                                           ; 1       ;
-; Vga_Test:u2|LessThan2~6                                                                                           ; 1       ;
-; Vga_Test:u2|LessThan2~5                                                                                           ; 1       ;
-; Vga_Test:u2|LessThan2~4                                                                                           ; 1       ;
-; Vga_Test:u2|LessThan2~3                                                                                           ; 1       ;
-; Vga_Test:u2|LessThan2~2                                                                                           ; 1       ;
-; Vga_Test:u2|LessThan2~0                                                                                           ; 1       ;
-; Vga_Test:u2|LessThan1~5                                                                                           ; 1       ;
-; Vga_Test:u2|LessThan1~4                                                                                           ; 1       ;
-; Vga_Test:u2|LessThan1~3                                                                                           ; 1       ;
-; Vga_Test:u2|LessThan1~2                                                                                           ; 1       ;
-; Vga_Test:u2|LessThan1~1                                                                                           ; 1       ;
-; Vga_Test:u2|LessThan1~0                                                                                           ; 1       ;
-; Vga_Test:u2|LessThan0~6                                                                                           ; 1       ;
-; Vga_Test:u2|LessThan0~5                                                                                           ; 1       ;
-; Vga_Test:u2|LessThan0~4                                                                                           ; 1       ;
-; Vga_Test:u2|LessThan0~3                                                                                           ; 1       ;
-; Vga_Test:u2|LessThan0~2                                                                                           ; 1       ;
-; Vga_Test:u2|LessThan0~0                                                                                           ; 1       ;
-; Add4~74                                                                                                           ; 1       ;
-; Add4~73                                                                                                           ; 1       ;
-; Add4~70                                                                                                           ; 1       ;
-; Add4~69                                                                                                           ; 1       ;
-; Add4~66                                                                                                           ; 1       ;
-; Add4~65                                                                                                           ; 1       ;
-; Add4~62                                                                                                           ; 1       ;
-; Add4~61                                                                                                           ; 1       ;
-; Add4~58                                                                                                           ; 1       ;
-; Add4~57                                                                                                           ; 1       ;
-; Add4~53                                                                                                           ; 1       ;
-; Add4~50                                                                                                           ; 1       ;
-; Add4~49                                                                                                           ; 1       ;
-; Add4~46                                                                                                           ; 1       ;
-; Add4~45                                                                                                           ; 1       ;
-; Add4~42                                                                                                           ; 1       ;
-; Add4~41                                                                                                           ; 1       ;
+; Vga_Test:u2|LessThan5~5                                                                                           ; 1       ;
+; Vga_Test:u2|LessThan5~4                                                                                           ; 1       ;
+; Vga_Test:u2|LessThan5~3                                                                                           ; 1       ;
+; Vga_Test:u2|LessThan5~2                                                                                           ; 1       ;
+; Vga_Test:u2|LessThan5~1                                                                                           ; 1       ;
+; Vga_Test:u2|process_0~7                                                                                           ; 1       ;
+; Vga_Test:u2|LessThan5~0                                                                                           ; 1       ;
+; Vga_Test:u2|s_Pos_Y[5]~0                                                                                          ; 1       ;
+; Vga_Test:u2|process_0~5                                                                                           ; 1       ;
+; Vga_Test:u2|LessThan7~5                                                                                           ; 1       ;
+; Vga_Test:u2|LessThan7~4                                                                                           ; 1       ;
+; Vga_Test:u2|LessThan7~3                                                                                           ; 1       ;
+; Vga_Test:u2|LessThan7~2                                                                                           ; 1       ;
+; Vga_Test:u2|LessThan7~1                                                                                           ; 1       ;
+; Vga_Test:u2|process_0~3                                                                                           ; 1       ;
+; Vga_Test:u2|LessThan7~0                                                                                           ; 1       ;
+; Vga_Test:u2|s_Pos_X[5]~0                                                                                          ; 1       ;
+; Vga_Test:u2|process_0~1                                                                                           ; 1       ;
+; Road_Generator:u3|process_0~6                                                                                     ; 1       ;
+; Road_Generator:u3|process_0~5                                                                                     ; 1       ;
+; Road_Generator:u3|process_0~3                                                                                     ; 1       ;
+; Add0~22                                                                                                           ; 1       ;
+; Add0~21                                                                                                           ; 1       ;
+; Road_Generator:u3|Add0~27                                                                                         ; 1       ;
+; Road_Generator:u3|Add0~26                                                                                         ; 1       ;
+; Add0~18                                                                                                           ; 1       ;
+; Add0~17                                                                                                           ; 1       ;
+; Road_Generator:u3|Add0~23                                                                                         ; 1       ;
+; Road_Generator:u3|Add0~22                                                                                         ; 1       ;
+; Add0~14                                                                                                           ; 1       ;
+; Add0~13                                                                                                           ; 1       ;
+; Road_Generator:u3|Add0~19                                                                                         ; 1       ;
+; Road_Generator:u3|Add0~18                                                                                         ; 1       ;
+; Add0~10                                                                                                           ; 1       ;
+; Add0~9                                                                                                            ; 1       ;
+; Add5~74                                                                                                           ; 1       ;
+; Add5~73                                                                                                           ; 1       ;
+; Add5~70                                                                                                           ; 1       ;
+; Add5~69                                                                                                           ; 1       ;
+; Add5~65                                                                                                           ; 1       ;
+; Add5~62                                                                                                           ; 1       ;
+; Add5~61                                                                                                           ; 1       ;
+; Add5~58                                                                                                           ; 1       ;
+; Add5~57                                                                                                           ; 1       ;
+; Add5~54                                                                                                           ; 1       ;
+; Add5~53                                                                                                           ; 1       ;
+; Add5~50                                                                                                           ; 1       ;
+; Add5~49                                                                                                           ; 1       ;
+; Add5~46                                                                                                           ; 1       ;
+; Add5~45                                                                                                           ; 1       ;
+; Add5~42                                                                                                           ; 1       ;
+; Add5~41                                                                                                           ; 1       ;
+; Add5~38                                                                                                           ; 1       ;
+; Add5~37                                                                                                           ; 1       ;
+; Add5~34                                                                                                           ; 1       ;
+; Add5~33                                                                                                           ; 1       ;
+; Add5~30                                                                                                           ; 1       ;
+; Add5~29                                                                                                           ; 1       ;
+; Add5~26                                                                                                           ; 1       ;
+; Add5~25                                                                                                           ; 1       ;
+; Add5~22                                                                                                           ; 1       ;
+; Add5~21                                                                                                           ; 1       ;
+; Add5~18                                                                                                           ; 1       ;
+; Add5~17                                                                                                           ; 1       ;
+; Add5~14                                                                                                           ; 1       ;
+; Add5~13                                                                                                           ; 1       ;
+; Add5~10                                                                                                           ; 1       ;
+; Add5~9                                                                                                            ; 1       ;
+; Add5~6                                                                                                            ; 1       ;
+; Add5~5                                                                                                            ; 1       ;
+; Add5~2                                                                                                            ; 1       ;
+; Add5~1                                                                                                            ; 1       ;
+; Road_Generator:u3|Add0~15                                                                                         ; 1       ;
+; Road_Generator:u3|Add0~14                                                                                         ; 1       ;
+; Add0~6                                                                                                            ; 1       ;
+; Add0~5                                                                                                            ; 1       ;
+; Road_Generator:u3|Add0~11                                                                                         ; 1       ;
+; Road_Generator:u3|Add0~10                                                                                         ; 1       ;
+; Add0~1                                                                                                            ; 1       ;
+; Add2~38                                                                                                           ; 1       ;
+; Add2~37                                                                                                           ; 1       ;
+; Vga_Controller:u1|Add1~38                                                                                         ; 1       ;
+; Vga_Controller:u1|Add1~34                                                                                         ; 1       ;
+; Add2~34                                                                                                           ; 1       ;
+; Add2~33                                                                                                           ; 1       ;
+; Add2~30                                                                                                           ; 1       ;
+; Add2~29                                                                                                           ; 1       ;
+; Vga_Controller:u1|Add1~30                                                                                         ; 1       ;
+; Vga_Controller:u1|Add1~26                                                                                         ; 1       ;
+; Add2~26                                                                                                           ; 1       ;
+; Add2~25                                                                                                           ; 1       ;
+; Add2~22                                                                                                           ; 1       ;
+; Add2~21                                                                                                           ; 1       ;
+; Vga_Controller:u1|Add1~22                                                                                         ; 1       ;
+; Add2~18                                                                                                           ; 1       ;
+; Add2~17                                                                                                           ; 1       ;
+; Add2~14                                                                                                           ; 1       ;
+; Add2~13                                                                                                           ; 1       ;
+; Add2~10                                                                                                           ; 1       ;
+; Add2~9                                                                                                            ; 1       ;
+; Add2~5                                                                                                            ; 1       ;
+; Add2~2                                                                                                            ; 1       ;
+; Add2~1                                                                                                            ; 1       ;
 ; Add4~38                                                                                                           ; 1       ;
 ; Add4~37                                                                                                           ; 1       ;
 ; Add4~34                                                                                                           ; 1       ;
@@ -1924,66 +2100,54 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Add4~13                                                                                                           ; 1       ;
 ; Add4~10                                                                                                           ; 1       ;
 ; Add4~9                                                                                                            ; 1       ;
-; Add4~6                                                                                                            ; 1       ;
 ; Add4~5                                                                                                            ; 1       ;
 ; Add4~2                                                                                                            ; 1       ;
 ; Add4~1                                                                                                            ; 1       ;
-; Add3~38                                                                                                           ; 1       ;
-; Add3~37                                                                                                           ; 1       ;
-; Add3~33                                                                                                           ; 1       ;
 ; Vga_Controller:u1|Add0~38                                                                                         ; 1       ;
-; Add3~30                                                                                                           ; 1       ;
-; Add3~29                                                                                                           ; 1       ;
 ; Vga_Controller:u1|Add0~34                                                                                         ; 1       ;
-; Add3~26                                                                                                           ; 1       ;
-; Add3~25                                                                                                           ; 1       ;
 ; Vga_Controller:u1|Add0~30                                                                                         ; 1       ;
-; Add3~22                                                                                                           ; 1       ;
-; Add3~21                                                                                                           ; 1       ;
 ; Vga_Controller:u1|Add0~26                                                                                         ; 1       ;
-; Add3~18                                                                                                           ; 1       ;
-; Add3~17                                                                                                           ; 1       ;
 ; Vga_Controller:u1|Add0~22                                                                                         ; 1       ;
 ; Vga_Controller:u1|Add0~18                                                                                         ; 1       ;
-; Add3~14                                                                                                           ; 1       ;
-; Add3~13                                                                                                           ; 1       ;
-; Add3~10                                                                                                           ; 1       ;
-; Add3~9                                                                                                            ; 1       ;
-; Add3~6                                                                                                            ; 1       ;
-; Add3~5                                                                                                            ; 1       ;
-; Vga_Controller:u1|Add0~10                                                                                         ; 1       ;
-; Vga_Controller:u1|Add0~6                                                                                          ; 1       ;
-; Vga_Controller:u1|Add0~2                                                                                          ; 1       ;
-; Add3~2                                                                                                            ; 1       ;
-; Add3~1                                                                                                            ; 1       ;
-; Add1~38                                                                                                           ; 1       ;
-; Add1~37                                                                                                           ; 1       ;
-; Add1~33                                                                                                           ; 1       ;
-; Vga_Controller:u1|Add1~38                                                                                         ; 1       ;
-; Add1~30                                                                                                           ; 1       ;
-; Add1~29                                                                                                           ; 1       ;
-; Vga_Controller:u1|Add1~34                                                                                         ; 1       ;
-; Add1~26                                                                                                           ; 1       ;
-; Add1~25                                                                                                           ; 1       ;
-; Vga_Controller:u1|Add1~30                                                                                         ; 1       ;
-; Add1~22                                                                                                           ; 1       ;
-; Add1~21                                                                                                           ; 1       ;
-; Vga_Controller:u1|Add1~26                                                                                         ; 1       ;
-; Add1~18                                                                                                           ; 1       ;
-; Add1~17                                                                                                           ; 1       ;
-; Add1~14                                                                                                           ; 1       ;
-; Add1~13                                                                                                           ; 1       ;
-; Add1~10                                                                                                           ; 1       ;
-; Add1~9                                                                                                            ; 1       ;
-; Add1~6                                                                                                            ; 1       ;
-; Add1~5                                                                                                            ; 1       ;
-; Vga_Controller:u1|Add1~22                                                                                         ; 1       ;
+; Vga_Controller:u1|Add0~14                                                                                         ; 1       ;
+; Road_Generator:u3|Add0~7                                                                                          ; 1       ;
+; Road_Generator:u3|Add0~6                                                                                          ; 1       ;
 ; Vga_Controller:u1|Add1~18                                                                                         ; 1       ;
 ; Vga_Controller:u1|Add1~14                                                                                         ; 1       ;
 ; Vga_Controller:u1|Add1~10                                                                                         ; 1       ;
-; Vga_Controller:u1|Add1~2                                                                                          ; 1       ;
-; Add1~2                                                                                                            ; 1       ;
-; Add1~1                                                                                                            ; 1       ;
+; Vga_Controller:u1|Add1~6                                                                                          ; 1       ;
+; Vga_Controller:u1|Add0~6                                                                                          ; 1       ;
+; Vga_Controller:u1|Add0~2                                                                                          ; 1       ;
+; Vga_Test:u2|Add0~38                                                                                               ; 1       ;
+; Vga_Test:u2|Add0~34                                                                                               ; 1       ;
+; Vga_Test:u2|Add0~33                                                                                               ; 1       ;
+; Vga_Test:u2|Add0~30                                                                                               ; 1       ;
+; Vga_Test:u2|Add0~29                                                                                               ; 1       ;
+; Vga_Test:u2|Add0~26                                                                                               ; 1       ;
+; Vga_Test:u2|Add0~25                                                                                               ; 1       ;
+; Vga_Test:u2|Add0~22                                                                                               ; 1       ;
+; Vga_Test:u2|Add0~21                                                                                               ; 1       ;
+; Vga_Test:u2|Add0~18                                                                                               ; 1       ;
+; Vga_Test:u2|Add0~17                                                                                               ; 1       ;
+; Vga_Test:u2|Add0~14                                                                                               ; 1       ;
+; Vga_Test:u2|Add0~13                                                                                               ; 1       ;
+; Vga_Test:u2|Add0~6                                                                                                ; 1       ;
+; Vga_Test:u2|Add0~2                                                                                                ; 1       ;
+; Vga_Test:u2|Add1~38                                                                                               ; 1       ;
+; Vga_Test:u2|Add1~34                                                                                               ; 1       ;
+; Vga_Test:u2|Add1~33                                                                                               ; 1       ;
+; Vga_Test:u2|Add1~30                                                                                               ; 1       ;
+; Vga_Test:u2|Add1~29                                                                                               ; 1       ;
+; Vga_Test:u2|Add1~26                                                                                               ; 1       ;
+; Vga_Test:u2|Add1~25                                                                                               ; 1       ;
+; Vga_Test:u2|Add1~22                                                                                               ; 1       ;
+; Vga_Test:u2|Add1~21                                                                                               ; 1       ;
+; Vga_Test:u2|Add1~18                                                                                               ; 1       ;
+; Vga_Test:u2|Add1~17                                                                                               ; 1       ;
+; Vga_Test:u2|Add1~14                                                                                               ; 1       ;
+; Vga_Test:u2|Add1~13                                                                                               ; 1       ;
+; Vga_Test:u2|Add1~6                                                                                                ; 1       ;
+; Vga_Test:u2|Add1~2                                                                                                ; 1       ;
 +-------------------------------------------------------------------------------------------------------------------+---------+
 
 
@@ -1992,14 +2156,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------------------------+-------------------------+
 ; Routing Resource Type                       ; Usage                   ;
 +---------------------------------------------+-------------------------+
-; Block interconnects                         ; 204 / 289,320 ( < 1 % ) ;
-; C12 interconnects                           ; 6 / 13,420 ( < 1 % )    ;
-; C2 interconnects                            ; 41 / 119,108 ( < 1 % )  ;
-; C4 interconnects                            ; 81 / 56,300 ( < 1 % )   ;
+; Block interconnects                         ; 339 / 289,320 ( < 1 % ) ;
+; C12 interconnects                           ; 36 / 13,420 ( < 1 % )   ;
+; C2 interconnects                            ; 74 / 119,108 ( < 1 % )  ;
+; C4 interconnects                            ; 74 / 56,300 ( < 1 % )   ;
 ; DQS bus muxes                               ; 0 / 25 ( 0 % )          ;
 ; DQS-18 I/O buses                            ; 0 / 25 ( 0 % )          ;
 ; DQS-9 I/O buses                             ; 0 / 25 ( 0 % )          ;
-; Direct links                                ; 51 / 289,320 ( < 1 % )  ;
+; Direct links                                ; 71 / 289,320 ( < 1 % )  ;
 ; Global clocks                               ; 1 / 16 ( 6 % )          ;
 ; HPS SDRAM PLL inputs                        ; 0 / 1 ( 0 % )           ;
 ; HPS SDRAM PLL outputs                       ; 0 / 1 ( 0 % )           ;
@@ -2055,13 +2219,13 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; HPS_INTERFACE_TPIU_TRACE_INPUTs             ; 0 / 2 ( 0 % )           ;
 ; HPS_INTERFACE_TPIU_TRACE_OUTPUTs            ; 0 / 33 ( 0 % )          ;
 ; Horizontal periphery clocks                 ; 0 / 72 ( 0 % )          ;
-; Local interconnects                         ; 77 / 84,580 ( < 1 % )   ;
+; Local interconnects                         ; 133 / 84,580 ( < 1 % )  ;
 ; Quadrant clocks                             ; 0 / 66 ( 0 % )          ;
-; R14 interconnects                           ; 15 / 12,676 ( < 1 % )   ;
-; R14/C12 interconnect drivers                ; 19 / 20,720 ( < 1 % )   ;
-; R3 interconnects                            ; 73 / 130,992 ( < 1 % )  ;
-; R6 interconnects                            ; 84 / 266,960 ( < 1 % )  ;
-; Spine clocks                                ; 2 / 360 ( < 1 % )       ;
+; R14 interconnects                           ; 19 / 12,676 ( < 1 % )   ;
+; R14/C12 interconnect drivers                ; 46 / 20,720 ( < 1 % )   ;
+; R3 interconnects                            ; 135 / 130,992 ( < 1 % ) ;
+; R6 interconnects                            ; 137 / 266,960 ( < 1 % ) ;
+; Spine clocks                                ; 1 / 360 ( < 1 % )       ;
 ; Wire stub REs                               ; 0 / 15,858 ( 0 % )      ;
 +---------------------------------------------+-------------------------+
 
@@ -2158,10 +2322,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; o_HS               ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
 ; o_VS               ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
 ; i_VGA_Reset        ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
-; i_Btn_Up           ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
-; i_Btn_Down         ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
 ; i_Btn_Left         ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
 ; i_Btn_Right        ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
+; i_Btn_Up           ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
+; i_Btn_Down         ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
 ; i_Clk              ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
 ; i_Rst              ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
 +--------------------+-----------+--------------+-----------+--------------+--------------+-----------+-----------+--------------+-----------+-----------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+
@@ -2214,7 +2378,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------------------------------------------------+-----------------------------------------------------------------+-------------------+
 ; Source Clock(s)                                                 ; Destination Clock(s)                                            ; Delay Added in ns ;
 +-----------------------------------------------------------------+-----------------------------------------------------------------+-------------------+
-; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 8.2               ;
+; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 9.8               ;
 +-----------------------------------------------------------------+-----------------------------------------------------------------+-------------------+
 Note: For more information on problematic transfers, consider running the Fitter again with the Optimize hold timing option (Settings Menu) turned off.
 This will disable optimization of problematic paths and expose them for further analysis using the TimeQuest Timing Analyzer.
@@ -2222,64 +2386,80 @@ This will disable optimization of problematic paths and expose them for further 
 
 +-------------------------------------------------------------------------------------------+
 ; Estimated Delay Added for Hold Timing Details                                             ;
-+-----------------------------------+-----------------------------------+-------------------+
-; Source Register                   ; Destination Register              ; Delay Added in ns ;
-+-----------------------------------+-----------------------------------+-------------------+
-; RefreshClock                      ; RefreshClock                      ; 8.080             ;
-; Refresh_Rate_Timer[17]            ; RefreshClock                      ; 4.040             ;
-; Refresh_Rate_Timer[16]            ; RefreshClock                      ; 4.040             ;
-; Refresh_Rate_Timer[15]            ; RefreshClock                      ; 4.040             ;
-; Refresh_Rate_Timer[14]            ; RefreshClock                      ; 4.040             ;
-; Refresh_Rate_Timer[13]            ; RefreshClock                      ; 4.040             ;
-; Refresh_Rate_Timer[12]            ; RefreshClock                      ; 4.040             ;
-; Refresh_Rate_Timer[10]            ; RefreshClock                      ; 4.040             ;
-; Refresh_Rate_Timer[9]             ; RefreshClock                      ; 4.040             ;
-; Refresh_Rate_Timer[8]             ; RefreshClock                      ; 4.040             ;
-; Refresh_Rate_Timer[7]             ; RefreshClock                      ; 4.040             ;
-; Refresh_Rate_Timer[6]             ; RefreshClock                      ; 4.040             ;
-; Refresh_Rate_Timer[5]             ; RefreshClock                      ; 4.040             ;
-; Refresh_Rate_Timer[4]             ; RefreshClock                      ; 4.040             ;
-; Refresh_Rate_Timer[3]             ; RefreshClock                      ; 4.040             ;
-; Refresh_Rate_Timer[2]             ; RefreshClock                      ; 4.040             ;
-; Refresh_Rate_Timer[1]             ; RefreshClock                      ; 4.040             ;
-; Refresh_Rate_Timer[0]             ; RefreshClock                      ; 4.040             ;
-; Refresh_Rate_Timer[18]            ; RefreshClock                      ; 4.040             ;
-; Refresh_Rate_Timer[11]            ; RefreshClock                      ; 4.040             ;
-; X_Pos[5]                          ; X_Pos[5]                          ; 0.097             ;
-; Y_Pos[2]                          ; Y_Pos[2]                          ; 0.095             ;
-; Y_Pos[1]                          ; Y_Pos[2]                          ; 0.095             ;
-; i_Btn_Up                          ; Y_Pos[2]                          ; 0.095             ;
-; Y_Pos[0]                          ; Y_Pos[2]                          ; 0.095             ;
-; X_Pos[3]                          ; X_Pos[3]                          ; 0.091             ;
-; X_Pos[4]                          ; X_Pos[4]                          ; 0.089             ;
-; Y_Pos[3]                          ; Y_Pos[3]                          ; 0.089             ;
-; Y_Pos[5]                          ; Y_Pos[5]                          ; 0.088             ;
-; Y_Pos[4]                          ; Y_Pos[4]                          ; 0.085             ;
-; X_Pos[2]                          ; X_Pos[3]                          ; 0.077             ;
-; X_Pos[1]                          ; X_Pos[3]                          ; 0.077             ;
-; i_Btn_Left                        ; X_Pos[3]                          ; 0.077             ;
-; X_Pos[0]                          ; X_Pos[3]                          ; 0.077             ;
-; Y_Pos[6]                          ; Y_Pos[9]                          ; 0.066             ;
-; X_Pos[8]                          ; X_Pos[9]                          ; 0.065             ;
-; Y_Pos[7]                          ; Y_Pos[9]                          ; 0.063             ;
-; Y_Pos[8]                          ; Y_Pos[9]                          ; 0.061             ;
-; X_Pos[7]                          ; X_Pos[9]                          ; 0.055             ;
-; X_Pos[6]                          ; X_Pos[9]                          ; 0.048             ;
-; Vga_Controller:u1|v_Vert_Count[8] ; Vga_Controller:u1|o_VS            ; 0.018             ;
-; Vga_Controller:u1|v_Vert_Count[7] ; Vga_Controller:u1|v_Vert_Count[7] ; 0.018             ;
-; Vga_Controller:u1|v_Vert_Count[4] ; Vga_Controller:u1|o_Row_Count[4]  ; 0.018             ;
-; Vga_Controller:u1|v_Vert_Count[9] ; Vga_Controller:u1|v_Vert_Count[9] ; 0.015             ;
-; Vga_Controller:u1|v_Vert_Count[3] ; Vga_Controller:u1|o_Row_Count[3]  ; 0.013             ;
-; Vga_Controller:u1|v_Vert_Count[1] ; Vga_Controller:u1|v_Vert_Count[1] ; 0.012             ;
-; Vga_Controller:u1|v_Vert_Count[5] ; Vga_Controller:u1|o_VS            ; 0.012             ;
-+-----------------------------------+-----------------------------------+-------------------+
-Note: This table only shows the top 47 path(s) that have the largest delay added for hold.
++------------------------------------+----------------------------------+-------------------+
+; Source Register                    ; Destination Register             ; Delay Added in ns ;
++------------------------------------+----------------------------------+-------------------+
+; RefreshClock                       ; RefreshClock                     ; 8.029             ;
+; Refresh_Rate_Timer[18]             ; RefreshClock                     ; 4.014             ;
+; Refresh_Rate_Timer[17]             ; RefreshClock                     ; 4.014             ;
+; Refresh_Rate_Timer[14]             ; RefreshClock                     ; 4.014             ;
+; Refresh_Rate_Timer[13]             ; RefreshClock                     ; 4.014             ;
+; Refresh_Rate_Timer[12]             ; RefreshClock                     ; 4.014             ;
+; Refresh_Rate_Timer[11]             ; RefreshClock                     ; 4.014             ;
+; Refresh_Rate_Timer[15]             ; RefreshClock                     ; 4.014             ;
+; Refresh_Rate_Timer[9]              ; RefreshClock                     ; 4.014             ;
+; Refresh_Rate_Timer[8]              ; RefreshClock                     ; 4.014             ;
+; Refresh_Rate_Timer[7]              ; RefreshClock                     ; 4.014             ;
+; Refresh_Rate_Timer[10]             ; RefreshClock                     ; 4.014             ;
+; Refresh_Rate_Timer[5]              ; RefreshClock                     ; 4.014             ;
+; Refresh_Rate_Timer[4]              ; RefreshClock                     ; 4.014             ;
+; Refresh_Rate_Timer[3]              ; RefreshClock                     ; 4.014             ;
+; Refresh_Rate_Timer[2]              ; RefreshClock                     ; 4.014             ;
+; Refresh_Rate_Timer[1]              ; RefreshClock                     ; 4.014             ;
+; Refresh_Rate_Timer[0]              ; RefreshClock                     ; 4.014             ;
+; Refresh_Rate_Timer[6]              ; RefreshClock                     ; 4.014             ;
+; Refresh_Rate_Timer[16]             ; RefreshClock                     ; 4.014             ;
+; Vga_Controller:u1|v_Vert_Count[7]  ; Vga_Controller:u1|o_VS           ; 0.469             ;
+; Vga_Controller:u1|v_Vert_Count[1]  ; Vga_Controller:u1|o_VS           ; 0.449             ;
+; Vga_Controller:u1|v_Vert_Count[6]  ; Vga_Controller:u1|o_VS           ; 0.400             ;
+; Vga_Controller:u1|v_Vert_Count[5]  ; Vga_Controller:u1|o_VS           ; 0.375             ;
+; Vga_Controller:u1|v_Vert_Count[3]  ; Vga_Controller:u1|o_VS           ; 0.352             ;
+; Y_Pos[3]                           ; Y_Pos[4]                         ; 0.282             ;
+; Vga_Controller:u1|v_Vert_Count[2]  ; Vga_Controller:u1|o_VS           ; 0.244             ;
+; Vga_Controller:u1|v_Vert_Count[0]  ; Vga_Controller:u1|o_VS           ; 0.244             ;
+; Vga_Controller:u1|v_Horiz_Count[8] ; Vga_Controller:u1|o_VS           ; 0.244             ;
+; Vga_Controller:u1|v_Horiz_Count[7] ; Vga_Controller:u1|o_VS           ; 0.244             ;
+; Vga_Controller:u1|v_Horiz_Count[6] ; Vga_Controller:u1|o_VS           ; 0.244             ;
+; Vga_Controller:u1|v_Horiz_Count[5] ; Vga_Controller:u1|o_VS           ; 0.244             ;
+; Vga_Controller:u1|v_Horiz_Count[4] ; Vga_Controller:u1|o_VS           ; 0.244             ;
+; Vga_Controller:u1|v_Horiz_Count[3] ; Vga_Controller:u1|o_VS           ; 0.244             ;
+; Vga_Controller:u1|v_Horiz_Count[2] ; Vga_Controller:u1|o_VS           ; 0.244             ;
+; Vga_Controller:u1|v_Horiz_Count[1] ; Vga_Controller:u1|o_VS           ; 0.244             ;
+; Vga_Controller:u1|v_Horiz_Count[0] ; Vga_Controller:u1|o_VS           ; 0.244             ;
+; Vga_Controller:u1|v_Horiz_Count[9] ; Vga_Controller:u1|o_VS           ; 0.244             ;
+; Vga_Controller:u1|v_Vert_Count[4]  ; Vga_Controller:u1|o_VS           ; 0.244             ;
+; Y_Pos[4]                           ; Y_Pos[4]                         ; 0.156             ;
+; Y_Pos[2]                           ; Y_Pos[4]                         ; 0.156             ;
+; Y_Pos[1]                           ; Y_Pos[4]                         ; 0.156             ;
+; i_Btn_Up                           ; Y_Pos[4]                         ; 0.156             ;
+; Y_Pos[0]                           ; Y_Pos[4]                         ; 0.156             ;
+; Y_Pos[5]                           ; Y_Pos[5]                         ; 0.133             ;
+; Y_Pos[6]                           ; Y_Pos[6]                         ; 0.122             ;
+; s_Road_Pos_Y[1]                    ; s_Road_Pos_Y[1]                  ; 0.095             ;
+; X_Pos[5]                           ; X_Pos[5]                         ; 0.093             ;
+; X_Pos[6]                           ; X_Pos[8]                         ; 0.092             ;
+; Y_Pos[7]                           ; Y_Pos[8]                         ; 0.089             ;
+; X_Pos[4]                           ; X_Pos[4]                         ; 0.088             ;
+; Y_Pos[8]                           ; Y_Pos[8]                         ; 0.080             ;
+; X_Pos[7]                           ; X_Pos[8]                         ; 0.066             ;
+; X_Pos[3]                           ; X_Pos[4]                         ; 0.064             ;
+; X_Pos[2]                           ; X_Pos[4]                         ; 0.064             ;
+; X_Pos[1]                           ; X_Pos[4]                         ; 0.064             ;
+; i_Btn_Left                         ; X_Pos[4]                         ; 0.064             ;
+; X_Pos[0]                           ; X_Pos[4]                         ; 0.064             ;
+; X_Pos[8]                           ; X_Pos[8]                         ; 0.062             ;
+; s_Road_Pos_Y[0]                    ; s_Road_Pos_Y[1]                  ; 0.061             ;
+; Vga_Controller:u1|v_Vert_Count[8]  ; Vga_Controller:u1|o_Row_Count[8] ; 0.048             ;
+; Vga_Controller:u1|v_Vert_Count[9]  ; Vga_Controller:u1|o_VS           ; 0.042             ;
+; s_Road_Pos_Y[2]                    ; s_Road_Pos_Y[2]                  ; 0.022             ;
++------------------------------------+----------------------------------+-------------------+
+Note: This table only shows the top 63 path(s) that have the largest delay added for hold.
 
 
 +-----------------+
 ; Fitter Messages ;
 +-----------------+
-Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (11104): Parallel Compilation has detected 4 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 2 of the 2 physical processors detected instead.
 Info (119006): Selected device 5CSEMA5F31C6 for design "VGA_Controller"
 Info (21077): Low junction temperature is 0 degrees C
 Info (21077): High junction temperature is 85 degrees C
@@ -2291,6 +2471,7 @@ Info (184020): Starting Fitter periphery placement operations
 Info (11178): Promoted 1 clock (1 global)
     Info (11162): Pll_50_to_25:u0|Pll_50_to_25_pll_0:pll_0|altera_pll:altera_pll_i|outclk_wire[0]~CLKENA0 with 64 fanout uses global clock CLKCTRL_G6
 Info (184021): Fitter periphery placement operations ending: elapsed time is 00:00:00
+Warning (335093): TimeQuest Timing Analyzer is analyzing 16 combinational loops as latches.
 Critical Warning (332012): Synopsys Design Constraints File file not found: 'VGA_Controller.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
 Info (332144): No user constrained generated clocks found in the design
 Info (332144): No user constrained base clocks found in the design
@@ -2307,33 +2488,33 @@ Info (176235): Finished register packing
 Info (11798): Fitter preparation operations ending: elapsed time is 00:00:13
 Info (170189): Fitter placement preparation operations beginning
 Info (14951): The Fitter is using Advanced Physical Optimization.
-Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:01
+Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:02
 Info (170191): Fitter placement operations beginning
 Info (170137): Fitter placement was successful
-Info (170192): Fitter placement operations ending: elapsed time is 00:00:03
+Info (170192): Fitter placement operations ending: elapsed time is 00:00:06
 Info (170193): Fitter routing operations beginning
 Info (170195): Router estimated average interconnect usage is 0% of the available device resources
-    Info (170196): Router estimated peak interconnect usage is 0% of the available device resources in the region that extends from location X33_Y0 to location X44_Y10
+    Info (170196): Router estimated peak interconnect usage is 1% of the available device resources in the region that extends from location X22_Y58 to location X32_Y69
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:03
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
-Info (11888): Total time spent on timing analysis during the Fitter is 0.44 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.65 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
-Info (11801): Fitter post-fit operations ending: elapsed time is 00:00:04
-Info (144001): Generated suppressed messages file C:/Users/FatihKaya/Desktop/FPGA_Project/001_VGA_Controller/output_files/VGA_Controller.fit.smsg
+Info (11801): Fitter post-fit operations ending: elapsed time is 00:00:05
+Info (144001): Generated suppressed messages file C:/Users/lenovo/Desktop/FPGA_Project/001_VGA_Controller/output_files/VGA_Controller.fit.smsg
 Info: Quartus II 64-Bit Fitter was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 2060 megabytes
-    Info: Processing ended: Mon Apr 30 21:11:43 2018
-    Info: Elapsed time: 00:00:48
-    Info: Total CPU time (on all processors): 00:00:56
+    Info: Peak virtual memory: 2419 megabytes
+    Info: Processing ended: Tue May 01 12:19:18 2018
+    Info: Elapsed time: 00:00:49
+    Info: Total CPU time (on all processors): 00:01:13
 
 
 +----------------------------+
 ; Fitter Suppressed Messages ;
 +----------------------------+
-The suppressed messages can be found in C:/Users/FatihKaya/Desktop/FPGA_Project/001_VGA_Controller/output_files/VGA_Controller.fit.smsg.
+The suppressed messages can be found in C:/Users/lenovo/Desktop/FPGA_Project/001_VGA_Controller/output_files/VGA_Controller.fit.smsg.
 
 
