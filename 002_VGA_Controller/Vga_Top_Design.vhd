@@ -25,7 +25,9 @@ entity Vga_Top_Design is
 			o_ADV_Blank : out std_logic;
 			o_ADV_Clk : out std_logic;
 			o_HS : out std_logic;
-			o_VS : out std_logic
+			o_VS : out std_logic;
+			
+			o_Crash : out std_logic
 	);
 
 end Vga_Top_Design;
@@ -144,6 +146,32 @@ architecture arch of Vga_Top_Design is
 			o_Disp_Ena : out std_logic
 			);
 	end component;
+	
+	----------------------------------------------------------------------
+	--	Crash Control --For WALL2 and Car
+	----------------------------------------------------------------------	
+	
+	component Crash_Control is
+	Generic(
+				g_Total_Row : integer := 480;
+				g_Total_Column : integer := 640;
+				
+				g_Car_L_X: std_logic_vector(9 downto 0) := "00" & X"20";		-- Car_Length_X = 32	
+				g_Car_L_Y: std_logic_vector(9 downto 0) := "00" & X"20";		-- Car_Length_X = 32	
+				
+				g_WALL2_L_X: std_logic_vector(9 downto 0) := "00" & X"64";	-- Wall_Length_X = 100	
+				g_WALL2_L_Y: std_logic_vector(9 downto 0) := "00" & X"96"	-- Wall_Length_Y = 150	
+				);
+	Port(
+			i_Car_Pos_X : in std_logic_vector(9 downto 0);
+			i_Car_Pos_Y : in std_logic_vector(9 downto 0);
+			
+			i_WALL2_Pos_X : in std_logic_vector(9 downto 0);
+			i_WALL2_Pos_Y : in std_logic_vector(9 downto 0);
+			
+			o_Crash : out std_logic
+			);
+	end component ;
 
 
 	
@@ -161,7 +189,7 @@ signal Red_Road,Green_Road,Blue_Road : std_logic_vector(7 downto 0);
 
 -- Current X and Y positions of Car and Walls
 signal s_Car_Pos_X,s_Car_Pos_Y : std_logic_vector(9 downto 0):= (others => '0');
-signal s_Wall2_Pos_Y : std_logic_vector(9 downto 0):= (others => '0');
+signal s_WALL2_Pos_Y : std_logic_vector(9 downto 0):= (others => '0');
 
 signal s_Road_Pos_Y : std_logic_vector(9 downto 0):= (others => '0');
 
@@ -220,8 +248,8 @@ u2 : component Vga_Test
 			i_Dist_Ena		=> disp_en,
 			i_Row_Num 		=> std_logic_vector(to_unsigned(row_count,10)),
 			i_Column_Num	=> std_logic_vector(to_unsigned(column_count,10)),
-			i_Pos_X 			=> s_Car_Pos_X, --"00" & X"C8",
-			i_Pos_Y 			=> s_Car_Pos_Y, --"00" & X"C8",
+			i_Pos_X 			=> s_Car_Pos_X, --"00" & X"20",	-- Car_Length_X = 32	
+			i_Pos_Y 			=> s_Car_Pos_Y, --"00" & X"20",	-- Car_Length_Y = 32	
 			
 			o_Red 			=> Red_Test  ,
 			o_Green 			=> Green_Test  ,
@@ -243,7 +271,7 @@ u3:component Wall_Generator
 			i_Row_Num => std_logic_vector(to_unsigned(row_count,10)),
 			i_Column_Num => std_logic_vector(to_unsigned(column_count,10)),
 			i_Pos_X => "0100001110",		-- 270 = b0100001110
-			i_Pos_Y => s_Wall2_Pos_Y,
+			i_Pos_Y => s_WALL2_Pos_Y,
 			
 			o_Red => Red_WALL2,
 			o_Green => Green_WALL2,
@@ -270,9 +298,29 @@ u4:component Road_Generator
 			o_Blue => Blue_Road,
 			o_Disp_Ena => DisplaySelect(4)
 			);		
+	
+	
+	-- Crash_Control for WALL2 and Car
+u5:component Crash_Control 
+	Generic map(
+				g_Total_Row => 480,
+				g_Total_Column => 640,
+				
+				g_Car_L_X => "00" & X"20",		-- Car_Length_X = 32	
+				g_Car_L_Y => "00" & X"20",		-- Car_Length_X = 32	
+				
+				g_WALL2_L_X => "00" & X"64",	-- Wall_Length_X = 100	
+				g_WALL2_L_Y => "00" & X"96"	-- Wall_Length_Y = 150	
+				)
+	Port map(
+			i_Car_Pos_X => s_Car_Pos_X,
+			i_Car_Pos_Y => s_Car_Pos_Y,
 			
+			i_WALL2_Pos_X => "0100001110",		-- 270 = b0100001110
+			i_WALL2_Pos_Y => s_WALL2_Pos_Y,
 			
-			
+			o_Crash => o_Crash
+			);
 	
 ------------------------------------------------------------------------------------------------------
 --					MULTIPLEXER
@@ -313,9 +361,9 @@ end process;
 Wall_Shift_Proc : process(RefreshClock,i_VGA_Reset)
 begin
 	if(i_VGA_Reset = '1') then
-	   s_Wall2_Pos_Y <= (others => '0');
+	   s_WALL2_Pos_Y <= (others => '0');
 	elsif( rising_edge(RefreshClock)) then
-	    s_Wall2_Pos_Y <= std_logic_vector(unsigned(s_Wall2_Pos_Y) + 1);
+	    s_WALL2_Pos_Y <= std_logic_vector(unsigned(s_WALL2_Pos_Y) + 1);
 	end if;
 	
 end process;

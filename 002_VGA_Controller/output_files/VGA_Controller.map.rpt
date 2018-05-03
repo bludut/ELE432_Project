@@ -1,5 +1,5 @@
 Analysis & Synthesis report for VGA_Controller
-Wed May 02 23:09:28 2018
+Thu May 03 22:48:36 2018
 Quartus II 64-Bit Version 14.0.0 Build 200 06/17/2014 SJ Web Edition
 
 
@@ -23,14 +23,16 @@ Quartus II 64-Bit Version 14.0.0 Build 200 06/17/2014 SJ Web Edition
  15. Parameter Settings for User Entity Instance: Vga_Test:u2
  16. Parameter Settings for User Entity Instance: Wall_Generator:u3
  17. Parameter Settings for User Entity Instance: Road_Generator:u4
- 18. Port Connectivity Checks: "Road_Generator:u4"
- 19. Port Connectivity Checks: "Wall_Generator:u3"
- 20. Port Connectivity Checks: "Vga_Controller:u1"
- 21. Port Connectivity Checks: "Pll_50_to_25:u0|Pll_50_to_25_pll_0:pll_0|altera_pll:altera_pll_i"
- 22. Port Connectivity Checks: "Pll_50_to_25:u0|Pll_50_to_25_pll_0:pll_0"
- 23. Post-Synthesis Netlist Statistics for Top Partition
- 24. Elapsed Time Per Partition
- 25. Analysis & Synthesis Messages
+ 18. Parameter Settings for User Entity Instance: Crash_Control:u5
+ 19. Port Connectivity Checks: "Crash_Control:u5"
+ 20. Port Connectivity Checks: "Road_Generator:u4"
+ 21. Port Connectivity Checks: "Wall_Generator:u3"
+ 22. Port Connectivity Checks: "Vga_Controller:u1"
+ 23. Port Connectivity Checks: "Pll_50_to_25:u0|Pll_50_to_25_pll_0:pll_0|altera_pll:altera_pll_i"
+ 24. Port Connectivity Checks: "Pll_50_to_25:u0|Pll_50_to_25_pll_0:pll_0"
+ 25. Post-Synthesis Netlist Statistics for Top Partition
+ 26. Elapsed Time Per Partition
+ 27. Analysis & Synthesis Messages
 
 
 
@@ -57,14 +59,14 @@ agreement for further details.
 +------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                 ;
 +---------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Wed May 02 23:09:28 2018      ;
+; Analysis & Synthesis Status     ; Successful - Thu May 03 22:48:36 2018      ;
 ; Quartus II 64-Bit Version       ; 14.0.0 Build 200 06/17/2014 SJ Web Edition ;
 ; Revision Name                   ; VGA_Controller                             ;
 ; Top-level Entity Name           ; Vga_Top_Design                             ;
 ; Family                          ; Cyclone V                                  ;
 ; Logic utilization (in ALMs)     ; N/A                                        ;
 ; Total registers                 ; 93                                         ;
-; Total pins                      ; 39                                         ;
+; Total pins                      ; 40                                         ;
 ; Total virtual pins              ; 0                                          ;
 ; Total block memory bits         ; 0                                          ;
 ; Total DSP Blocks                ; 0                                          ;
@@ -195,6 +197,7 @@ agreement for further details.
 ; Vga_Controller.vhd                                     ; yes             ; User VHDL File         ; C:/Users/KAYA/Desktop/Codes/ELE432_VHDL_Codes/ELE432_Project/002_VGA_Controller/Vga_Controller.vhd                                     ;              ;
 ; Road_Generator.vhd                                     ; yes             ; User VHDL File         ; C:/Users/KAYA/Desktop/Codes/ELE432_VHDL_Codes/ELE432_Project/002_VGA_Controller/Road_Generator.vhd                                     ;              ;
 ; Wall_Generator.vhd                                     ; yes             ; User VHDL File         ; C:/Users/KAYA/Desktop/Codes/ELE432_VHDL_Codes/ELE432_Project/002_VGA_Controller/Wall_Generator.vhd                                     ;              ;
+; Crash_Control.vhd                                      ; yes             ; User VHDL File         ; C:/Users/KAYA/Desktop/Codes/ELE432_VHDL_Codes/ELE432_Project/002_VGA_Controller/Crash_Control.vhd                                      ;              ;
 ; altera_pll.v                                           ; yes             ; Megafunction           ; c:/altera/14.0/quartus/libraries/megafunctions/altera_pll.v                                                                            ;              ;
 +--------------------------------------------------------+-----------------+------------------------+----------------------------------------------------------------------------------------------------------------------------------------+--------------+
 
@@ -204,26 +207,26 @@ agreement for further details.
 +---------------------------------------------+-------------------+
 ; Resource                                    ; Usage             ;
 +---------------------------------------------+-------------------+
-; Estimate of Logic utilization (ALMs needed) ; 181               ;
+; Estimate of Logic utilization (ALMs needed) ; 195               ;
 ;                                             ;                   ;
-; Combinational ALUT usage for logic          ; 282               ;
+; Combinational ALUT usage for logic          ; 307               ;
 ;     -- 7 input functions                    ; 0                 ;
-;     -- 6 input functions                    ; 69                ;
-;     -- 5 input functions                    ; 41                ;
-;     -- 4 input functions                    ; 27                ;
-;     -- <=3 input functions                  ; 145               ;
+;     -- 6 input functions                    ; 73                ;
+;     -- 5 input functions                    ; 44                ;
+;     -- 4 input functions                    ; 34                ;
+;     -- <=3 input functions                  ; 156               ;
 ;                                             ;                   ;
 ; Dedicated logic registers                   ; 93                ;
 ;                                             ;                   ;
-; I/O pins                                    ; 39                ;
+; I/O pins                                    ; 40                ;
 ; Total DSP Blocks                            ; 0                 ;
 ; Total PLLs                                  ; 1                 ;
 ;     -- PLLs                                 ; 1                 ;
 ;                                             ;                   ;
 ; Maximum fan-out node                        ; i_VGA_Reset~input ;
 ; Maximum fan-out                             ; 93                ;
-; Total fan-out                               ; 1555              ;
-; Average fan-out                             ; 3.43              ;
+; Total fan-out                               ; 1645              ;
+; Average fan-out                             ; 3.42              ;
 +---------------------------------------------+-------------------+
 
 
@@ -232,13 +235,14 @@ agreement for further details.
 +------------------------------------+-------------------+--------------+-------------------+------------+------+--------------+----------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node         ; LC Combinationals ; LC Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                              ; Library Name ;
 +------------------------------------+-------------------+--------------+-------------------+------------+------+--------------+----------------------------------------------------------------------------------+--------------+
-; |Vga_Top_Design                    ; 282 (81)          ; 93 (50)      ; 0                 ; 0          ; 39   ; 0            ; |Vga_Top_Design                                                                  ; work         ;
+; |Vga_Top_Design                    ; 307 (81)          ; 93 (50)      ; 0                 ; 0          ; 40   ; 0            ; |Vga_Top_Design                                                                  ; work         ;
+;    |Crash_Control:u5|              ; 23 (23)           ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |Vga_Top_Design|Crash_Control:u5                                                 ; work         ;
 ;    |Pll_50_to_25:u0|               ; 0 (0)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |Vga_Top_Design|Pll_50_to_25:u0                                                  ; pll_50_to_25 ;
 ;       |Pll_50_to_25_pll_0:pll_0|   ; 0 (0)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |Vga_Top_Design|Pll_50_to_25:u0|Pll_50_to_25_pll_0:pll_0                         ; Pll_50_to_25 ;
 ;          |altera_pll:altera_pll_i| ; 0 (0)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |Vga_Top_Design|Pll_50_to_25:u0|Pll_50_to_25_pll_0:pll_0|altera_pll:altera_pll_i ; work         ;
 ;    |Road_Generator:u4|             ; 40 (40)           ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |Vga_Top_Design|Road_Generator:u4                                                ; work         ;
 ;    |Vga_Controller:u1|             ; 47 (47)           ; 43 (43)      ; 0                 ; 0          ; 0    ; 0            ; |Vga_Top_Design|Vga_Controller:u1                                                ; work         ;
-;    |Vga_Test:u2|                   ; 68 (68)           ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |Vga_Top_Design|Vga_Test:u2                                                      ; work         ;
+;    |Vga_Test:u2|                   ; 70 (70)           ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |Vga_Top_Design|Vga_Test:u2                                                      ; work         ;
 ;    |Wall_Generator:u3|             ; 46 (46)           ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |Vga_Top_Design|Wall_Generator:u3                                                ; work         ;
 +------------------------------------+-------------------+--------------+-------------------+------------+------+--------------+----------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
@@ -285,16 +289,16 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------+-----------------------------+
 ; Register name                          ; Reason for Removal          ;
 +----------------------------------------+-----------------------------+
-; s_Wall2_Pos_Y[0]                       ; Merged with s_Road_Pos_Y[0] ;
-; s_Wall2_Pos_Y[1]                       ; Merged with s_Road_Pos_Y[1] ;
-; s_Wall2_Pos_Y[2]                       ; Merged with s_Road_Pos_Y[2] ;
-; s_Wall2_Pos_Y[3]                       ; Merged with s_Road_Pos_Y[3] ;
-; s_Wall2_Pos_Y[4]                       ; Merged with s_Road_Pos_Y[4] ;
-; s_Wall2_Pos_Y[5]                       ; Merged with s_Road_Pos_Y[5] ;
-; s_Wall2_Pos_Y[6]                       ; Merged with s_Road_Pos_Y[6] ;
-; s_Wall2_Pos_Y[9]                       ; Merged with s_Road_Pos_Y[9] ;
-; s_Wall2_Pos_Y[8]                       ; Merged with s_Road_Pos_Y[8] ;
-; s_Wall2_Pos_Y[7]                       ; Merged with s_Road_Pos_Y[7] ;
+; s_WALL2_Pos_Y[0]                       ; Merged with s_Road_Pos_Y[0] ;
+; s_WALL2_Pos_Y[1]                       ; Merged with s_Road_Pos_Y[1] ;
+; s_WALL2_Pos_Y[2]                       ; Merged with s_Road_Pos_Y[2] ;
+; s_WALL2_Pos_Y[3]                       ; Merged with s_Road_Pos_Y[3] ;
+; s_WALL2_Pos_Y[4]                       ; Merged with s_Road_Pos_Y[4] ;
+; s_WALL2_Pos_Y[5]                       ; Merged with s_Road_Pos_Y[5] ;
+; s_WALL2_Pos_Y[6]                       ; Merged with s_Road_Pos_Y[6] ;
+; s_WALL2_Pos_Y[9]                       ; Merged with s_Road_Pos_Y[9] ;
+; s_WALL2_Pos_Y[8]                       ; Merged with s_Road_Pos_Y[8] ;
+; s_WALL2_Pos_Y[7]                       ; Merged with s_Road_Pos_Y[7] ;
 ; Total Number of Removed Registers = 10 ;                             ;
 +----------------------------------------+-----------------------------+
 
@@ -624,6 +628,34 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++---------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Crash_Control:u5 ;
++----------------+------------+---------------------------------+
+; Parameter Name ; Value      ; Type                            ;
++----------------+------------+---------------------------------+
+; g_total_row    ; 480        ; Signed Integer                  ;
+; g_total_column ; 640        ; Signed Integer                  ;
+; g_car_l_x      ; 0000100000 ; Unsigned Binary                 ;
+; g_car_l_y      ; 0000100000 ; Unsigned Binary                 ;
+; g_wall2_l_x    ; 0001100100 ; Unsigned Binary                 ;
+; g_wall2_l_y    ; 0010010110 ; Unsigned Binary                 ;
++----------------+------------+---------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------+
+; Port Connectivity Checks: "Crash_Control:u5"          ;
++---------------------+-------+----------+--------------+
+; Port                ; Type  ; Severity ; Details      ;
++---------------------+-------+----------+--------------+
+; i_wall2_pos_x[3..1] ; Input ; Info     ; Stuck at VCC ;
+; i_wall2_pos_x[7..4] ; Input ; Info     ; Stuck at GND ;
+; i_wall2_pos_x[9]    ; Input ; Info     ; Stuck at GND ;
+; i_wall2_pos_x[8]    ; Input ; Info     ; Stuck at VCC ;
+; i_wall2_pos_x[0]    ; Input ; Info     ; Stuck at GND ;
++---------------------+-------+----------+--------------+
+
+
 +-----------------------------------------------+
 ; Port Connectivity Checks: "Road_Generator:u4" ;
 +---------+-------+----------+------------------+
@@ -707,26 +739,26 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     ENA CLR           ; 20                          ;
 ;     ENA CLR SCLR      ; 9                           ;
 ;     ENA CLR SCLR SLD  ; 9                           ;
-; arriav_lcell_comb     ; 284                         ;
-;     arith             ; 107                         ;
-;         0 data inputs ; 3                           ;
-;         1 data inputs ; 58                          ;
+; arriav_lcell_comb     ; 309                         ;
+;     arith             ; 117                         ;
+;         0 data inputs ; 4                           ;
+;         1 data inputs ; 67                          ;
 ;         2 data inputs ; 46                          ;
-;     normal            ; 170                         ;
+;     normal            ; 185                         ;
 ;         0 data inputs ; 2                           ;
 ;         1 data inputs ; 1                           ;
 ;         2 data inputs ; 11                          ;
-;         3 data inputs ; 19                          ;
-;         4 data inputs ; 27                          ;
-;         5 data inputs ; 41                          ;
-;         6 data inputs ; 69                          ;
+;         3 data inputs ; 20                          ;
+;         4 data inputs ; 34                          ;
+;         5 data inputs ; 44                          ;
+;         6 data inputs ; 73                          ;
 ;     shared            ; 7                           ;
 ;         2 data inputs ; 7                           ;
-; boundary_port         ; 39                          ;
+; boundary_port         ; 40                          ;
 ; generic_pll           ; 1                           ;
 ;                       ;                             ;
 ; Max LUT depth         ; 5.90                        ;
-; Average LUT depth     ; 3.89                        ;
+; Average LUT depth     ; 3.88                        ;
 +-----------------------+-----------------------------+
 
 
@@ -745,7 +777,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 14.0.0 Build 200 06/17/2014 SJ Web Edition
-    Info: Processing started: Wed May 02 23:09:21 2018
+    Info: Processing started: Thu May 03 22:48:29 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off VGA_Controller -c VGA_Controller
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file pll_50_to_25/synthesis/pll_50_to_25.vhd
@@ -768,8 +800,11 @@ Info (12021): Found 2 design units, including 1 entities, in source file road_ge
 Info (12021): Found 2 design units, including 1 entities, in source file wall_generator.vhd
     Info (12022): Found design unit 1: Wall_Generator-arch
     Info (12023): Found entity 1: Wall_Generator
+Info (12021): Found 2 design units, including 1 entities, in source file crash_control.vhd
+    Info (12022): Found design unit 1: Crash_Control-arch
+    Info (12023): Found entity 1: Crash_Control
 Info (12127): Elaborating entity "Vga_Top_Design" for the top level hierarchy
-Warning (10492): VHDL Process Statement warning at Vga_Top_Design.vhd(332): signal "i_VGA_Reset" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Vga_Top_Design.vhd(380): signal "i_VGA_Reset" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Info (12128): Elaborating entity "Pll_50_to_25" for hierarchy "Pll_50_to_25:u0"
 Info (12128): Elaborating entity "Pll_50_to_25_pll_0" for hierarchy "Pll_50_to_25:u0|Pll_50_to_25_pll_0:pll_0"
 Info (12128): Elaborating entity "altera_pll" for hierarchy "Pll_50_to_25:u0|Pll_50_to_25_pll_0:pll_0|altera_pll:altera_pll_i"
@@ -900,6 +935,29 @@ Info (10041): Inferred latch for "o_Red[4]" at Road_Generator.vhd(32)
 Info (10041): Inferred latch for "o_Red[5]" at Road_Generator.vhd(32)
 Info (10041): Inferred latch for "o_Red[6]" at Road_Generator.vhd(32)
 Info (10041): Inferred latch for "o_Red[7]" at Road_Generator.vhd(32)
+Info (12128): Elaborating entity "Crash_Control" for hierarchy "Crash_Control:u5"
+Warning (10036): Verilog HDL or VHDL warning at Crash_Control.vhd(36): object "s_Car_L_Y" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at Crash_Control.vhd(37): object "s_WALL2_L_X" assigned a value but never read
+Warning (10492): VHDL Process Statement warning at Crash_Control.vhd(76): signal "I2_X" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Crash_Control.vhd(76): signal "C_X" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Crash_Control.vhd(76): signal "I2_Y" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Crash_Control.vhd(76): signal "C_Y" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Crash_Control.vhd(81): signal "I2_X" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Crash_Control.vhd(81): signal "C_X" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Crash_Control.vhd(81): signal "I2_Y" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Crash_Control.vhd(81): signal "s_WALL2_L_Y" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Crash_Control.vhd(81): signal "C_Y" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Crash_Control.vhd(86): signal "I2_X" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Crash_Control.vhd(86): signal "C_X" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Crash_Control.vhd(86): signal "s_Car_L_X" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Crash_Control.vhd(86): signal "I2_Y" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Crash_Control.vhd(86): signal "C_Y" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Crash_Control.vhd(91): signal "I2_X" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Crash_Control.vhd(91): signal "C_X" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Crash_Control.vhd(91): signal "s_Car_L_X" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Crash_Control.vhd(91): signal "I2_Y" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Crash_Control.vhd(91): signal "s_WALL2_L_Y" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Crash_Control.vhd(91): signal "C_Y" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "o_ADV_Sync" is stuck at GND
@@ -914,14 +972,14 @@ Warning (21074): Design contains 3 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "i_Mode[0]"
     Warning (15610): No output dependent on input pin "i_Mode[1]"
     Warning (15610): No output dependent on input pin "i_Mode[2]"
-Info (21057): Implemented 360 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 386 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 10 input pins
-    Info (21059): Implemented 29 output pins
-    Info (21061): Implemented 320 logic cells
+    Info (21059): Implemented 30 output pins
+    Info (21061): Implemented 345 logic cells
     Info (21065): Implemented 1 PLLs
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 24 warnings
-    Info: Peak virtual memory: 733 megabytes
-    Info: Processing ended: Wed May 02 23:09:28 2018
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 46 warnings
+    Info: Peak virtual memory: 729 megabytes
+    Info: Processing ended: Thu May 03 22:48:36 2018
     Info: Elapsed time: 00:00:07
     Info: Total CPU time (on all processors): 00:00:07
 

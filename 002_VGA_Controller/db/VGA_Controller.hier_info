@@ -45,16 +45,16 @@ i_VGA_Reset => s_Car_Pos_X[6].ACLR
 i_VGA_Reset => s_Car_Pos_X[7].ACLR
 i_VGA_Reset => s_Car_Pos_X[8].ACLR
 i_VGA_Reset => s_Car_Pos_X[9].ACLR
-i_VGA_Reset => s_Wall2_Pos_Y[0].ACLR
-i_VGA_Reset => s_Wall2_Pos_Y[1].ACLR
-i_VGA_Reset => s_Wall2_Pos_Y[2].ACLR
-i_VGA_Reset => s_Wall2_Pos_Y[3].ACLR
-i_VGA_Reset => s_Wall2_Pos_Y[4].ACLR
-i_VGA_Reset => s_Wall2_Pos_Y[5].ACLR
-i_VGA_Reset => s_Wall2_Pos_Y[6].ACLR
-i_VGA_Reset => s_Wall2_Pos_Y[7].ACLR
-i_VGA_Reset => s_Wall2_Pos_Y[8].ACLR
-i_VGA_Reset => s_Wall2_Pos_Y[9].ACLR
+i_VGA_Reset => s_WALL2_Pos_Y[0].ACLR
+i_VGA_Reset => s_WALL2_Pos_Y[1].ACLR
+i_VGA_Reset => s_WALL2_Pos_Y[2].ACLR
+i_VGA_Reset => s_WALL2_Pos_Y[3].ACLR
+i_VGA_Reset => s_WALL2_Pos_Y[4].ACLR
+i_VGA_Reset => s_WALL2_Pos_Y[5].ACLR
+i_VGA_Reset => s_WALL2_Pos_Y[6].ACLR
+i_VGA_Reset => s_WALL2_Pos_Y[7].ACLR
+i_VGA_Reset => s_WALL2_Pos_Y[8].ACLR
+i_VGA_Reset => s_WALL2_Pos_Y[9].ACLR
 i_VGA_Reset => s_Road_Pos_Y[0].ACLR
 i_VGA_Reset => s_Road_Pos_Y[1].ACLR
 i_VGA_Reset => s_Road_Pos_Y[2].ACLR
@@ -134,6 +134,7 @@ o_ADV_Blank << Vga_Controller:u1.o_Dir_Blnk
 o_ADV_Clk << Pll_50_to_25:u0.pll_0_outclk0_clk
 o_HS << Vga_Controller:u1.o_HS
 o_VS << Vga_Controller:u1.o_VS
+o_Crash << Crash_Control:u5.o_Crash
 
 
 |Vga_Top_Design|Pll_50_to_25:u0
@@ -1019,5 +1020,76 @@ o_Blue[5] <= o_Blue[5]$latch.DB_MAX_OUTPUT_PORT_TYPE
 o_Blue[6] <= o_Blue[6]$latch.DB_MAX_OUTPUT_PORT_TYPE
 o_Blue[7] <= o_Blue[7]$latch.DB_MAX_OUTPUT_PORT_TYPE
 o_Disp_Ena <= o_Disp_Ena.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Vga_Top_Design|Crash_Control:u5
+i_Car_Pos_X[0] => Equal0.IN52
+i_Car_Pos_X[0] => Add2.IN64
+i_Car_Pos_X[1] => Equal0.IN51
+i_Car_Pos_X[1] => Add2.IN63
+i_Car_Pos_X[2] => Equal0.IN50
+i_Car_Pos_X[2] => Add2.IN62
+i_Car_Pos_X[3] => Equal0.IN49
+i_Car_Pos_X[3] => Add2.IN61
+i_Car_Pos_X[4] => Equal0.IN48
+i_Car_Pos_X[4] => Add2.IN60
+i_Car_Pos_X[5] => Equal0.IN47
+i_Car_Pos_X[5] => Add2.IN59
+i_Car_Pos_X[6] => Equal0.IN46
+i_Car_Pos_X[6] => Add2.IN58
+i_Car_Pos_X[7] => Equal0.IN45
+i_Car_Pos_X[7] => Add2.IN57
+i_Car_Pos_X[8] => Equal0.IN44
+i_Car_Pos_X[8] => Add2.IN56
+i_Car_Pos_X[9] => Equal0.IN43
+i_Car_Pos_X[9] => Add2.IN55
+i_Car_Pos_Y[0] => Equal1.IN53
+i_Car_Pos_Y[0] => Equal3.IN63
+i_Car_Pos_Y[1] => Equal1.IN52
+i_Car_Pos_Y[1] => Equal3.IN62
+i_Car_Pos_Y[2] => Equal1.IN51
+i_Car_Pos_Y[2] => Equal3.IN61
+i_Car_Pos_Y[3] => Equal1.IN50
+i_Car_Pos_Y[3] => Equal3.IN60
+i_Car_Pos_Y[4] => Equal1.IN49
+i_Car_Pos_Y[4] => Equal3.IN59
+i_Car_Pos_Y[5] => Add1.IN10
+i_Car_Pos_Y[6] => Add1.IN9
+i_Car_Pos_Y[7] => Add1.IN8
+i_Car_Pos_Y[8] => Add1.IN7
+i_Car_Pos_Y[9] => Add1.IN6
+i_WALL2_Pos_X[0] => Equal0.IN63
+i_WALL2_Pos_X[0] => Equal2.IN63
+i_WALL2_Pos_X[1] => Equal0.IN62
+i_WALL2_Pos_X[1] => Equal2.IN62
+i_WALL2_Pos_X[2] => Add0.IN16
+i_WALL2_Pos_X[3] => Add0.IN15
+i_WALL2_Pos_X[4] => Add0.IN14
+i_WALL2_Pos_X[5] => Add0.IN13
+i_WALL2_Pos_X[6] => Add0.IN12
+i_WALL2_Pos_X[7] => Add0.IN11
+i_WALL2_Pos_X[8] => Add0.IN10
+i_WALL2_Pos_X[9] => Add0.IN9
+i_WALL2_Pos_Y[0] => Equal1.IN63
+i_WALL2_Pos_Y[0] => Add3.IN64
+i_WALL2_Pos_Y[1] => Equal1.IN62
+i_WALL2_Pos_Y[1] => Add3.IN63
+i_WALL2_Pos_Y[2] => Equal1.IN61
+i_WALL2_Pos_Y[2] => Add3.IN62
+i_WALL2_Pos_Y[3] => Equal1.IN60
+i_WALL2_Pos_Y[3] => Add3.IN61
+i_WALL2_Pos_Y[4] => Equal1.IN59
+i_WALL2_Pos_Y[4] => Add3.IN60
+i_WALL2_Pos_Y[5] => Equal1.IN58
+i_WALL2_Pos_Y[5] => Add3.IN59
+i_WALL2_Pos_Y[6] => Equal1.IN57
+i_WALL2_Pos_Y[6] => Add3.IN58
+i_WALL2_Pos_Y[7] => Equal1.IN56
+i_WALL2_Pos_Y[7] => Add3.IN57
+i_WALL2_Pos_Y[8] => Equal1.IN55
+i_WALL2_Pos_Y[8] => Add3.IN56
+i_WALL2_Pos_Y[9] => Equal1.IN54
+i_WALL2_Pos_Y[9] => Add3.IN55
+o_Crash <= o_Crash.DB_MAX_OUTPUT_PORT_TYPE
 
 
