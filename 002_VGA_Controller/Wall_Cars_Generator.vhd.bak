@@ -1,0 +1,99 @@
+library IEEE;
+use IEEE.std_logic_1164.All;
+use IEEE.numeric_std.All;
+use IEEE.std_logic_unsigned.All;
+entity Wall_Cars_Generator is
+	Generic(
+				g_Total_Row : integer := 480;
+				g_Total_Column : integer := 640
+				);
+	Port(
+			i_Dist_Ena : in Std_logic;
+			i_Row_Num : in std_logic_vector (9 downto 0) ;
+			i_Column_Num : in std_logic_vector (9 downto 0);
+			i_Pos_X : in std_logic_vector(9 downto 0);
+			i_Pos_Y : in std_logic_vector(9 downto 0);
+			
+			o_Red : out std_logic_vector (7 downto 0);
+			o_Green : out std_logic_vector (7 downto 0);
+			o_Blue : out std_logic_vector (7 downto 0);
+			o_Disp_Ena : out std_logic
+			);
+end Wall_Cars_Generator;
+
+
+architecture arch of Wall_Cars_Generator is
+
+	------------------------------------------------------------------
+	-- WALL GENERATOR
+	------------------------------------------------------------------
+	component Wall_Generator is
+	Generic(
+				g_Total_Row : integer := 480;
+				g_Total_Column : integer := 640
+				);
+	Port(
+			i_Dist_Ena : in Std_logic;
+			i_Row_Num : in std_logic_vector (9 downto 0) ;
+			i_Column_Num : in std_logic_vector (9 downto 0);
+			i_Pos_X : in std_logic_vector(9 downto 0);
+			i_Pos_Y : in std_logic_vector(9 downto 0);
+			
+			o_Red : out std_logic_vector (7 downto 0);
+			o_Green : out std_logic_vector (7 downto 0);
+			o_Blue : out std_logic_vector (7 downto 0);
+			o_Disp_Ena : out std_logic
+			);
+	end component Wall_Generator;
+		
+
+
+	constant X_LENGTH : std_logic_vector(9 downto 0) := "00" & X"32";			-- Wall_Length_X = 50			
+	constant Y_LENGTH : std_logic_vector(9 downto 0) := "00" & X"4B";			-- Wall_Length_Y = 75	
+	constant Cnst_2Car : std_logic_vector(9 downto 0) := "00" & X"C8";		-- Second Car offset = 200 
+	
+	
+
+	signal s_Pos_X,s_Pos_Y : std_logic_vector(9 downto 0);	-- Buna gerek kalmayabilir.
+
+begin
+
+	-- First Car
+Car1:component Wall_Generator 
+	Generic map(
+				g_Total_Row => 480,
+				g_Total_Column => 640
+				)
+	Port map(
+			i_Dist_Ena => disp_en,
+			i_Row_Num => std_logic_vector(to_unsigned(row_count,10)),
+			i_Column_Num => std_logic_vector(to_unsigned(column_count,10)),
+			i_Pos_X => "0100001110",		-- 270 = b0100001110
+			i_Pos_Y => s_WALL2_Pos_Y,
+			
+			o_Red => Red_WALL2,
+			o_Green => Green_WALL2,
+			o_Blue => Blue_WALL2,
+			o_Disp_Ena => DisplaySelect(2)
+			);
+			
+	-- Second Car
+Car2:component Wall_Generator 
+	Generic map(
+				g_Total_Row => 480,
+				g_Total_Column => 640
+				)
+	Port map(
+			i_Dist_Ena => disp_en,
+			i_Row_Num => std_logic_vector(to_unsigned(row_count,10)),
+			i_Column_Num => std_logic_vector(to_unsigned(column_count,10)),
+			i_Pos_X => "0100001110",		-- 270 = b0100001110
+			i_Pos_Y => s_WALL2_Pos_Y + Cnst_2Car,
+			
+			o_Red => Red_WALL2,
+			o_Green => Green_WALL2,
+			o_Blue => Blue_WALL2,
+			o_Disp_Ena => DisplaySelect(2)
+			);
+
+end arch;

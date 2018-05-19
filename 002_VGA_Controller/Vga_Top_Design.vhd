@@ -27,7 +27,7 @@ entity Vga_Top_Design is
 			o_HS : out std_logic;
 			o_VS : out std_logic;
 			
-			o_Crash : out std_logic
+			o_Lost_LED : out std_logic
 	);
 
 end Vga_Top_Design;
@@ -106,7 +106,7 @@ architecture arch of Vga_Top_Design is
 	------------------------------------------------------------------
 	-- WALL GENERATOR
 	------------------------------------------------------------------
-	component Wall_Generator is
+	component Wall_Cars_Generator is
 	Generic(
 				g_Total_Row : integer := 480;
 				g_Total_Column : integer := 640
@@ -118,12 +118,44 @@ architecture arch of Vga_Top_Design is
 			i_Pos_X : in std_logic_vector(9 downto 0);
 			i_Pos_Y : in std_logic_vector(9 downto 0);
 			
+			Cnst_2Car : in std_logic_vector(9 downto 0);
+			Cnst_3Car : in std_logic_vector(9 downto 0);
+			Cnst_4Car : in std_logic_vector(9 downto 0);	
+			
 			o_Red : out std_logic_vector (7 downto 0);
 			o_Green : out std_logic_vector (7 downto 0);
 			o_Blue : out std_logic_vector (7 downto 0);
 			o_Disp_Ena : out std_logic
 			);
-	end component Wall_Generator;
+	end component Wall_Cars_Generator;
+	
+	
+	------------------------------------------------------------------
+	-- GOLDEN GENERATOR
+	------------------------------------------------------------------	
+	component All_Golden_Generator is
+	Generic(
+				g_Total_Row : integer := 480;
+				g_Total_Column : integer := 640
+				);
+	Port(
+			i_Dist_Ena : in Std_logic;
+			i_Row_Num : in std_logic_vector (9 downto 0) ;
+			i_Column_Num : in std_logic_vector (9 downto 0);
+			i_Pos_X : in std_logic_vector(9 downto 0);
+			i_Pos_Y : in std_logic_vector(9 downto 0);
+			
+			Cnst_2Gold : in std_logic_vector(9 downto 0);
+			Cnst_3Gold : in std_logic_vector(9 downto 0);
+			Cnst_4Gold : in std_logic_vector(9 downto 0);	
+			
+			o_Red : out std_logic_vector (7 downto 0);
+			o_Green : out std_logic_vector (7 downto 0);
+			o_Blue : out std_logic_vector (7 downto 0);
+			o_Disp_Ena : out std_logic
+			);
+	end component All_Golden_Generator;
+	
 		
 	----------------------------------------------------------------------
 	--	ROAD GENERATOR
@@ -148,31 +180,18 @@ architecture arch of Vga_Top_Design is
 	end component;
 	
 	----------------------------------------------------------------------
-	--	Crash Control --For WALL2 and Car
-	----------------------------------------------------------------------	
-	
+	--	CRASH CONTROL
+	----------------------------------------------------------------------
 	component Crash_Control is
-	Generic(
-				g_Total_Row : integer := 480;
-				g_Total_Column : integer := 640;
-				
-				g_Car_L_X: std_logic_vector(9 downto 0) := "00" & X"20";		-- Car_Length_X = 32	
-				g_Car_L_Y: std_logic_vector(9 downto 0) := "00" & X"20";		-- Car_Length_X = 32	
-				
-				g_WALL2_L_X: std_logic_vector(9 downto 0) := "00" & X"64";	-- Wall_Length_X = 100	
-				g_WALL2_L_Y: std_logic_vector(9 downto 0) := "00" & X"96"	-- Wall_Length_Y = 150	
-				);
-	Port(
-			i_Car_Pos_X : in std_logic_vector(9 downto 0);
-			i_Car_Pos_Y : in std_logic_vector(9 downto 0);
-			
-			i_WALL2_Pos_X : in std_logic_vector(9 downto 0);
-			i_WALL2_Pos_Y : in std_logic_vector(9 downto 0);
-			
-			o_Crash : out std_logic
-			);
-	end component ;
-
+	port(
+		i_clk : in std_logic;
+		i_Wall_En :in  std_logic;
+		i_Golden_En :in  std_logic;
+		i_Car_En :in  std_logic;
+		
+		o_Lost :out  std_logic
+	);
+	end component;
 
 	
 signal pixel_clk : std_logic;	
@@ -180,17 +199,26 @@ signal disp_en : std_logic;
 signal row_count : integer;
 signal column_count : integer;
 
-signal DisplaySelect : std_logic_vector(4 downto 0);
+signal DisplaySelect : std_logic_vector(7 downto 0);
 
+
+
+---------------------- 	RGB Outpus   --------------------------------
 signal Red_Test,Green_Test,Blue_Test : std_logic_vector(7 downto 0);
+
+signal Red_WALL1,Green_WALL1,Blue_WALL1 : std_logic_vector(7 downto 0);
 signal Red_WALL2,Green_WALL2,Blue_WALL2 : std_logic_vector(7 downto 0);
+signal Red_WALL3,Green_WALL3,Blue_WALL3 : std_logic_vector(7 downto 0);
+
+signal Red_GOLD1,Green_GOLD1,Blue_GOLD1 : std_logic_vector(7 downto 0);
+signal Red_GOLD2,Green_GOLD2,Blue_GOLD2 : std_logic_vector(7 downto 0);
+signal Red_GOLD3,Green_GOLD3,Blue_GOLD3 : std_logic_vector(7 downto 0);
 
 signal Red_Road,Green_Road,Blue_Road : std_logic_vector(7 downto 0);
+----------------------------------------------------------------------   
 
--- Current X and Y positions of Car and Walls
+-- Current X and Y positions of Car
 signal s_Car_Pos_X,s_Car_Pos_Y : std_logic_vector(9 downto 0):= (others => '0');
-signal s_WALL2_Pos_Y : std_logic_vector(9 downto 0):= (others => '0');
-
 signal s_Road_Pos_Y : std_logic_vector(9 downto 0):= (others => '0');
 
 signal Refresh_Rate_Timer : unsigned(18 downto 0); -- 1100110100010100000
@@ -258,10 +286,11 @@ u2 : component Vga_Test
 	);
 	
 	
-	-- WALL1 => DisplaySelect(1)   and   WALL4 => DisplaySelect(3)  
-		
-	-- WALL2_Generator
-u3:component Wall_Generator 
+------------------------------------     WALL GENERATOR FOR COLUMNS     -------------------------------
+	-- Column1 => DisplaySelect(1)   Column2 => DisplaySelect(2)   Column3 => DisplaySelect(3) 
+-------		-------		-------		-------		-------		-------		-------		-------		-------	
+	-- Column1_Car_Generator
+Column1_Car_Generator:component Wall_Cars_Generator 
 	Generic map(
 				g_Total_Row => 480,
 				g_Total_Column => 640
@@ -270,16 +299,143 @@ u3:component Wall_Generator
 			i_Dist_Ena => disp_en,
 			i_Row_Num => std_logic_vector(to_unsigned(row_count,10)),
 			i_Column_Num => std_logic_vector(to_unsigned(column_count,10)),
-			i_Pos_X => "0100001110",		-- 270 = b0100001110
-			i_Pos_Y => s_WALL2_Pos_Y,
+			i_Pos_X => "0001110011",		-- 115 = b0001110011
+			i_Pos_Y => s_Road_Pos_Y,
+			
+			Cnst_2Car => std_logic_vector(to_unsigned(200,10)),
+			Cnst_3Car => std_logic_vector(to_unsigned(400,10)),
+			Cnst_4Car => std_logic_vector(to_unsigned(600,10)),
+			
+			o_Red => Red_WALL1,
+			o_Green => Green_WALL1,
+			o_Blue => Blue_WALL1,
+			o_Disp_Ena => DisplaySelect(1)
+			);
+-------		-------		-------		-------		-------		-------		-------		-------		-------
+	-- Column2_Car_Generator
+Column2_Car_Generator:component Wall_Cars_Generator 
+	Generic map(
+				g_Total_Row => 480,
+				g_Total_Column => 640
+				)
+	Port map(
+			i_Dist_Ena => disp_en,
+			i_Row_Num => std_logic_vector(to_unsigned(row_count,10)),
+			i_Column_Num => std_logic_vector(to_unsigned(column_count,10)),
+			i_Pos_X => "0100100111",		-- 295 = b0100100111
+			i_Pos_Y => s_Road_Pos_Y,
+			
+			Cnst_2Car => std_logic_vector(to_unsigned(200,10)),
+			Cnst_3Car => std_logic_vector(to_unsigned(400,10)),
+			Cnst_4Car => std_logic_vector(to_unsigned(600,10)),
 			
 			o_Red => Red_WALL2,
 			o_Green => Green_WALL2,
 			o_Blue => Blue_WALL2,
 			o_Disp_Ena => DisplaySelect(2)
 			);
+-------		-------		-------		-------		-------		-------		-------		-------		-------			
+		-- Column3_Car_Generator
+Column3_Car_Generator:component Wall_Cars_Generator 
+	Generic map(
+				g_Total_Row => 480,
+				g_Total_Column => 640
+				)
+	Port map(
+			i_Dist_Ena => disp_en,
+			i_Row_Num => std_logic_vector(to_unsigned(row_count,10)),
+			i_Column_Num => std_logic_vector(to_unsigned(column_count,10)),
+			i_Pos_X => "0111011011",		-- 475 = b0111011011
+			i_Pos_Y => s_Road_Pos_Y,
 			
+			Cnst_2Car => std_logic_vector(to_unsigned(0,10)),
+			Cnst_3Car => std_logic_vector(to_unsigned(400,10)),
+			Cnst_4Car => std_logic_vector(to_unsigned(600,10)),
 			
+			o_Red => Red_WALL3,
+			o_Green => Green_WALL3,
+			o_Blue => Blue_WALL3,
+			o_Disp_Ena => DisplaySelect(3)
+			);
+--------------------------------------------------------------------------------------------------------			
+		
+	
+------------------------------------     GOLDEN GENERATOR FOR COLUMNS    -------------------------------
+	-- Column1 => DisplaySelect(4)   Column2 => DisplaySelect(5)   Column3 => DisplaySelect(6) 
+-------		-------		-------		-------		-------		-------		-------		-------		-------	
+	-- Column1_Golden_Generator
+Column1_Golden_Generator:component All_Golden_Generator 
+	Generic map(
+				g_Total_Row => 480,
+				g_Total_Column => 640
+				)
+	Port map(
+			i_Dist_Ena => disp_en,
+			i_Row_Num => std_logic_vector(to_unsigned(row_count,10)),
+			i_Column_Num => std_logic_vector(to_unsigned(column_count,10)),
+			i_Pos_X => "0001110011",		-- 115 = b0001110011
+			i_Pos_Y => s_Road_Pos_Y,
+			
+			Cnst_2Gold => std_logic_vector(to_unsigned(100,10)),
+			Cnst_3Gold => std_logic_vector(to_unsigned(300,10)),
+			Cnst_4Gold => std_logic_vector(to_unsigned(500,10)),
+			
+			o_Red => Red_GOLD1,
+			o_Green => Green_GOLD1,
+			o_Blue => Blue_GOLD1,
+			o_Disp_Ena => DisplaySelect(4)
+			);
+-------		-------		-------		-------		-------		-------		-------		-------		-------
+
+	-- Column2_Golden_Generator
+Column2_Golden_Generator:component All_Golden_Generator 
+	Generic map(
+				g_Total_Row => 480,
+				g_Total_Column => 640
+				)
+	Port map(
+			i_Dist_Ena => disp_en,
+			i_Row_Num => std_logic_vector(to_unsigned(row_count,10)),
+			i_Column_Num => std_logic_vector(to_unsigned(column_count,10)),
+			i_Pos_X => "0100100111",		-- 295 = b0100100111
+			i_Pos_Y => s_Road_Pos_Y,
+			
+			Cnst_2Gold => std_logic_vector(to_unsigned(100,10)),
+			Cnst_3Gold => std_logic_vector(to_unsigned(300,10)),
+			Cnst_4Gold => std_logic_vector(to_unsigned(500,10)),
+			
+			o_Red => Red_GOLD2,
+			o_Green => Green_GOLD2,
+			o_Blue => Blue_GOLD2,
+			o_Disp_Ena => DisplaySelect(5)
+			);
+-------		-------		-------		-------		-------		-------		-------		-------		-------
+
+	-- Column3_Golden_Generator
+Column3_Golden_Generator:component All_Golden_Generator 
+	Generic map(
+				g_Total_Row => 480,
+				g_Total_Column => 640
+				)
+	Port map(
+			i_Dist_Ena => disp_en,
+			i_Row_Num => std_logic_vector(to_unsigned(row_count,10)),
+			i_Column_Num => std_logic_vector(to_unsigned(column_count,10)),
+			i_Pos_X => "0111011011",		-- 475 = b0111011011
+			i_Pos_Y => s_Road_Pos_Y,
+			
+			Cnst_2Gold => std_logic_vector(to_unsigned(100,10)),
+			Cnst_3Gold => std_logic_vector(to_unsigned(300,10)),
+			Cnst_4Gold => std_logic_vector(to_unsigned(500,10)),
+			
+			o_Red => Red_GOLD3,
+			o_Green => Green_GOLD3,
+			o_Blue => Blue_GOLD3,
+			o_Disp_Ena => DisplaySelect(6)
+			);
+-------		-------		-------		-------		-------		-------		-------		-------		-------
+
+
 	-- Road_Generator
 u4:component Road_Generator 
 	Generic map(
@@ -296,50 +452,44 @@ u4:component Road_Generator
 			o_Red => Red_Road,
 			o_Green => Green_Road,
 			o_Blue => Blue_Road,
-			o_Disp_Ena => DisplaySelect(4)
+			o_Disp_Ena => DisplaySelect(7)
 			);		
 	
 	
-	-- Crash_Control for WALL2 and Car
-u5:component Crash_Control 
-	Generic map(
-				g_Total_Row => 480,
-				g_Total_Column => 640,
-				
-				g_Car_L_X => "00" & X"20",		-- Car_Length_X = 32	
-				g_Car_L_Y => "00" & X"20",		-- Car_Length_X = 32	
-				
-				g_WALL2_L_X => "00" & X"64",	-- Wall_Length_X = 100	
-				g_WALL2_L_Y => "00" & X"96"	-- Wall_Length_Y = 150	
-				)
-	Port map(
-			i_Car_Pos_X => s_Car_Pos_X,
-			i_Car_Pos_Y => s_Car_Pos_Y,
-			
-			i_WALL2_Pos_X => "0100001110",		-- 270 = b0100001110
-			i_WALL2_Pos_Y => s_WALL2_Pos_Y,
-			
-			o_Crash => o_Crash
-			);
-	
+
 ------------------------------------------------------------------------------------------------------
 --					MULTIPLEXER
 ------------------------------------------------------------------------------------------------------	
 	
 -- RED Multiplexer 	
 		o_Red <= 	Red_Test when DisplaySelect(0)= '1' else
+						Red_WALL1 when DisplaySelect(1)= '1' else
 						Red_WALL2 when DisplaySelect(2)= '1' else
-						Red_Road when DisplaySelect(4)= '1' else
+						Red_WALL3 when DisplaySelect(3)= '1' else
+						Red_GOLD1 when DisplaySelect(4)= '1' else
+						Red_GOLD2 when DisplaySelect(5)= '1' else
+						Red_GOLD3 when DisplaySelect(6)= '1' else
+						Red_Road when DisplaySelect(7)= '1' else
 					(others=> '0');
 -- GREEN Multiplexer 	
 		o_Green <= 	Green_Test when DisplaySelect(0)= '1' else
+						Green_WALL1 when DisplaySelect(1)= '1' else
 						Green_WALL2 when DisplaySelect(2)= '1' else
-						Green_Road when DisplaySelect(4)= '1' else
+						Green_WALL3 when DisplaySelect(3)= '1' else
+						Green_GOLD1 when DisplaySelect(4)= '1' else
+						Green_GOLD2 when DisplaySelect(5)= '1' else
+						Green_GOLD3 when DisplaySelect(6)= '1' else
+						Green_Road when DisplaySelect(7)= '1' else
 		         (others=> '0');
 -- BLUE Multiplexer 	
 		o_Blue <= 	Blue_Test when DisplaySelect(0)= '1' else
+						Blue_WALL1 when DisplaySelect(1)= '1' else
 						Blue_WALL2 when DisplaySelect(2)= '1' else
-						Blue_Road when DisplaySelect(4)= '1' else
+						Blue_WALL3 when DisplaySelect(3)= '1' else
+						Blue_GOLD1 when DisplaySelect(4)= '1' else
+						Blue_GOLD2 when DisplaySelect(5)= '1' else
+						Blue_GOLD3 when DisplaySelect(6)= '1' else
+						Blue_Road when DisplaySelect(7)= '1' else
 				   (others=> '0');	
 		
 ------------------------------------------------------------------------------------------------------
@@ -355,21 +505,6 @@ begin
 	
 end process;
 
-------------------------------------------------------------------------------------------------------
--- 	WALL2 SHIFTER
-------------------------------------------------------------------------------------------------------	
-Wall_Shift_Proc : process(RefreshClock,i_VGA_Reset)
-begin
-	if(i_VGA_Reset = '1') then
-	   s_WALL2_Pos_Y <= (others => '0');
-	elsif( rising_edge(RefreshClock)) then
-	    s_WALL2_Pos_Y <= std_logic_vector(unsigned(s_WALL2_Pos_Y) + 1);
-	end if;
-	
-end process;
-		
-
-
 
 ------------------------------------------------------------------------------------------------------
 -- 	POSITION GENERATOR
@@ -378,8 +513,8 @@ PositionGenerator : Process(RefreshClock,i_Btn_Down,i_Btn_Up,i_Btn_Left,i_Btn_Ri
 begin
 
 	if(i_VGA_Reset = '1') then
-		s_Car_Pos_X <= (others => '0');
-		s_Car_Pos_Y <= (others => '0');
+		s_Car_Pos_X <= ( 5 => '1', others => '0');
+		s_Car_Pos_Y <= ( 5 => '1', others => '0');
 	elsif( rising_edge(RefreshClock)) then
 		if(i_Btn_Up = '0') then
 			s_Car_Pos_Y <= std_logic_vector(unsigned(s_Car_Pos_Y)-3);
@@ -419,8 +554,17 @@ begin
 	end if;
 end process;
 
+ 
+ 
+	----------------------------------------------------------------------
+	--	CRASH CONTROL
+	----------------------------------------------------------------------
+Crash_Control_Blk: component Crash_Control
+	port map(
+		i_clk => RefreshClock, 
+		i_Wall_En => (DisplaySelect(1) or DisplaySelect(2) or DisplaySelect(3)),
+		i_Golden_En => (DisplaySelect(4) or DisplaySelect(5) or DisplaySelect(6)),
+		i_Car_En => DisplaySelect(0),
+	   o_Lost =>o_Lost_LED); 
 
-
-
-				
 end arch;

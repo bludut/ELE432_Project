@@ -23,8 +23,8 @@ end Wall_Generator;
 
 
 architecture arch of Wall_Generator is
-	constant X_LENGTH : std_logic_vector(9 downto 0) := "00" & X"64";			-- Wall_Length_X = 100			
-	constant Y_LENGTH : std_logic_vector(9 downto 0) := "00" & X"96";			-- Wall_Length_Y = 150		
+	constant X_LENGTH : std_logic_vector(9 downto 0) := "00" & X"32";			-- Wall_Length_X = 100			
+	constant Y_LENGTH : std_logic_vector(9 downto 0) := "00" & X"48";			-- Wall_Length_Y = 150		
 
 	signal s_Pos_X,s_Pos_Y : std_logic_vector(9 downto 0);	-- Buna gerek kalmayabilir.
 

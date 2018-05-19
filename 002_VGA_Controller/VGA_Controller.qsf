@@ -42,7 +42,7 @@ set_global_assignment -name DEVICE 5CSEMA5F31C6
 set_global_assignment -name TOP_LEVEL_ENTITY Vga_Top_Design
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 14.1.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "12:32:14  APRIL 22, 2018"
-set_global_assignment -name LAST_QUARTUS_VERSION 14.0
+set_global_assignment -name LAST_QUARTUS_VERSION 14.1.0
 set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
 set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
@@ -101,5 +101,9 @@ set_global_assignment -name CDF_FILE output_files/Chain1.cdf
 set_global_assignment -name VHDL_FILE Road_Generator.vhd
 set_global_assignment -name VHDL_FILE Wall_Generator.vhd
 set_global_assignment -name VHDL_FILE Crash_Control.vhd
-set_location_assignment PIN_V16 -to o_Crash
+set_global_assignment -name VHDL_FILE Map_Enable_Generator.vhd
+set_global_assignment -name VHDL_FILE Wall_Cars_Generator.vhd
+set_global_assignment -name VHDL_FILE All_Golden_Generator.vhd
+set_global_assignment -name VHDL_FILE Golden_Generator.vhd
+set_location_assignment PIN_V16 -to o_Lost_LED
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
