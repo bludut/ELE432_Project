@@ -1,0 +1,38 @@
+Info: Starting: Create block symbol file (.bsf)
+Info: ip-generate --project-directory="C:\Users\FatihKaya\Desktop\ALTERA DE1-SoC Rev-C\Examples\000_VGA_Controller" --output-directory="C:\Users\FatihKaya\Desktop\ALTERA DE1-SoC Rev-C\Examples\000_VGA_Controller\Pll_50_to_25" --report-file="bsf:C:\Users\FatihKaya\Desktop\ALTERA DE1-SoC Rev-C\Examples\000_VGA_Controller\Pll_50_to_25\Pll_50_to_25.bsf" --system-info=DEVICE_FAMILY="Cyclone V" --system-info=DEVICE=5CSEMA5F31C6 --system-info=DEVICE_SPEEDGRADE=6 --component-file="C:\Users\FatihKaya\Desktop\ALTERA DE1-SoC Rev-C\Examples\000_VGA_Controller\Pll_50_to_25.qsys" --remove-qsys-generate-warning
+Progress: Loading 000_VGA_Controller/Pll_50_to_25.qsys
+Progress: Reading input file
+Progress: Adding clk_0 [clock_source 14.1]
+Progress: Parameterizing module clk_0
+Progress: Adding pll_0 [altera_pll 14.1]
+Progress: Parameterizing module pll_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: Pll_50_to_25.pll_0: The legal reference clock frequency is 5.0 MHz..800.0 MHz
+Info: Pll_50_to_25.pll_0: Able to implement PLL with user settings
+Warning: Pll_50_to_25.pll_0: pll_0.locked must be exported, or connected to a matching conduit.
+Info: ip-generate succeeded.
+Info: Finished: Create block symbol file (.bsf)
+Info: 
+Info: Starting: Create HDL design files for synthesis
+Info: ip-generate --project-directory="C:\Users\FatihKaya\Desktop\ALTERA DE1-SoC Rev-C\Examples\000_VGA_Controller" --output-directory="C:\Users\FatihKaya\Desktop\ALTERA DE1-SoC Rev-C\Examples\000_VGA_Controller\Pll_50_to_25\synthesis" --file-set=QUARTUS_SYNTH --report-file="html:C:\Users\FatihKaya\Desktop\ALTERA DE1-SoC Rev-C\Examples\000_VGA_Controller\Pll_50_to_25\Pll_50_to_25.html" --report-file="sopcinfo:C:\Users\FatihKaya\Desktop\ALTERA DE1-SoC Rev-C\Examples\000_VGA_Controller\Pll_50_to_25.sopcinfo" --report-file="cmp:C:\Users\FatihKaya\Desktop\ALTERA DE1-SoC Rev-C\Examples\000_VGA_Controller\Pll_50_to_25\Pll_50_to_25.cmp" --report-file="qip:C:\Users\FatihKaya\Desktop\ALTERA DE1-SoC Rev-C\Examples\000_VGA_Controller\Pll_50_to_25\synthesis\Pll_50_to_25.qip" --report-file="svd:C:\Users\FatihKaya\Desktop\ALTERA DE1-SoC Rev-C\Examples\000_VGA_Controller\Pll_50_to_25\synthesis\Pll_50_to_25.svd" --report-file="regmap:C:\Users\FatihKaya\Desktop\ALTERA DE1-SoC Rev-C\Examples\000_VGA_Controller\Pll_50_to_25\synthesis\Pll_50_to_25.regmap" --report-file="xml:C:\Users\FatihKaya\Desktop\ALTERA DE1-SoC Rev-C\Examples\000_VGA_Controller\Pll_50_to_25\Pll_50_to_25.xml" --report-file="debuginfo:C:\Users\FatihKaya\Desktop\ALTERA DE1-SoC Rev-C\Examples\000_VGA_Controller\Pll_50_to_25\synthesis\Pll_50_to_25.debuginfo" --system-info=DEVICE_FAMILY="Cyclone V" --system-info=DEVICE=5CSEMA5F31C6 --system-info=DEVICE_SPEEDGRADE=6 --component-file="C:\Users\FatihKaya\Desktop\ALTERA DE1-SoC Rev-C\Examples\000_VGA_Controller\Pll_50_to_25.qsys" --remove-qsys-generate-warning --language=VHDL
+Progress: Loading 000_VGA_Controller/Pll_50_to_25.qsys
+Progress: Reading input file
+Progress: Adding clk_0 [clock_source 14.1]
+Progress: Parameterizing module clk_0
+Progress: Adding pll_0 [altera_pll 14.1]
+Progress: Parameterizing module pll_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: Pll_50_to_25.pll_0: The legal reference clock frequency is 5.0 MHz..800.0 MHz
+Info: Pll_50_to_25.pll_0: Able to implement PLL with user settings
+Warning: Pll_50_to_25.pll_0: pll_0.locked must be exported, or connected to a matching conduit.
+Info: Pll_50_to_25: Generating Pll_50_to_25 "Pll_50_to_25" for QUARTUS_SYNTH
+Info: pll_0: "Pll_50_to_25" instantiated altera_pll "pll_0"
+Info: Pll_50_to_25: Done "Pll_50_to_25" with 2 modules, 3 files
+Info: ip-generate succeeded.
+Info: Finished: Create HDL design files for synthesis
