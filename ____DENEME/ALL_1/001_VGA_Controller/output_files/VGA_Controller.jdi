@@ -1,0 +1,16 @@
+<sld_project_info>
+  <project>
+    <hash md5_digest_80b="5e0390ea1de35ca32cec"/>
+  </project>
+  <file_info>
+    <file device="5CSEMA5F31C6" path="VGA_Controller.sof" usercode="0xFFFFFFFF"/>
+  </file_info>
+  <sld_infos>
+    <sld_info hpath="Pll_50_to_25:u0" name="u0">
+      <assignment_values>
+        <assignment_value text="QSYS_NAME Pll_50_to_25 HAS_SOPCINFO 1 GENERATION_ID 1524390071"/>
+      </assignment_values>
+      <parameters/>
+    </sld_info>
+  </sld_infos>
+</sld_project_info>
