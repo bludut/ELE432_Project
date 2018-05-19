@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for VGA_Controller
-Sat May 19 23:11:23 2018
+Sat May 19 23:42:43 2018
 Quartus II 64-Bit Version 14.0.0 Build 200 06/17/2014 SJ Web Edition
 
 
@@ -114,12 +114,12 @@ agreement for further details.
 ; Number detected on machine ; 4           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 1.33        ;
+; Average used               ; 1.18        ;
 ; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-4         ;  11.1%      ;
+;     Processors 2-4         ;   5.9%      ;
 +----------------------------+-------------+
 
 
@@ -140,8 +140,8 @@ agreement for further details.
 +------------+-----------------+-----------------------------------------------------------------+------+
 ; Fmax       ; Restricted Fmax ; Clock Name                                                      ; Note ;
 +------------+-----------------+-----------------------------------------------------------------+------+
-; 144.43 MHz ; 144.43 MHz      ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;      ;
-; 352.11 MHz ; 352.11 MHz      ; RefreshClock                                                    ;      ;
+; 147.45 MHz ; 147.45 MHz      ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;      ;
+; 341.88 MHz ; 341.88 MHz      ; RefreshClock                                                    ;      ;
 +------------+-----------------+-----------------------------------------------------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -157,8 +157,8 @@ HTML report is unavailable in plain text report export.
 +-----------------------------------------------------------------+--------+---------------+
 ; Clock                                                           ; Slack  ; End Point TNS ;
 +-----------------------------------------------------------------+--------+---------------+
-; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; -3.452 ; -3.452        ;
-; RefreshClock                                                    ; -1.840 ; -41.577       ;
+; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; -3.103 ; -3.103        ;
+; RefreshClock                                                    ; -1.925 ; -43.522       ;
 +-----------------------------------------------------------------+--------+---------------+
 
 
@@ -167,8 +167,8 @@ HTML report is unavailable in plain text report export.
 +-----------------------------------------------------------------+--------+---------------+
 ; Clock                                                           ; Slack  ; End Point TNS ;
 +-----------------------------------------------------------------+--------+---------------+
-; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; -1.127 ; -1.127        ;
-; RefreshClock                                                    ; 0.663  ; 0.000         ;
+; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; -1.321 ; -1.321        ;
+; RefreshClock                                                    ; 0.676  ; 0.000         ;
 +-----------------------------------------------------------------+--------+---------------+
 
 
@@ -189,10 +189,10 @@ No paths to report.
 +-----------------------------------------------------------------+--------+---------------+
 ; Clock                                                           ; Slack  ; End Point TNS ;
 +-----------------------------------------------------------------+--------+---------------+
-; RefreshClock                                                    ; -0.394 ; -15.005       ;
+; RefreshClock                                                    ; -0.394 ; -14.485       ;
 ; u0|pll_0|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]   ; 1.666  ; 0.000         ;
 ; i_Clk                                                           ; 9.900  ; 0.000         ;
-; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 19.291 ; 0.000         ;
+; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 19.300 ; 0.000         ;
 +-----------------------------------------------------------------+--------+---------------+
 
 
@@ -201,10 +201,10 @@ No paths to report.
 +-------------+--------------+-------+-------+------------+-----------------+
 ; Data Port   ; Clock Port   ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-------------+--------------+-------+-------+------------+-----------------+
-; i_Btn_Down  ; RefreshClock ; 6.767 ; 6.151 ; Rise       ; RefreshClock    ;
-; i_Btn_Left  ; RefreshClock ; 5.923 ; 6.636 ; Rise       ; RefreshClock    ;
-; i_Btn_Right ; RefreshClock ; 5.353 ; 5.505 ; Rise       ; RefreshClock    ;
-; i_Btn_Up    ; RefreshClock ; 7.373 ; 6.723 ; Rise       ; RefreshClock    ;
+; i_Btn_Down  ; RefreshClock ; 4.268 ; 4.805 ; Rise       ; RefreshClock    ;
+; i_Btn_Left  ; RefreshClock ; 5.583 ; 6.289 ; Rise       ; RefreshClock    ;
+; i_Btn_Right ; RefreshClock ; 4.367 ; 4.758 ; Rise       ; RefreshClock    ;
+; i_Btn_Up    ; RefreshClock ; 5.347 ; 6.010 ; Rise       ; RefreshClock    ;
 +-------------+--------------+-------+-------+------------+-----------------+
 
 
@@ -213,10 +213,10 @@ No paths to report.
 +-------------+--------------+--------+--------+------------+-----------------+
 ; Data Port   ; Clock Port   ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +-------------+--------------+--------+--------+------------+-----------------+
-; i_Btn_Down  ; RefreshClock ; -5.010 ; -4.561 ; Rise       ; RefreshClock    ;
-; i_Btn_Left  ; RefreshClock ; -3.780 ; -4.399 ; Rise       ; RefreshClock    ;
-; i_Btn_Right ; RefreshClock ; -4.241 ; -4.515 ; Rise       ; RefreshClock    ;
-; i_Btn_Up    ; RefreshClock ; -3.174 ; -3.879 ; Rise       ; RefreshClock    ;
+; i_Btn_Down  ; RefreshClock ; -3.290 ; -3.850 ; Rise       ; RefreshClock    ;
+; i_Btn_Left  ; RefreshClock ; -3.438 ; -3.946 ; Rise       ; RefreshClock    ;
+; i_Btn_Right ; RefreshClock ; -3.437 ; -3.805 ; Rise       ; RefreshClock    ;
+; i_Btn_Up    ; RefreshClock ; -3.262 ; -3.877 ; Rise       ; RefreshClock    ;
 +-------------+--------------+--------+--------+------------+-----------------+
 
 
@@ -225,63 +225,63 @@ No paths to report.
 +-------------+--------------+--------+--------+------------+-----------------------------------------------------------------+
 ; Data Port   ; Clock Port   ; Rise   ; Fall   ; Clock Edge ; Clock Reference                                                 ;
 +-------------+--------------+--------+--------+------------+-----------------------------------------------------------------+
-; o_Blue[*]   ; RefreshClock ; 19.061 ; 19.477 ; Rise       ; RefreshClock                                                    ;
-;  o_Blue[0]  ; RefreshClock ; 17.528 ; 17.826 ; Rise       ; RefreshClock                                                    ;
-;  o_Blue[1]  ; RefreshClock ; 18.457 ; 19.419 ; Rise       ; RefreshClock                                                    ;
-;  o_Blue[2]  ; RefreshClock ; 18.822 ; 18.968 ; Rise       ; RefreshClock                                                    ;
-;  o_Blue[3]  ; RefreshClock ; 19.061 ; 19.457 ; Rise       ; RefreshClock                                                    ;
-;  o_Blue[4]  ; RefreshClock ; 18.632 ; 19.020 ; Rise       ; RefreshClock                                                    ;
-;  o_Blue[5]  ; RefreshClock ; 18.967 ; 19.477 ; Rise       ; RefreshClock                                                    ;
-;  o_Blue[6]  ; RefreshClock ; 18.903 ; 19.311 ; Rise       ; RefreshClock                                                    ;
-;  o_Blue[7]  ; RefreshClock ; 18.633 ; 18.998 ; Rise       ; RefreshClock                                                    ;
-; o_Green[*]  ; RefreshClock ; 19.848 ; 19.275 ; Rise       ; RefreshClock                                                    ;
-;  o_Green[0] ; RefreshClock ; 19.552 ; 18.813 ; Rise       ; RefreshClock                                                    ;
-;  o_Green[1] ; RefreshClock ; 19.559 ; 18.826 ; Rise       ; RefreshClock                                                    ;
-;  o_Green[2] ; RefreshClock ; 19.528 ; 18.891 ; Rise       ; RefreshClock                                                    ;
-;  o_Green[3] ; RefreshClock ; 19.848 ; 19.241 ; Rise       ; RefreshClock                                                    ;
-;  o_Green[4] ; RefreshClock ; 19.502 ; 18.748 ; Rise       ; RefreshClock                                                    ;
-;  o_Green[5] ; RefreshClock ; 19.167 ; 19.275 ; Rise       ; RefreshClock                                                    ;
-;  o_Green[6] ; RefreshClock ; 18.953 ; 19.119 ; Rise       ; RefreshClock                                                    ;
-;  o_Green[7] ; RefreshClock ; 19.271 ; 18.532 ; Rise       ; RefreshClock                                                    ;
-; o_Red[*]    ; RefreshClock ; 19.093 ; 19.723 ; Rise       ; RefreshClock                                                    ;
-;  o_Red[0]   ; RefreshClock ; 18.981 ; 18.490 ; Rise       ; RefreshClock                                                    ;
-;  o_Red[1]   ; RefreshClock ; 19.029 ; 18.397 ; Rise       ; RefreshClock                                                    ;
-;  o_Red[2]   ; RefreshClock ; 18.984 ; 18.370 ; Rise       ; RefreshClock                                                    ;
-;  o_Red[3]   ; RefreshClock ; 19.084 ; 18.513 ; Rise       ; RefreshClock                                                    ;
-;  o_Red[4]   ; RefreshClock ; 18.776 ; 18.188 ; Rise       ; RefreshClock                                                    ;
-;  o_Red[5]   ; RefreshClock ; 18.767 ; 19.668 ; Rise       ; RefreshClock                                                    ;
-;  o_Red[6]   ; RefreshClock ; 18.751 ; 19.723 ; Rise       ; RefreshClock                                                    ;
-;  o_Red[7]   ; RefreshClock ; 19.093 ; 18.621 ; Rise       ; RefreshClock                                                    ;
+; o_Blue[*]   ; RefreshClock ; 21.910 ; 22.186 ; Rise       ; RefreshClock                                                    ;
+;  o_Blue[0]  ; RefreshClock ; 21.910 ; 22.186 ; Rise       ; RefreshClock                                                    ;
+;  o_Blue[1]  ; RefreshClock ; 21.094 ; 21.225 ; Rise       ; RefreshClock                                                    ;
+;  o_Blue[2]  ; RefreshClock ; 21.706 ; 21.992 ; Rise       ; RefreshClock                                                    ;
+;  o_Blue[3]  ; RefreshClock ; 21.750 ; 22.076 ; Rise       ; RefreshClock                                                    ;
+;  o_Blue[4]  ; RefreshClock ; 21.349 ; 21.532 ; Rise       ; RefreshClock                                                    ;
+;  o_Blue[5]  ; RefreshClock ; 21.214 ; 21.349 ; Rise       ; RefreshClock                                                    ;
+;  o_Blue[6]  ; RefreshClock ; 21.431 ; 21.652 ; Rise       ; RefreshClock                                                    ;
+;  o_Blue[7]  ; RefreshClock ; 21.196 ; 21.344 ; Rise       ; RefreshClock                                                    ;
+; o_Green[*]  ; RefreshClock ; 19.410 ; 20.821 ; Rise       ; RefreshClock                                                    ;
+;  o_Green[0] ; RefreshClock ; 17.343 ; 17.703 ; Rise       ; RefreshClock                                                    ;
+;  o_Green[1] ; RefreshClock ; 18.712 ; 19.765 ; Rise       ; RefreshClock                                                    ;
+;  o_Green[2] ; RefreshClock ; 19.305 ; 20.821 ; Rise       ; RefreshClock                                                    ;
+;  o_Green[3] ; RefreshClock ; 19.410 ; 20.756 ; Rise       ; RefreshClock                                                    ;
+;  o_Green[4] ; RefreshClock ; 17.631 ; 18.138 ; Rise       ; RefreshClock                                                    ;
+;  o_Green[5] ; RefreshClock ; 18.365 ; 19.391 ; Rise       ; RefreshClock                                                    ;
+;  o_Green[6] ; RefreshClock ; 18.182 ; 19.083 ; Rise       ; RefreshClock                                                    ;
+;  o_Green[7] ; RefreshClock ; 18.615 ; 19.649 ; Rise       ; RefreshClock                                                    ;
+; o_Red[*]    ; RefreshClock ; 21.678 ; 22.379 ; Rise       ; RefreshClock                                                    ;
+;  o_Red[0]   ; RefreshClock ; 19.586 ; 21.596 ; Rise       ; RefreshClock                                                    ;
+;  o_Red[1]   ; RefreshClock ; 19.662 ; 21.559 ; Rise       ; RefreshClock                                                    ;
+;  o_Red[2]   ; RefreshClock ; 19.612 ; 21.700 ; Rise       ; RefreshClock                                                    ;
+;  o_Red[3]   ; RefreshClock ; 19.809 ; 21.859 ; Rise       ; RefreshClock                                                    ;
+;  o_Red[4]   ; RefreshClock ; 20.185 ; 22.379 ; Rise       ; RefreshClock                                                    ;
+;  o_Red[5]   ; RefreshClock ; 21.548 ; 21.752 ; Rise       ; RefreshClock                                                    ;
+;  o_Red[6]   ; RefreshClock ; 21.678 ; 21.938 ; Rise       ; RefreshClock                                                    ;
+;  o_Red[7]   ; RefreshClock ; 18.925 ; 20.792 ; Rise       ; RefreshClock                                                    ;
 ; o_ADV_Clk   ; i_Clk        ; 11.064 ;        ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-; o_Blue[*]   ; i_Clk        ; 22.040 ; 22.486 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Blue[0]  ; i_Clk        ; 20.507 ; 20.805 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Blue[1]  ; i_Clk        ; 21.576 ; 22.486 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Blue[2]  ; i_Clk        ; 21.801 ; 21.947 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Blue[3]  ; i_Clk        ; 22.040 ; 22.436 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Blue[4]  ; i_Clk        ; 21.611 ; 21.999 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Blue[5]  ; i_Clk        ; 21.946 ; 22.456 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Blue[6]  ; i_Clk        ; 21.882 ; 22.290 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Blue[7]  ; i_Clk        ; 21.612 ; 21.977 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-; o_Green[*]  ; i_Clk        ; 22.827 ; 22.712 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Green[0] ; i_Clk        ; 22.531 ; 22.284 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Green[1] ; i_Clk        ; 22.538 ; 22.297 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Green[2] ; i_Clk        ; 22.507 ; 22.362 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Green[3] ; i_Clk        ; 22.827 ; 22.712 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Green[4] ; i_Clk        ; 22.481 ; 22.219 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Green[5] ; i_Clk        ; 22.146 ; 22.284 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Green[6] ; i_Clk        ; 21.932 ; 22.098 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Green[7] ; i_Clk        ; 22.250 ; 22.003 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-; o_HS        ; i_Clk        ; 13.196 ; 13.720 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-; o_Red[*]    ; i_Clk        ; 22.072 ; 22.842 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Red[0]   ; i_Clk        ; 21.960 ; 21.931 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Red[1]   ; i_Clk        ; 22.008 ; 22.207 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Red[2]   ; i_Clk        ; 21.963 ; 21.797 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Red[3]   ; i_Clk        ; 22.063 ; 21.953 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Red[4]   ; i_Clk        ; 21.755 ; 21.980 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Red[5]   ; i_Clk        ; 21.766 ; 22.661 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Red[6]   ; i_Clk        ; 21.870 ; 22.842 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Red[7]   ; i_Clk        ; 22.072 ; 22.413 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-; o_VS        ; i_Clk        ; 14.359 ; 15.451 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+; o_Blue[*]   ; i_Clk        ; 25.200 ; 25.476 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Blue[0]  ; i_Clk        ; 25.200 ; 25.476 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Blue[1]  ; i_Clk        ; 24.384 ; 24.515 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Blue[2]  ; i_Clk        ; 24.996 ; 25.282 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Blue[3]  ; i_Clk        ; 25.040 ; 25.366 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Blue[4]  ; i_Clk        ; 24.639 ; 24.822 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Blue[5]  ; i_Clk        ; 24.504 ; 24.639 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Blue[6]  ; i_Clk        ; 24.721 ; 24.942 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Blue[7]  ; i_Clk        ; 24.486 ; 24.634 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+; o_Green[*]  ; i_Clk        ; 22.567 ; 24.040 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Green[0] ; i_Clk        ; 20.633 ; 20.993 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Green[1] ; i_Clk        ; 21.858 ; 22.879 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Green[2] ; i_Clk        ; 22.410 ; 23.925 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Green[3] ; i_Clk        ; 22.567 ; 24.040 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Green[4] ; i_Clk        ; 20.736 ; 21.221 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Green[5] ; i_Clk        ; 21.492 ; 22.645 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Green[6] ; i_Clk        ; 21.400 ; 22.279 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Green[7] ; i_Clk        ; 21.761 ; 22.794 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+; o_HS        ; i_Clk        ; 13.337 ; 13.676 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+; o_Red[*]    ; i_Clk        ; 24.968 ; 25.669 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Red[0]   ; i_Clk        ; 22.535 ; 24.886 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Red[1]   ; i_Clk        ; 22.611 ; 24.849 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Red[2]   ; i_Clk        ; 22.561 ; 24.990 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Red[3]   ; i_Clk        ; 22.758 ; 25.149 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Red[4]   ; i_Clk        ; 23.134 ; 25.669 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Red[5]   ; i_Clk        ; 24.838 ; 25.042 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Red[6]   ; i_Clk        ; 24.968 ; 25.228 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Red[7]   ; i_Clk        ; 21.874 ; 24.082 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+; o_VS        ; i_Clk        ; 15.745 ; 17.417 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
 ; o_ADV_Clk   ; i_Clk        ;        ; 10.944 ; Fall       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
 +-------------+--------------+--------+--------+------------+-----------------------------------------------------------------+
 
@@ -291,63 +291,63 @@ No paths to report.
 +-------------+--------------+--------+--------+------------+-----------------------------------------------------------------+
 ; Data Port   ; Clock Port   ; Rise   ; Fall   ; Clock Edge ; Clock Reference                                                 ;
 +-------------+--------------+--------+--------+------------+-----------------------------------------------------------------+
-; o_Blue[*]   ; RefreshClock ; 8.011  ; 8.339  ; Rise       ; RefreshClock                                                    ;
-;  o_Blue[0]  ; RefreshClock ; 8.011  ; 8.339  ; Rise       ; RefreshClock                                                    ;
-;  o_Blue[1]  ; RefreshClock ; 8.893  ; 9.776  ; Rise       ; RefreshClock                                                    ;
-;  o_Blue[2]  ; RefreshClock ; 8.560  ; 8.763  ; Rise       ; RefreshClock                                                    ;
-;  o_Blue[3]  ; RefreshClock ; 8.773  ; 9.181  ; Rise       ; RefreshClock                                                    ;
-;  o_Blue[4]  ; RefreshClock ; 8.491  ; 8.818  ; Rise       ; RefreshClock                                                    ;
-;  o_Blue[5]  ; RefreshClock ; 8.793  ; 9.216  ; Rise       ; RefreshClock                                                    ;
-;  o_Blue[6]  ; RefreshClock ; 8.715  ; 9.020  ; Rise       ; RefreshClock                                                    ;
-;  o_Blue[7]  ; RefreshClock ; 8.503  ; 8.816  ; Rise       ; RefreshClock                                                    ;
-; o_Green[*]  ; RefreshClock ; 8.526  ; 8.761  ; Rise       ; RefreshClock                                                    ;
-;  o_Green[0] ; RefreshClock ; 9.011  ; 9.909  ; Rise       ; RefreshClock                                                    ;
-;  o_Green[1] ; RefreshClock ; 9.018  ; 9.923  ; Rise       ; RefreshClock                                                    ;
-;  o_Green[2] ; RefreshClock ; 8.971  ; 9.934  ; Rise       ; RefreshClock                                                    ;
-;  o_Green[3] ; RefreshClock ; 9.269  ; 10.262 ; Rise       ; RefreshClock                                                    ;
-;  o_Green[4] ; RefreshClock ; 8.964  ; 9.849  ; Rise       ; RefreshClock                                                    ;
-;  o_Green[5] ; RefreshClock ; 8.801  ; 8.971  ; Rise       ; RefreshClock                                                    ;
-;  o_Green[6] ; RefreshClock ; 8.526  ; 8.761  ; Rise       ; RefreshClock                                                    ;
-;  o_Green[7] ; RefreshClock ; 8.755  ; 9.654  ; Rise       ; RefreshClock                                                    ;
-; o_Red[*]    ; RefreshClock ; 8.423  ; 9.462  ; Rise       ; RefreshClock                                                    ;
-;  o_Red[0]   ; RefreshClock ; 8.784  ; 9.694  ; Rise       ; RefreshClock                                                    ;
-;  o_Red[1]   ; RefreshClock ; 8.423  ; 9.586  ; Rise       ; RefreshClock                                                    ;
-;  o_Red[2]   ; RefreshClock ; 8.631  ; 9.575  ; Rise       ; RefreshClock                                                    ;
-;  o_Red[3]   ; RefreshClock ; 8.471  ; 9.599  ; Rise       ; RefreshClock                                                    ;
-;  o_Red[4]   ; RefreshClock ; 8.611  ; 9.462  ; Rise       ; RefreshClock                                                    ;
-;  o_Red[5]   ; RefreshClock ; 9.189  ; 10.055 ; Rise       ; RefreshClock                                                    ;
-;  o_Red[6]   ; RefreshClock ; 9.220  ; 9.980  ; Rise       ; RefreshClock                                                    ;
-;  o_Red[7]   ; RefreshClock ; 8.791  ; 9.772  ; Rise       ; RefreshClock                                                    ;
+; o_Blue[*]   ; RefreshClock ; 8.892  ; 8.992  ; Rise       ; RefreshClock                                                    ;
+;  o_Blue[0]  ; RefreshClock ; 9.626  ; 9.828  ; Rise       ; RefreshClock                                                    ;
+;  o_Blue[1]  ; RefreshClock ; 8.892  ; 8.992  ; Rise       ; RefreshClock                                                    ;
+;  o_Blue[2]  ; RefreshClock ; 9.207  ; 9.483  ; Rise       ; RefreshClock                                                    ;
+;  o_Blue[3]  ; RefreshClock ; 9.241  ; 9.546  ; Rise       ; RefreshClock                                                    ;
+;  o_Blue[4]  ; RefreshClock ; 9.219  ; 9.439  ; Rise       ; RefreshClock                                                    ;
+;  o_Blue[5]  ; RefreshClock ; 9.103  ; 9.295  ; Rise       ; RefreshClock                                                    ;
+;  o_Blue[6]  ; RefreshClock ; 9.292  ; 9.537  ; Rise       ; RefreshClock                                                    ;
+;  o_Blue[7]  ; RefreshClock ; 9.086  ; 9.290  ; Rise       ; RefreshClock                                                    ;
+; o_Green[*]  ; RefreshClock ; 8.874  ; 8.977  ; Rise       ; RefreshClock                                                    ;
+;  o_Green[0] ; RefreshClock ; 8.874  ; 8.977  ; Rise       ; RefreshClock                                                    ;
+;  o_Green[1] ; RefreshClock ; 10.022 ; 10.709 ; Rise       ; RefreshClock                                                    ;
+;  o_Green[2] ; RefreshClock ; 10.551 ; 11.661 ; Rise       ; RefreshClock                                                    ;
+;  o_Green[3] ; RefreshClock ; 10.885 ; 11.931 ; Rise       ; RefreshClock                                                    ;
+;  o_Green[4] ; RefreshClock ; 9.043  ; 9.239  ; Rise       ; RefreshClock                                                    ;
+;  o_Green[5] ; RefreshClock ; 9.923  ; 10.699 ; Rise       ; RefreshClock                                                    ;
+;  o_Green[6] ; RefreshClock ; 9.561  ; 10.112 ; Rise       ; RefreshClock                                                    ;
+;  o_Green[7] ; RefreshClock ; 9.930  ; 10.657 ; Rise       ; RefreshClock                                                    ;
+; o_Red[*]    ; RefreshClock ; 8.761  ; 9.297  ; Rise       ; RefreshClock                                                    ;
+;  o_Red[0]   ; RefreshClock ; 9.181  ; 9.875  ; Rise       ; RefreshClock                                                    ;
+;  o_Red[1]   ; RefreshClock ; 9.117  ; 9.770  ; Rise       ; RefreshClock                                                    ;
+;  o_Red[2]   ; RefreshClock ; 9.165  ; 9.883  ; Rise       ; RefreshClock                                                    ;
+;  o_Red[3]   ; RefreshClock ; 9.103  ; 9.815  ; Rise       ; RefreshClock                                                    ;
+;  o_Red[4]   ; RefreshClock ; 9.273  ; 10.091 ; Rise       ; RefreshClock                                                    ;
+;  o_Red[5]   ; RefreshClock ; 9.076  ; 9.297  ; Rise       ; RefreshClock                                                    ;
+;  o_Red[6]   ; RefreshClock ; 9.191  ; 9.443  ; Rise       ; RefreshClock                                                    ;
+;  o_Red[7]   ; RefreshClock ; 8.761  ; 9.505  ; Rise       ; RefreshClock                                                    ;
 ; o_ADV_Clk   ; i_Clk        ; 9.678  ;        ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-; o_Blue[*]   ; i_Clk        ; 12.414 ; 12.718 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Blue[0]  ; i_Clk        ; 12.414 ; 12.718 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Blue[1]  ; i_Clk        ; 13.077 ; 13.894 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Blue[2]  ; i_Clk        ; 13.041 ; 13.523 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Blue[3]  ; i_Clk        ; 13.253 ; 13.941 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Blue[4]  ; i_Clk        ; 13.116 ; 13.678 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Blue[5]  ; i_Clk        ; 13.417 ; 14.076 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Blue[6]  ; i_Clk        ; 13.342 ; 13.883 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Blue[7]  ; i_Clk        ; 13.129 ; 13.679 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-; o_Green[*]  ; i_Clk        ; 13.572 ; 13.808 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Green[0] ; i_Clk        ; 13.896 ; 14.316 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Green[1] ; i_Clk        ; 13.903 ; 14.330 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Green[2] ; i_Clk        ; 13.856 ; 14.341 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Green[3] ; i_Clk        ; 14.154 ; 14.669 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Green[4] ; i_Clk        ; 13.849 ; 14.256 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Green[5] ; i_Clk        ; 13.847 ; 14.021 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Green[6] ; i_Clk        ; 13.572 ; 13.808 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Green[7] ; i_Clk        ; 13.640 ; 14.061 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-; o_HS        ; i_Clk        ; 11.558 ; 11.968 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-; o_Red[*]    ; i_Clk        ; 13.292 ; 13.872 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Red[0]   ; i_Clk        ; 13.590 ; 13.992 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Red[1]   ; i_Clk        ; 13.733 ; 14.214 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Red[2]   ; i_Clk        ; 13.563 ; 13.872 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Red[3]   ; i_Clk        ; 13.543 ; 13.994 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Red[4]   ; i_Clk        ; 13.651 ; 13.998 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Red[5]   ; i_Clk        ; 13.324 ; 14.110 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Red[6]   ; i_Clk        ; 13.292 ; 14.067 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Red[7]   ; i_Clk        ; 13.831 ; 14.311 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-; o_VS        ; i_Clk        ; 12.620 ; 13.554 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+; o_Blue[*]   ; i_Clk        ; 13.030 ; 13.130 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Blue[0]  ; i_Clk        ; 13.764 ; 13.966 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Blue[1]  ; i_Clk        ; 13.030 ; 13.130 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Blue[2]  ; i_Clk        ; 13.345 ; 13.621 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Blue[3]  ; i_Clk        ; 13.379 ; 13.684 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Blue[4]  ; i_Clk        ; 13.357 ; 13.577 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Blue[5]  ; i_Clk        ; 13.241 ; 13.433 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Blue[6]  ; i_Clk        ; 13.430 ; 13.675 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Blue[7]  ; i_Clk        ; 13.224 ; 13.428 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+; o_Green[*]  ; i_Clk        ; 13.062 ; 13.501 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Green[0] ; i_Clk        ; 13.062 ; 13.501 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Green[1] ; i_Clk        ; 14.464 ; 15.355 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Green[2] ; i_Clk        ; 14.904 ; 16.212 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Green[3] ; i_Clk        ; 15.023 ; 16.365 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Green[4] ; i_Clk        ; 13.454 ; 13.856 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Green[5] ; i_Clk        ; 14.061 ; 15.114 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Green[6] ; i_Clk        ; 13.972 ; 14.729 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Green[7] ; i_Clk        ; 14.314 ; 15.236 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+; o_HS        ; i_Clk        ; 11.719 ; 12.020 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+; o_Red[*]    ; i_Clk        ; 12.899 ; 13.435 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Red[0]   ; i_Clk        ; 13.319 ; 14.085 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Red[1]   ; i_Clk        ; 13.255 ; 13.980 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Red[2]   ; i_Clk        ; 13.303 ; 14.093 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Red[3]   ; i_Clk        ; 13.241 ; 14.025 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Red[4]   ; i_Clk        ; 13.411 ; 14.301 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Red[5]   ; i_Clk        ; 13.214 ; 13.435 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Red[6]   ; i_Clk        ; 13.329 ; 13.581 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Red[7]   ; i_Clk        ; 12.899 ; 13.715 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+; o_VS        ; i_Clk        ; 13.916 ; 15.433 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
 ; o_ADV_Clk   ; i_Clk        ;        ; 9.571  ; Fall       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
 +-------------+--------------+--------+--------+------------+-----------------------------------------------------------------+
 
@@ -363,8 +363,8 @@ No synchronizer chains to report.
 +------------+-----------------+-----------------------------------------------------------------+------+
 ; Fmax       ; Restricted Fmax ; Clock Name                                                      ; Note ;
 +------------+-----------------+-----------------------------------------------------------------+------+
-; 148.3 MHz  ; 148.3 MHz       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;      ;
-; 341.76 MHz ; 341.76 MHz      ; RefreshClock                                                    ;      ;
+; 151.35 MHz ; 151.35 MHz      ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;      ;
+; 338.07 MHz ; 338.07 MHz      ; RefreshClock                                                    ;      ;
 +------------+-----------------+-----------------------------------------------------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -374,8 +374,8 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-----------------------------------------------------------------+--------+---------------+
 ; Clock                                                           ; Slack  ; End Point TNS ;
 +-----------------------------------------------------------------+--------+---------------+
-; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; -2.984 ; -2.984        ;
-; RefreshClock                                                    ; -1.926 ; -42.938       ;
+; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; -2.643 ; -2.643        ;
+; RefreshClock                                                    ; -1.958 ; -44.291       ;
 +-----------------------------------------------------------------+--------+---------------+
 
 
@@ -384,8 +384,8 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-----------------------------------------------------------------+--------+---------------+
 ; Clock                                                           ; Slack  ; End Point TNS ;
 +-----------------------------------------------------------------+--------+---------------+
-; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; -1.458 ; -1.458        ;
-; RefreshClock                                                    ; 0.657  ; 0.000         ;
+; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; -1.665 ; -1.665        ;
+; RefreshClock                                                    ; 0.672  ; 0.000         ;
 +-----------------------------------------------------------------+--------+---------------+
 
 
@@ -406,7 +406,7 @@ No paths to report.
 +-----------------------------------------------------------------+--------+---------------+
 ; Clock                                                           ; Slack  ; End Point TNS ;
 +-----------------------------------------------------------------+--------+---------------+
-; RefreshClock                                                    ; -0.394 ; -14.869       ;
+; RefreshClock                                                    ; -0.394 ; -14.343       ;
 ; u0|pll_0|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]   ; 1.666  ; 0.000         ;
 ; i_Clk                                                           ; 9.926  ; 0.000         ;
 ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 19.250 ; 0.000         ;
@@ -418,10 +418,10 @@ No paths to report.
 +-------------+--------------+-------+-------+------------+-----------------+
 ; Data Port   ; Clock Port   ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-------------+--------------+-------+-------+------------+-----------------+
-; i_Btn_Down  ; RefreshClock ; 6.477 ; 5.901 ; Rise       ; RefreshClock    ;
-; i_Btn_Left  ; RefreshClock ; 5.873 ; 6.570 ; Rise       ; RefreshClock    ;
-; i_Btn_Right ; RefreshClock ; 5.083 ; 5.256 ; Rise       ; RefreshClock    ;
-; i_Btn_Up    ; RefreshClock ; 7.151 ; 6.527 ; Rise       ; RefreshClock    ;
+; i_Btn_Down  ; RefreshClock ; 4.060 ; 4.603 ; Rise       ; RefreshClock    ;
+; i_Btn_Left  ; RefreshClock ; 5.584 ; 6.269 ; Rise       ; RefreshClock    ;
+; i_Btn_Right ; RefreshClock ; 4.134 ; 4.558 ; Rise       ; RefreshClock    ;
+; i_Btn_Up    ; RefreshClock ; 5.377 ; 6.007 ; Rise       ; RefreshClock    ;
 +-------------+--------------+-------+-------+------------+-----------------+
 
 
@@ -430,10 +430,10 @@ No paths to report.
 +-------------+--------------+--------+--------+------------+-----------------+
 ; Data Port   ; Clock Port   ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +-------------+--------------+--------+--------+------------+-----------------+
-; i_Btn_Down  ; RefreshClock ; -4.764 ; -4.375 ; Rise       ; RefreshClock    ;
-; i_Btn_Left  ; RefreshClock ; -3.685 ; -4.267 ; Rise       ; RefreshClock    ;
-; i_Btn_Right ; RefreshClock ; -4.011 ; -4.254 ; Rise       ; RefreshClock    ;
-; i_Btn_Up    ; RefreshClock ; -3.079 ; -3.731 ; Rise       ; RefreshClock    ;
+; i_Btn_Down  ; RefreshClock ; -3.103 ; -3.638 ; Rise       ; RefreshClock    ;
+; i_Btn_Left  ; RefreshClock ; -3.402 ; -3.791 ; Rise       ; RefreshClock    ;
+; i_Btn_Right ; RefreshClock ; -3.250 ; -3.618 ; Rise       ; RefreshClock    ;
+; i_Btn_Up    ; RefreshClock ; -3.199 ; -3.774 ; Rise       ; RefreshClock    ;
 +-------------+--------------+--------+--------+------------+-----------------+
 
 
@@ -442,63 +442,63 @@ No paths to report.
 +-------------+--------------+--------+--------+------------+-----------------------------------------------------------------+
 ; Data Port   ; Clock Port   ; Rise   ; Fall   ; Clock Edge ; Clock Reference                                                 ;
 +-------------+--------------+--------+--------+------------+-----------------------------------------------------------------+
-; o_Blue[*]   ; RefreshClock ; 18.684 ; 19.080 ; Rise       ; RefreshClock                                                    ;
-;  o_Blue[0]  ; RefreshClock ; 17.128 ; 17.467 ; Rise       ; RefreshClock                                                    ;
-;  o_Blue[1]  ; RefreshClock ; 18.008 ; 19.038 ; Rise       ; RefreshClock                                                    ;
-;  o_Blue[2]  ; RefreshClock ; 18.418 ; 18.587 ; Rise       ; RefreshClock                                                    ;
-;  o_Blue[3]  ; RefreshClock ; 18.684 ; 19.057 ; Rise       ; RefreshClock                                                    ;
-;  o_Blue[4]  ; RefreshClock ; 18.247 ; 18.655 ; Rise       ; RefreshClock                                                    ;
-;  o_Blue[5]  ; RefreshClock ; 18.578 ; 19.080 ; Rise       ; RefreshClock                                                    ;
-;  o_Blue[6]  ; RefreshClock ; 18.477 ; 18.902 ; Rise       ; RefreshClock                                                    ;
-;  o_Blue[7]  ; RefreshClock ; 18.247 ; 18.625 ; Rise       ; RefreshClock                                                    ;
-; o_Green[*]  ; RefreshClock ; 19.425 ; 18.831 ; Rise       ; RefreshClock                                                    ;
-;  o_Green[0] ; RefreshClock ; 19.135 ; 18.315 ; Rise       ; RefreshClock                                                    ;
-;  o_Green[1] ; RefreshClock ; 19.150 ; 18.328 ; Rise       ; RefreshClock                                                    ;
-;  o_Green[2] ; RefreshClock ; 19.111 ; 18.381 ; Rise       ; RefreshClock                                                    ;
-;  o_Green[3] ; RefreshClock ; 19.425 ; 18.731 ; Rise       ; RefreshClock                                                    ;
-;  o_Green[4] ; RefreshClock ; 19.083 ; 18.254 ; Rise       ; RefreshClock                                                    ;
-;  o_Green[5] ; RefreshClock ; 18.678 ; 18.831 ; Rise       ; RefreshClock                                                    ;
-;  o_Green[6] ; RefreshClock ; 18.493 ; 18.683 ; Rise       ; RefreshClock                                                    ;
-;  o_Green[7] ; RefreshClock ; 18.875 ; 18.047 ; Rise       ; RefreshClock                                                    ;
-; o_Red[*]    ; RefreshClock ; 18.672 ; 19.286 ; Rise       ; RefreshClock                                                    ;
-;  o_Red[0]   ; RefreshClock ; 18.523 ; 18.000 ; Rise       ; RefreshClock                                                    ;
-;  o_Red[1]   ; RefreshClock ; 18.628 ; 17.907 ; Rise       ; RefreshClock                                                    ;
-;  o_Red[2]   ; RefreshClock ; 18.501 ; 17.858 ; Rise       ; RefreshClock                                                    ;
-;  o_Red[3]   ; RefreshClock ; 18.672 ; 18.022 ; Rise       ; RefreshClock                                                    ;
-;  o_Red[4]   ; RefreshClock ; 18.337 ; 17.726 ; Rise       ; RefreshClock                                                    ;
-;  o_Red[5]   ; RefreshClock ; 18.378 ; 19.276 ; Rise       ; RefreshClock                                                    ;
-;  o_Red[6]   ; RefreshClock ; 18.355 ; 19.286 ; Rise       ; RefreshClock                                                    ;
-;  o_Red[7]   ; RefreshClock ; 18.659 ; 18.116 ; Rise       ; RefreshClock                                                    ;
+; o_Blue[*]   ; RefreshClock ; 21.274 ; 21.637 ; Rise       ; RefreshClock                                                    ;
+;  o_Blue[0]  ; RefreshClock ; 21.274 ; 21.637 ; Rise       ; RefreshClock                                                    ;
+;  o_Blue[1]  ; RefreshClock ; 20.512 ; 20.714 ; Rise       ; RefreshClock                                                    ;
+;  o_Blue[2]  ; RefreshClock ; 21.161 ; 21.434 ; Rise       ; RefreshClock                                                    ;
+;  o_Blue[3]  ; RefreshClock ; 21.213 ; 21.525 ; Rise       ; RefreshClock                                                    ;
+;  o_Blue[4]  ; RefreshClock ; 20.824 ; 20.997 ; Rise       ; RefreshClock                                                    ;
+;  o_Blue[5]  ; RefreshClock ; 20.701 ; 20.825 ; Rise       ; RefreshClock                                                    ;
+;  o_Blue[6]  ; RefreshClock ; 20.897 ; 21.114 ; Rise       ; RefreshClock                                                    ;
+;  o_Blue[7]  ; RefreshClock ; 20.684 ; 20.841 ; Rise       ; RefreshClock                                                    ;
+; o_Green[*]  ; RefreshClock ; 19.042 ; 20.421 ; Rise       ; RefreshClock                                                    ;
+;  o_Green[0] ; RefreshClock ; 16.875 ; 17.282 ; Rise       ; RefreshClock                                                    ;
+;  o_Green[1] ; RefreshClock ; 18.320 ; 19.442 ; Rise       ; RefreshClock                                                    ;
+;  o_Green[2] ; RefreshClock ; 18.927 ; 20.421 ; Rise       ; RefreshClock                                                    ;
+;  o_Green[3] ; RefreshClock ; 19.042 ; 20.339 ; Rise       ; RefreshClock                                                    ;
+;  o_Green[4] ; RefreshClock ; 17.204 ; 17.843 ; Rise       ; RefreshClock                                                    ;
+;  o_Green[5] ; RefreshClock ; 18.011 ; 19.024 ; Rise       ; RefreshClock                                                    ;
+;  o_Green[6] ; RefreshClock ; 17.810 ; 18.785 ; Rise       ; RefreshClock                                                    ;
+;  o_Green[7] ; RefreshClock ; 18.239 ; 19.294 ; Rise       ; RefreshClock                                                    ;
+; o_Red[*]    ; RefreshClock ; 21.130 ; 21.828 ; Rise       ; RefreshClock                                                    ;
+;  o_Red[0]   ; RefreshClock ; 19.102 ; 21.061 ; Rise       ; RefreshClock                                                    ;
+;  o_Red[1]   ; RefreshClock ; 19.224 ; 21.024 ; Rise       ; RefreshClock                                                    ;
+;  o_Red[2]   ; RefreshClock ; 19.143 ; 21.168 ; Rise       ; RefreshClock                                                    ;
+;  o_Red[3]   ; RefreshClock ; 19.366 ; 21.326 ; Rise       ; RefreshClock                                                    ;
+;  o_Red[4]   ; RefreshClock ; 19.723 ; 21.828 ; Rise       ; RefreshClock                                                    ;
+;  o_Red[5]   ; RefreshClock ; 21.006 ; 21.211 ; Rise       ; RefreshClock                                                    ;
+;  o_Red[6]   ; RefreshClock ; 21.130 ; 21.393 ; Rise       ; RefreshClock                                                    ;
+;  o_Red[7]   ; RefreshClock ; 18.468 ; 20.254 ; Rise       ; RefreshClock                                                    ;
 ; o_ADV_Clk   ; i_Clk        ; 10.885 ;        ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-; o_Blue[*]   ; i_Clk        ; 21.638 ; 22.034 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Blue[0]  ; i_Clk        ; 20.082 ; 20.421 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Blue[1]  ; i_Clk        ; 21.078 ; 21.992 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Blue[2]  ; i_Clk        ; 21.372 ; 21.541 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Blue[3]  ; i_Clk        ; 21.638 ; 22.011 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Blue[4]  ; i_Clk        ; 21.201 ; 21.609 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Blue[5]  ; i_Clk        ; 21.532 ; 22.034 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Blue[6]  ; i_Clk        ; 21.431 ; 21.856 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Blue[7]  ; i_Clk        ; 21.201 ; 21.579 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-; o_Green[*]  ; i_Clk        ; 22.379 ; 22.240 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Green[0] ; i_Clk        ; 22.089 ; 21.824 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Green[1] ; i_Clk        ; 22.104 ; 21.837 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Green[2] ; i_Clk        ; 22.065 ; 21.890 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Green[3] ; i_Clk        ; 22.379 ; 22.240 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Green[4] ; i_Clk        ; 22.037 ; 21.763 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Green[5] ; i_Clk        ; 21.632 ; 21.867 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Green[6] ; i_Clk        ; 21.447 ; 21.650 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Green[7] ; i_Clk        ; 21.829 ; 21.556 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-; o_HS        ; i_Clk        ; 12.794 ; 13.367 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-; o_Red[*]    ; i_Clk        ; 21.626 ; 22.365 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Red[0]   ; i_Clk        ; 21.477 ; 21.478 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Red[1]   ; i_Clk        ; 21.582 ; 21.797 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Red[2]   ; i_Clk        ; 21.455 ; 21.322 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Red[3]   ; i_Clk        ; 21.626 ; 21.497 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Red[4]   ; i_Clk        ; 21.291 ; 21.587 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Red[5]   ; i_Clk        ; 21.332 ; 22.230 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Red[6]   ; i_Clk        ; 21.363 ; 22.365 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Red[7]   ; i_Clk        ; 21.613 ; 21.977 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-; o_VS        ; i_Clk        ; 13.984 ; 15.041 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+; o_Blue[*]   ; i_Clk        ; 24.459 ; 24.822 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Blue[0]  ; i_Clk        ; 24.459 ; 24.822 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Blue[1]  ; i_Clk        ; 23.697 ; 23.899 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Blue[2]  ; i_Clk        ; 24.346 ; 24.619 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Blue[3]  ; i_Clk        ; 24.398 ; 24.710 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Blue[4]  ; i_Clk        ; 24.009 ; 24.182 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Blue[5]  ; i_Clk        ; 23.886 ; 24.010 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Blue[6]  ; i_Clk        ; 24.082 ; 24.299 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Blue[7]  ; i_Clk        ; 23.869 ; 24.026 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+; o_Green[*]  ; i_Clk        ; 22.026 ; 23.445 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Green[0] ; i_Clk        ; 20.060 ; 20.467 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Green[1] ; i_Clk        ; 21.313 ; 22.318 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Green[2] ; i_Clk        ; 21.886 ; 23.347 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Green[3] ; i_Clk        ; 22.026 ; 23.445 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Green[4] ; i_Clk        ; 20.163 ; 20.692 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Green[5] ; i_Clk        ; 20.964 ; 22.100 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Green[6] ; i_Clk        ; 20.885 ; 21.749 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Green[7] ; i_Clk        ; 21.233 ; 22.251 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+; o_HS        ; i_Clk        ; 12.887 ; 13.299 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+; o_Red[*]    ; i_Clk        ; 24.315 ; 25.013 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Red[0]   ; i_Clk        ; 21.972 ; 24.246 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Red[1]   ; i_Clk        ; 22.094 ; 24.209 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Red[2]   ; i_Clk        ; 22.013 ; 24.353 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Red[3]   ; i_Clk        ; 22.236 ; 24.511 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Red[4]   ; i_Clk        ; 22.593 ; 25.013 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Red[5]   ; i_Clk        ; 24.191 ; 24.396 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Red[6]   ; i_Clk        ; 24.315 ; 24.578 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Red[7]   ; i_Clk        ; 21.338 ; 23.439 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+; o_VS        ; i_Clk        ; 15.377 ; 16.931 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
 ; o_ADV_Clk   ; i_Clk        ;        ; 10.775 ; Fall       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
 +-------------+--------------+--------+--------+------------+-----------------------------------------------------------------+
 
@@ -508,63 +508,63 @@ No paths to report.
 +-------------+--------------+--------+--------+------------+-----------------------------------------------------------------+
 ; Data Port   ; Clock Port   ; Rise   ; Fall   ; Clock Edge ; Clock Reference                                                 ;
 +-------------+--------------+--------+--------+------------+-----------------------------------------------------------------+
-; o_Blue[*]   ; RefreshClock ; 7.515  ; 7.873  ; Rise       ; RefreshClock                                                    ;
-;  o_Blue[0]  ; RefreshClock ; 7.515  ; 7.873  ; Rise       ; RefreshClock                                                    ;
-;  o_Blue[1]  ; RefreshClock ; 8.431  ; 9.292  ; Rise       ; RefreshClock                                                    ;
-;  o_Blue[2]  ; RefreshClock ; 8.082  ; 8.331  ; Rise       ; RefreshClock                                                    ;
-;  o_Blue[3]  ; RefreshClock ; 8.317  ; 8.739  ; Rise       ; RefreshClock                                                    ;
-;  o_Blue[4]  ; RefreshClock ; 8.050  ; 8.404  ; Rise       ; RefreshClock                                                    ;
-;  o_Blue[5]  ; RefreshClock ; 8.347  ; 8.776  ; Rise       ; RefreshClock                                                    ;
-;  o_Blue[6]  ; RefreshClock ; 8.235  ; 8.574  ; Rise       ; RefreshClock                                                    ;
-;  o_Blue[7]  ; RefreshClock ; 8.059  ; 8.389  ; Rise       ; RefreshClock                                                    ;
-; o_Green[*]  ; RefreshClock ; 8.057  ; 8.325  ; Rise       ; RefreshClock                                                    ;
-;  o_Green[0] ; RefreshClock ; 8.557  ; 9.396  ; Rise       ; RefreshClock                                                    ;
-;  o_Green[1] ; RefreshClock ; 8.572  ; 9.409  ; Rise       ; RefreshClock                                                    ;
-;  o_Green[2] ; RefreshClock ; 8.519  ; 9.421  ; Rise       ; RefreshClock                                                    ;
-;  o_Green[3] ; RefreshClock ; 8.811  ; 9.747  ; Rise       ; RefreshClock                                                    ;
-;  o_Green[4] ; RefreshClock ; 8.509  ; 9.339  ; Rise       ; RefreshClock                                                    ;
-;  o_Green[5] ; RefreshClock ; 8.308  ; 8.528  ; Rise       ; RefreshClock                                                    ;
-;  o_Green[6] ; RefreshClock ; 8.057  ; 8.325  ; Rise       ; RefreshClock                                                    ;
-;  o_Green[7] ; RefreshClock ; 8.321  ; 9.153  ; Rise       ; RefreshClock                                                    ;
-; o_Red[*]    ; RefreshClock ; 7.985  ; 9.026  ; Rise       ; RefreshClock                                                    ;
-;  o_Red[0]   ; RefreshClock ; 8.343  ; 9.243  ; Rise       ; RefreshClock                                                    ;
-;  o_Red[1]   ; RefreshClock ; 7.985  ; 9.134  ; Rise       ; RefreshClock                                                    ;
-;  o_Red[2]   ; RefreshClock ; 8.145  ; 9.098  ; Rise       ; RefreshClock                                                    ;
-;  o_Red[3]   ; RefreshClock ; 8.022  ; 9.113  ; Rise       ; RefreshClock                                                    ;
-;  o_Red[4]   ; RefreshClock ; 8.188  ; 9.026  ; Rise       ; RefreshClock                                                    ;
-;  o_Red[5]   ; RefreshClock ; 8.695  ; 9.559  ; Rise       ; RefreshClock                                                    ;
-;  o_Red[6]   ; RefreshClock ; 8.747  ; 9.561  ; Rise       ; RefreshClock                                                    ;
-;  o_Red[7]   ; RefreshClock ; 8.371  ; 9.319  ; Rise       ; RefreshClock                                                    ;
+; o_Blue[*]   ; RefreshClock ; 8.377  ; 8.496  ; Rise       ; RefreshClock                                                    ;
+;  o_Blue[0]  ; RefreshClock ; 9.061  ; 9.305  ; Rise       ; RefreshClock                                                    ;
+;  o_Blue[1]  ; RefreshClock ; 8.377  ; 8.496  ; Rise       ; RefreshClock                                                    ;
+;  o_Blue[2]  ; RefreshClock ; 8.644  ; 8.945  ; Rise       ; RefreshClock                                                    ;
+;  o_Blue[3]  ; RefreshClock ; 8.682  ; 9.008  ; Rise       ; RefreshClock                                                    ;
+;  o_Blue[4]  ; RefreshClock ; 8.659  ; 8.909  ; Rise       ; RefreshClock                                                    ;
+;  o_Blue[5]  ; RefreshClock ; 8.554  ; 8.765  ; Rise       ; RefreshClock                                                    ;
+;  o_Blue[6]  ; RefreshClock ; 8.722  ; 9.007  ; Rise       ; RefreshClock                                                    ;
+;  o_Blue[7]  ; RefreshClock ; 8.537  ; 8.771  ; Rise       ; RefreshClock                                                    ;
+; o_Green[*]  ; RefreshClock ; 8.338  ; 8.578  ; Rise       ; RefreshClock                                                    ;
+;  o_Green[0] ; RefreshClock ; 8.338  ; 8.578  ; Rise       ; RefreshClock                                                    ;
+;  o_Green[1] ; RefreshClock ; 9.552  ; 10.288 ; Rise       ; RefreshClock                                                    ;
+;  o_Green[2] ; RefreshClock ; 10.094 ; 11.224 ; Rise       ; RefreshClock                                                    ;
+;  o_Green[3] ; RefreshClock ; 10.337 ; 11.474 ; Rise       ; RefreshClock                                                    ;
+;  o_Green[4] ; RefreshClock ; 8.545  ; 8.840  ; Rise       ; RefreshClock                                                    ;
+;  o_Green[5] ; RefreshClock ; 9.388  ; 10.296 ; Rise       ; RefreshClock                                                    ;
+;  o_Green[6] ; RefreshClock ; 9.107  ; 9.708  ; Rise       ; RefreshClock                                                    ;
+;  o_Green[7] ; RefreshClock ; 9.476  ; 10.250 ; Rise       ; RefreshClock                                                    ;
+; o_Red[*]    ; RefreshClock ; 8.217  ; 8.765  ; Rise       ; RefreshClock                                                    ;
+;  o_Red[0]   ; RefreshClock ; 8.578  ; 9.298  ; Rise       ; RefreshClock                                                    ;
+;  o_Red[1]   ; RefreshClock ; 8.554  ; 9.202  ; Rise       ; RefreshClock                                                    ;
+;  o_Red[2]   ; RefreshClock ; 8.577  ; 9.308  ; Rise       ; RefreshClock                                                    ;
+;  o_Red[3]   ; RefreshClock ; 8.530  ; 9.246  ; Rise       ; RefreshClock                                                    ;
+;  o_Red[4]   ; RefreshClock ; 8.685  ; 9.512  ; Rise       ; RefreshClock                                                    ;
+;  o_Red[5]   ; RefreshClock ; 8.514  ; 8.765  ; Rise       ; RefreshClock                                                    ;
+;  o_Red[6]   ; RefreshClock ; 8.623  ; 8.916  ; Rise       ; RefreshClock                                                    ;
+;  o_Red[7]   ; RefreshClock ; 8.217  ; 8.956  ; Rise       ; RefreshClock                                                    ;
 ; o_ADV_Clk   ; i_Clk        ; 9.585  ;        ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-; o_Blue[*]   ; i_Clk        ; 12.087 ; 12.395 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Blue[0]  ; i_Clk        ; 12.087 ; 12.395 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Blue[1]  ; i_Clk        ; 12.796 ; 13.559 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Blue[2]  ; i_Clk        ; 12.696 ; 13.170 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Blue[3]  ; i_Clk        ; 12.931 ; 13.582 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Blue[4]  ; i_Clk        ; 12.836 ; 13.375 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Blue[5]  ; i_Clk        ; 13.132 ; 13.752 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Blue[6]  ; i_Clk        ; 13.023 ; 13.549 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Blue[7]  ; i_Clk        ; 12.846 ; 13.368 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-; o_Green[*]  ; i_Clk        ; 13.205 ; 13.479 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Green[0] ; i_Clk        ; 13.507 ; 13.946 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Green[1] ; i_Clk        ; 13.522 ; 13.959 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Green[2] ; i_Clk        ; 13.469 ; 13.971 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Green[3] ; i_Clk        ; 13.761 ; 14.297 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Green[4] ; i_Clk        ; 13.459 ; 13.889 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Green[5] ; i_Clk        ; 13.456 ; 13.686 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Green[6] ; i_Clk        ; 13.205 ; 13.479 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Green[7] ; i_Clk        ; 13.271 ; 13.703 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-; o_HS        ; i_Clk        ; 11.264 ; 11.713 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-; o_Red[*]    ; i_Clk        ; 12.992 ; 13.491 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Red[0]   ; i_Clk        ; 13.202 ; 13.638 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Red[1]   ; i_Clk        ; 13.434 ; 13.896 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Red[2]   ; i_Clk        ; 13.159 ; 13.491 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Red[3]   ; i_Clk        ; 13.181 ; 13.640 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Red[4]   ; i_Clk        ; 13.281 ; 13.680 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Red[5]   ; i_Clk        ; 13.013 ; 13.762 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Red[6]   ; i_Clk        ; 12.992 ; 13.733 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Red[7]   ; i_Clk        ; 13.464 ; 13.973 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-; o_VS        ; i_Clk        ; 12.350 ; 13.240 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+; o_Blue[*]   ; i_Clk        ; 12.724 ; 12.843 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Blue[0]  ; i_Clk        ; 13.408 ; 13.652 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Blue[1]  ; i_Clk        ; 12.724 ; 12.843 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Blue[2]  ; i_Clk        ; 12.991 ; 13.292 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Blue[3]  ; i_Clk        ; 13.029 ; 13.355 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Blue[4]  ; i_Clk        ; 13.006 ; 13.256 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Blue[5]  ; i_Clk        ; 12.901 ; 13.112 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Blue[6]  ; i_Clk        ; 13.069 ; 13.354 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Blue[7]  ; i_Clk        ; 12.884 ; 13.118 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+; o_Green[*]  ; i_Clk        ; 12.685 ; 13.156 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Green[0] ; i_Clk        ; 12.685 ; 13.156 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Green[1] ; i_Clk        ; 14.112 ; 14.979 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Green[2] ; i_Clk        ; 14.589 ; 15.846 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Green[3] ; i_Clk        ; 14.684 ; 15.951 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Green[4] ; i_Clk        ; 13.077 ; 13.507 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Green[5] ; i_Clk        ; 13.735 ; 14.757 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Green[6] ; i_Clk        ; 13.640 ; 14.376 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Green[7] ; i_Clk        ; 13.994 ; 14.892 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+; o_HS        ; i_Clk        ; 11.377 ; 11.716 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+; o_Red[*]    ; i_Clk        ; 12.564 ; 13.112 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Red[0]   ; i_Clk        ; 12.925 ; 13.688 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Red[1]   ; i_Clk        ; 12.901 ; 13.592 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Red[2]   ; i_Clk        ; 12.924 ; 13.698 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Red[3]   ; i_Clk        ; 12.877 ; 13.636 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Red[4]   ; i_Clk        ; 13.032 ; 13.902 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Red[5]   ; i_Clk        ; 12.861 ; 13.112 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Red[6]   ; i_Clk        ; 12.970 ; 13.263 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Red[7]   ; i_Clk        ; 12.564 ; 13.346 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+; o_VS        ; i_Clk        ; 13.647 ; 15.015 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
 ; o_ADV_Clk   ; i_Clk        ;        ; 9.485  ; Fall       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
 +-------------+--------------+--------+--------+------------+-----------------------------------------------------------------+
 
@@ -580,8 +580,8 @@ No synchronizer chains to report.
 +-----------------------------------------------------------------+--------+---------------+
 ; Clock                                                           ; Slack  ; End Point TNS ;
 +-----------------------------------------------------------------+--------+---------------+
-; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; -3.305 ; -3.305        ;
-; RefreshClock                                                    ; -0.689 ; -13.669       ;
+; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; -2.918 ; -2.918        ;
+; RefreshClock                                                    ; -0.781 ; -15.599       ;
 +-----------------------------------------------------------------+--------+---------------+
 
 
@@ -590,8 +590,8 @@ No synchronizer chains to report.
 +-----------------------------------------------------------------+--------+---------------+
 ; Clock                                                           ; Slack  ; End Point TNS ;
 +-----------------------------------------------------------------+--------+---------------+
-; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; -0.039 ; -0.039        ;
-; RefreshClock                                                    ; 0.346  ; 0.000         ;
+; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; -0.218 ; -0.218        ;
+; RefreshClock                                                    ; 0.341  ; 0.000         ;
 +-----------------------------------------------------------------+--------+---------------+
 
 
@@ -612,10 +612,10 @@ No paths to report.
 +-----------------------------------------------------------------+--------+---------------+
 ; Clock                                                           ; Slack  ; End Point TNS ;
 +-----------------------------------------------------------------+--------+---------------+
-; RefreshClock                                                    ; 0.068  ; 0.000         ;
+; RefreshClock                                                    ; 0.111  ; 0.000         ;
 ; u0|pll_0|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]   ; 1.666  ; 0.000         ;
 ; i_Clk                                                           ; 9.643  ; 0.000         ;
-; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 19.547 ; 0.000         ;
+; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 19.551 ; 0.000         ;
 +-----------------------------------------------------------------+--------+---------------+
 
 
@@ -624,10 +624,10 @@ No paths to report.
 +-------------+--------------+-------+-------+------------+-----------------+
 ; Data Port   ; Clock Port   ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-------------+--------------+-------+-------+------------+-----------------+
-; i_Btn_Down  ; RefreshClock ; 4.468 ; 4.143 ; Rise       ; RefreshClock    ;
-; i_Btn_Left  ; RefreshClock ; 3.389 ; 4.293 ; Rise       ; RefreshClock    ;
-; i_Btn_Right ; RefreshClock ; 3.161 ; 3.526 ; Rise       ; RefreshClock    ;
-; i_Btn_Up    ; RefreshClock ; 4.760 ; 4.413 ; Rise       ; RefreshClock    ;
+; i_Btn_Down  ; RefreshClock ; 2.462 ; 3.152 ; Rise       ; RefreshClock    ;
+; i_Btn_Left  ; RefreshClock ; 3.133 ; 4.021 ; Rise       ; RefreshClock    ;
+; i_Btn_Right ; RefreshClock ; 2.593 ; 3.161 ; Rise       ; RefreshClock    ;
+; i_Btn_Up    ; RefreshClock ; 2.989 ; 3.825 ; Rise       ; RefreshClock    ;
 +-------------+--------------+-------+-------+------------+-----------------+
 
 
@@ -636,10 +636,10 @@ No paths to report.
 +-------------+--------------+--------+--------+------------+-----------------+
 ; Data Port   ; Clock Port   ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +-------------+--------------+--------+--------+------------+-----------------+
-; i_Btn_Down  ; RefreshClock ; -3.384 ; -3.198 ; Rise       ; RefreshClock    ;
-; i_Btn_Left  ; RefreshClock ; -2.212 ; -3.030 ; Rise       ; RefreshClock    ;
-; i_Btn_Right ; RefreshClock ; -2.491 ; -2.955 ; Rise       ; RefreshClock    ;
-; i_Btn_Up    ; RefreshClock ; -1.841 ; -2.676 ; Rise       ; RefreshClock    ;
+; i_Btn_Down  ; RefreshClock ; -1.915 ; -2.594 ; Rise       ; RefreshClock    ;
+; i_Btn_Left  ; RefreshClock ; -1.983 ; -2.632 ; Rise       ; RefreshClock    ;
+; i_Btn_Right ; RefreshClock ; -2.033 ; -2.582 ; Rise       ; RefreshClock    ;
+; i_Btn_Up    ; RefreshClock ; -1.873 ; -2.661 ; Rise       ; RefreshClock    ;
 +-------------+--------------+--------+--------+------------+-----------------+
 
 
@@ -648,131 +648,131 @@ No paths to report.
 +-------------+--------------+--------+--------+------------+-----------------------------------------------------------------+
 ; Data Port   ; Clock Port   ; Rise   ; Fall   ; Clock Edge ; Clock Reference                                                 ;
 +-------------+--------------+--------+--------+------------+-----------------------------------------------------------------+
-; o_Blue[*]   ; RefreshClock ; 11.951 ; 12.394 ; Rise       ; RefreshClock                                                    ;
-;  o_Blue[0]  ; RefreshClock ; 10.682 ; 10.982 ; Rise       ; RefreshClock                                                    ;
-;  o_Blue[1]  ; RefreshClock ; 11.407 ; 12.337 ; Rise       ; RefreshClock                                                    ;
-;  o_Blue[2]  ; RefreshClock ; 11.680 ; 11.915 ; Rise       ; RefreshClock                                                    ;
-;  o_Blue[3]  ; RefreshClock ; 11.951 ; 12.362 ; Rise       ; RefreshClock                                                    ;
-;  o_Blue[4]  ; RefreshClock ; 11.645 ; 12.025 ; Rise       ; RefreshClock                                                    ;
-;  o_Blue[5]  ; RefreshClock ; 11.906 ; 12.394 ; Rise       ; RefreshClock                                                    ;
-;  o_Blue[6]  ; RefreshClock ; 11.847 ; 12.219 ; Rise       ; RefreshClock                                                    ;
-;  o_Blue[7]  ; RefreshClock ; 11.684 ; 12.019 ; Rise       ; RefreshClock                                                    ;
-; o_Green[*]  ; RefreshClock ; 12.415 ; 12.227 ; Rise       ; RefreshClock                                                    ;
-;  o_Green[0] ; RefreshClock ; 12.250 ; 11.839 ; Rise       ; RefreshClock                                                    ;
-;  o_Green[1] ; RefreshClock ; 12.245 ; 11.858 ; Rise       ; RefreshClock                                                    ;
-;  o_Green[2] ; RefreshClock ; 12.243 ; 11.897 ; Rise       ; RefreshClock                                                    ;
-;  o_Green[3] ; RefreshClock ; 12.415 ; 12.133 ; Rise       ; RefreshClock                                                    ;
-;  o_Green[4] ; RefreshClock ; 12.210 ; 11.786 ; Rise       ; RefreshClock                                                    ;
-;  o_Green[5] ; RefreshClock ; 12.004 ; 12.227 ; Rise       ; RefreshClock                                                    ;
-;  o_Green[6] ; RefreshClock ; 11.860 ; 12.108 ; Rise       ; RefreshClock                                                    ;
-;  o_Green[7] ; RefreshClock ; 12.087 ; 11.650 ; Rise       ; RefreshClock                                                    ;
-; o_Red[*]    ; RefreshClock ; 12.028 ; 12.465 ; Rise       ; RefreshClock                                                    ;
-;  o_Red[0]   ; RefreshClock ; 11.965 ; 11.614 ; Rise       ; RefreshClock                                                    ;
-;  o_Red[1]   ; RefreshClock ; 11.966 ; 11.569 ; Rise       ; RefreshClock                                                    ;
-;  o_Red[2]   ; RefreshClock ; 11.943 ; 11.491 ; Rise       ; RefreshClock                                                    ;
-;  o_Red[3]   ; RefreshClock ; 12.028 ; 11.654 ; Rise       ; RefreshClock                                                    ;
-;  o_Red[4]   ; RefreshClock ; 11.800 ; 11.365 ; Rise       ; RefreshClock                                                    ;
-;  o_Red[5]   ; RefreshClock ; 11.577 ; 12.465 ; Rise       ; RefreshClock                                                    ;
-;  o_Red[6]   ; RefreshClock ; 11.513 ; 12.394 ; Rise       ; RefreshClock                                                    ;
-;  o_Red[7]   ; RefreshClock ; 12.014 ; 11.727 ; Rise       ; RefreshClock                                                    ;
+; o_Blue[*]   ; RefreshClock ; 14.256 ; 14.552 ; Rise       ; RefreshClock                                                    ;
+;  o_Blue[0]  ; RefreshClock ; 14.256 ; 14.552 ; Rise       ; RefreshClock                                                    ;
+;  o_Blue[1]  ; RefreshClock ; 13.732 ; 13.883 ; Rise       ; RefreshClock                                                    ;
+;  o_Blue[2]  ; RefreshClock ; 14.096 ; 14.422 ; Rise       ; RefreshClock                                                    ;
+;  o_Blue[3]  ; RefreshClock ; 14.158 ; 14.496 ; Rise       ; RefreshClock                                                    ;
+;  o_Blue[4]  ; RefreshClock ; 13.817 ; 14.066 ; Rise       ; RefreshClock                                                    ;
+;  o_Blue[5]  ; RefreshClock ; 13.733 ; 13.938 ; Rise       ; RefreshClock                                                    ;
+;  o_Blue[6]  ; RefreshClock ; 13.905 ; 14.163 ; Rise       ; RefreshClock                                                    ;
+;  o_Blue[7]  ; RefreshClock ; 13.729 ; 13.910 ; Rise       ; RefreshClock                                                    ;
+; o_Green[*]  ; RefreshClock ; 12.012 ; 13.399 ; Rise       ; RefreshClock                                                    ;
+;  o_Green[0] ; RefreshClock ; 10.394 ; 10.803 ; Rise       ; RefreshClock                                                    ;
+;  o_Green[1] ; RefreshClock ; 11.395 ; 12.434 ; Rise       ; RefreshClock                                                    ;
+;  o_Green[2] ; RefreshClock ; 11.843 ; 13.236 ; Rise       ; RefreshClock                                                    ;
+;  o_Green[3] ; RefreshClock ; 12.012 ; 13.399 ; Rise       ; RefreshClock                                                    ;
+;  o_Green[4] ; RefreshClock ; 10.479 ; 11.011 ; Rise       ; RefreshClock                                                    ;
+;  o_Green[5] ; RefreshClock ; 11.200 ; 12.276 ; Rise       ; RefreshClock                                                    ;
+;  o_Green[6] ; RefreshClock ; 11.076 ; 11.957 ; Rise       ; RefreshClock                                                    ;
+;  o_Green[7] ; RefreshClock ; 11.378 ; 12.393 ; Rise       ; RefreshClock                                                    ;
+; o_Red[*]    ; RefreshClock ; 14.075 ; 14.668 ; Rise       ; RefreshClock                                                    ;
+;  o_Red[0]   ; RefreshClock ; 12.287 ; 14.109 ; Rise       ; RefreshClock                                                    ;
+;  o_Red[1]   ; RefreshClock ; 12.323 ; 14.104 ; Rise       ; RefreshClock                                                    ;
+;  o_Red[2]   ; RefreshClock ; 12.304 ; 14.168 ; Rise       ; RefreshClock                                                    ;
+;  o_Red[3]   ; RefreshClock ; 12.424 ; 14.296 ; Rise       ; RefreshClock                                                    ;
+;  o_Red[4]   ; RefreshClock ; 12.667 ; 14.668 ; Rise       ; RefreshClock                                                    ;
+;  o_Red[5]   ; RefreshClock ; 14.006 ; 14.241 ; Rise       ; RefreshClock                                                    ;
+;  o_Red[6]   ; RefreshClock ; 14.075 ; 14.382 ; Rise       ; RefreshClock                                                    ;
+;  o_Red[7]   ; RefreshClock ; 11.887 ; 13.602 ; Rise       ; RefreshClock                                                    ;
 ; o_ADV_Clk   ; i_Clk        ; 6.443  ;        ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-; o_Blue[*]   ; i_Clk        ; 13.334 ; 13.947 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Blue[0]  ; i_Clk        ; 12.220 ; 12.508 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Blue[1]  ; i_Clk        ; 13.071 ; 13.947 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Blue[2]  ; i_Clk        ; 13.063 ; 13.339 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Blue[3]  ; i_Clk        ; 13.334 ; 13.785 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Blue[4]  ; i_Clk        ; 13.069 ; 13.451 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Blue[5]  ; i_Clk        ; 13.330 ; 13.819 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Blue[6]  ; i_Clk        ; 13.276 ; 13.650 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Blue[7]  ; i_Clk        ; 13.113 ; 13.449 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-; o_Green[*]  ; i_Clk        ; 13.777 ; 14.184 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Green[0] ; i_Clk        ; 13.612 ; 13.890 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Green[1] ; i_Clk        ; 13.607 ; 13.909 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Green[2] ; i_Clk        ; 13.605 ; 13.948 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Green[3] ; i_Clk        ; 13.777 ; 14.184 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Green[4] ; i_Clk        ; 13.572 ; 13.837 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Green[5] ; i_Clk        ; 13.366 ; 13.716 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Green[6] ; i_Clk        ; 13.222 ; 13.567 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Green[7] ; i_Clk        ; 13.449 ; 13.701 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-; o_HS        ; i_Clk        ; 7.711  ; 8.220  ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-; o_Red[*]    ; i_Clk        ; 13.390 ; 14.076 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Red[0]   ; i_Clk        ; 13.327 ; 13.645 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Red[1]   ; i_Clk        ; 13.328 ; 13.753 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Red[2]   ; i_Clk        ; 13.305 ; 13.506 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Red[3]   ; i_Clk        ; 13.390 ; 13.688 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Red[4]   ; i_Clk        ; 13.162 ; 13.576 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Red[5]   ; i_Clk        ; 13.175 ; 14.051 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Red[6]   ; i_Clk        ; 13.157 ; 14.076 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Red[7]   ; i_Clk        ; 13.376 ; 13.938 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-; o_VS        ; i_Clk        ; 8.676  ; 9.728  ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+; o_Blue[*]   ; i_Clk        ; 16.225 ; 16.521 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Blue[0]  ; i_Clk        ; 16.225 ; 16.521 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Blue[1]  ; i_Clk        ; 15.701 ; 15.852 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Blue[2]  ; i_Clk        ; 16.065 ; 16.391 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Blue[3]  ; i_Clk        ; 16.127 ; 16.465 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Blue[4]  ; i_Clk        ; 15.786 ; 16.035 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Blue[5]  ; i_Clk        ; 15.702 ; 15.907 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Blue[6]  ; i_Clk        ; 15.874 ; 16.132 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Blue[7]  ; i_Clk        ; 15.698 ; 15.879 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+; o_Green[*]  ; i_Clk        ; 13.981 ; 15.368 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Green[0] ; i_Clk        ; 12.363 ; 12.772 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Green[1] ; i_Clk        ; 13.364 ; 14.403 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Green[2] ; i_Clk        ; 13.812 ; 15.205 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Green[3] ; i_Clk        ; 13.981 ; 15.368 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Green[4] ; i_Clk        ; 12.448 ; 12.980 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Green[5] ; i_Clk        ; 13.169 ; 14.245 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Green[6] ; i_Clk        ; 13.045 ; 13.926 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Green[7] ; i_Clk        ; 13.347 ; 14.362 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+; o_HS        ; i_Clk        ; 7.753  ; 8.122  ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+; o_Red[*]    ; i_Clk        ; 16.044 ; 16.637 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Red[0]   ; i_Clk        ; 13.832 ; 16.078 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Red[1]   ; i_Clk        ; 13.868 ; 16.073 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Red[2]   ; i_Clk        ; 13.849 ; 16.137 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Red[3]   ; i_Clk        ; 13.969 ; 16.265 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Red[4]   ; i_Clk        ; 14.212 ; 16.637 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Red[5]   ; i_Clk        ; 15.975 ; 16.210 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Red[6]   ; i_Clk        ; 16.044 ; 16.351 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Red[7]   ; i_Clk        ; 13.432 ; 15.571 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+; o_VS        ; i_Clk        ; 9.795  ; 11.376 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
 ; o_ADV_Clk   ; i_Clk        ;        ; 6.437  ; Fall       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
 +-------------+--------------+--------+--------+------------+-----------------------------------------------------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------+
-; Minimum Clock to Output Times                                                                                             ;
-+-------------+--------------+-------+-------+------------+-----------------------------------------------------------------+
-; Data Port   ; Clock Port   ; Rise  ; Fall  ; Clock Edge ; Clock Reference                                                 ;
-+-------------+--------------+-------+-------+------------+-----------------------------------------------------------------+
-; o_Blue[*]   ; RefreshClock ; 4.865 ; 5.151 ; Rise       ; RefreshClock                                                    ;
-;  o_Blue[0]  ; RefreshClock ; 4.865 ; 5.151 ; Rise       ; RefreshClock                                                    ;
-;  o_Blue[1]  ; RefreshClock ; 5.596 ; 6.419 ; Rise       ; RefreshClock                                                    ;
-;  o_Blue[2]  ; RefreshClock ; 5.293 ; 5.519 ; Rise       ; RefreshClock                                                    ;
-;  o_Blue[3]  ; RefreshClock ; 5.540 ; 5.909 ; Rise       ; RefreshClock                                                    ;
-;  o_Blue[4]  ; RefreshClock ; 5.300 ; 5.618 ; Rise       ; RefreshClock                                                    ;
-;  o_Blue[5]  ; RefreshClock ; 5.536 ; 5.942 ; Rise       ; RefreshClock                                                    ;
-;  o_Blue[6]  ; RefreshClock ; 5.470 ; 5.748 ; Rise       ; RefreshClock                                                    ;
-;  o_Blue[7]  ; RefreshClock ; 5.346 ; 5.626 ; Rise       ; RefreshClock                                                    ;
-; o_Green[*]  ; RefreshClock ; 5.361 ; 5.613 ; Rise       ; RefreshClock                                                    ;
-;  o_Green[0] ; RefreshClock ; 5.689 ; 6.337 ; Rise       ; RefreshClock                                                    ;
-;  o_Green[1] ; RefreshClock ; 5.684 ; 6.357 ; Rise       ; RefreshClock                                                    ;
-;  o_Green[2] ; RefreshClock ; 5.672 ; 6.358 ; Rise       ; RefreshClock                                                    ;
-;  o_Green[3] ; RefreshClock ; 5.832 ; 6.581 ; Rise       ; RefreshClock                                                    ;
-;  o_Green[4] ; RefreshClock ; 5.652 ; 6.287 ; Rise       ; RefreshClock                                                    ;
-;  o_Green[5] ; RefreshClock ; 5.526 ; 5.755 ; Rise       ; RefreshClock                                                    ;
-;  o_Green[6] ; RefreshClock ; 5.361 ; 5.613 ; Rise       ; RefreshClock                                                    ;
-;  o_Green[7] ; RefreshClock ; 5.540 ; 6.164 ; Rise       ; RefreshClock                                                    ;
-; o_Red[*]    ; RefreshClock ; 5.382 ; 5.959 ; Rise       ; RefreshClock                                                    ;
-;  o_Red[0]   ; RefreshClock ; 5.544 ; 6.155 ; Rise       ; RefreshClock                                                    ;
-;  o_Red[1]   ; RefreshClock ; 5.382 ; 6.096 ; Rise       ; RefreshClock                                                    ;
-;  o_Red[2]   ; RefreshClock ; 5.469 ; 6.029 ; Rise       ; RefreshClock                                                    ;
-;  o_Red[3]   ; RefreshClock ; 5.438 ; 6.141 ; Rise       ; RefreshClock                                                    ;
-;  o_Red[4]   ; RefreshClock ; 5.402 ; 5.959 ; Rise       ; RefreshClock                                                    ;
-;  o_Red[5]   ; RefreshClock ; 5.743 ; 6.549 ; Rise       ; RefreshClock                                                    ;
-;  o_Red[6]   ; RefreshClock ; 5.670 ; 6.362 ; Rise       ; RefreshClock                                                    ;
-;  o_Red[7]   ; RefreshClock ; 5.549 ; 6.233 ; Rise       ; RefreshClock                                                    ;
-; o_ADV_Clk   ; i_Clk        ; 5.787 ;       ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-; o_Blue[*]   ; i_Clk        ; 7.401 ; 7.700 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Blue[0]  ; i_Clk        ; 7.401 ; 7.700 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Blue[1]  ; i_Clk        ; 7.998 ; 8.820 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Blue[2]  ; i_Clk        ; 7.792 ; 8.304 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Blue[3]  ; i_Clk        ; 8.039 ; 8.693 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Blue[4]  ; i_Clk        ; 7.843 ; 8.446 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Blue[5]  ; i_Clk        ; 8.080 ; 8.770 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Blue[6]  ; i_Clk        ; 8.014 ; 8.580 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Blue[7]  ; i_Clk        ; 7.891 ; 8.458 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-; o_Green[*]  ; i_Clk        ; 8.117 ; 8.370 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Green[0] ; i_Clk        ; 8.398 ; 8.883 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Green[1] ; i_Clk        ; 8.393 ; 8.903 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Green[2] ; i_Clk        ; 8.381 ; 8.904 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Green[3] ; i_Clk        ; 8.541 ; 9.127 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Green[4] ; i_Clk        ; 8.361 ; 8.833 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Green[5] ; i_Clk        ; 8.282 ; 8.511 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Green[6] ; i_Clk        ; 8.117 ; 8.370 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Green[7] ; i_Clk        ; 8.249 ; 8.710 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-; o_HS        ; i_Clk        ; 6.915 ; 7.337 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-; o_Red[*]    ; i_Clk        ; 8.060 ; 8.526 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Red[0]   ; i_Clk        ; 8.214 ; 8.653 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Red[1]   ; i_Clk        ; 8.246 ; 8.743 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Red[2]   ; i_Clk        ; 8.165 ; 8.526 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Red[3]   ; i_Clk        ; 8.215 ; 8.681 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Red[4]   ; i_Clk        ; 8.180 ; 8.568 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Red[5]   ; i_Clk        ; 8.124 ; 8.942 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Red[6]   ; i_Clk        ; 8.060 ; 8.883 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Red[7]   ; i_Clk        ; 8.326 ; 8.841 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-; o_VS        ; i_Clk        ; 7.804 ; 8.728 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-; o_ADV_Clk   ; i_Clk        ;       ; 5.779 ; Fall       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-+-------------+--------------+-------+-------+------------+-----------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                                                              ;
++-------------+--------------+-------+--------+------------+-----------------------------------------------------------------+
+; Data Port   ; Clock Port   ; Rise  ; Fall   ; Clock Edge ; Clock Reference                                                 ;
++-------------+--------------+-------+--------+------------+-----------------------------------------------------------------+
+; o_Blue[*]   ; RefreshClock ; 5.429 ; 5.557  ; Rise       ; RefreshClock                                                    ;
+;  o_Blue[0]  ; RefreshClock ; 5.897 ; 6.134  ; Rise       ; RefreshClock                                                    ;
+;  o_Blue[1]  ; RefreshClock ; 5.429 ; 5.557  ; Rise       ; RefreshClock                                                    ;
+;  o_Blue[2]  ; RefreshClock ; 5.671 ; 5.961  ; Rise       ; RefreshClock                                                    ;
+;  o_Blue[3]  ; RefreshClock ; 5.722 ; 6.015  ; Rise       ; RefreshClock                                                    ;
+;  o_Blue[4]  ; RefreshClock ; 5.703 ; 5.929  ; Rise       ; RefreshClock                                                    ;
+;  o_Blue[5]  ; RefreshClock ; 5.630 ; 5.827  ; Rise       ; RefreshClock                                                    ;
+;  o_Blue[6]  ; RefreshClock ; 5.782 ; 6.007  ; Rise       ; RefreshClock                                                    ;
+;  o_Blue[7]  ; RefreshClock ; 5.627 ; 5.804  ; Rise       ; RefreshClock                                                    ;
+; o_Green[*]  ; RefreshClock ; 5.328 ; 5.431  ; Rise       ; RefreshClock                                                    ;
+;  o_Green[0] ; RefreshClock ; 5.328 ; 5.431  ; Rise       ; RefreshClock                                                    ;
+;  o_Green[1] ; RefreshClock ; 6.280 ; 6.965  ; Rise       ; RefreshClock                                                    ;
+;  o_Green[2] ; RefreshClock ; 6.732 ; 7.713  ; Rise       ; RefreshClock                                                    ;
+;  o_Green[3] ; RefreshClock ; 6.946 ; 7.919  ; Rise       ; RefreshClock                                                    ;
+;  o_Green[4] ; RefreshClock ; 5.486 ; 5.699  ; Rise       ; RefreshClock                                                    ;
+;  o_Green[5] ; RefreshClock ; 6.243 ; 6.926  ; Rise       ; RefreshClock                                                    ;
+;  o_Green[6] ; RefreshClock ; 5.965 ; 6.499  ; Rise       ; RefreshClock                                                    ;
+;  o_Green[7] ; RefreshClock ; 6.264 ; 6.940  ; Rise       ; RefreshClock                                                    ;
+; o_Red[*]    ; RefreshClock ; 5.408 ; 5.818  ; Rise       ; RefreshClock                                                    ;
+;  o_Red[0]   ; RefreshClock ; 5.696 ; 6.221  ; Rise       ; RefreshClock                                                    ;
+;  o_Red[1]   ; RefreshClock ; 5.663 ; 6.170  ; Rise       ; RefreshClock                                                    ;
+;  o_Red[2]   ; RefreshClock ; 5.694 ; 6.229  ; Rise       ; RefreshClock                                                    ;
+;  o_Red[3]   ; RefreshClock ; 5.680 ; 6.207  ; Rise       ; RefreshClock                                                    ;
+;  o_Red[4]   ; RefreshClock ; 5.725 ; 6.298  ; Rise       ; RefreshClock                                                    ;
+;  o_Red[5]   ; RefreshClock ; 5.599 ; 5.818  ; Rise       ; RefreshClock                                                    ;
+;  o_Red[6]   ; RefreshClock ; 5.659 ; 5.933  ; Rise       ; RefreshClock                                                    ;
+;  o_Red[7]   ; RefreshClock ; 5.408 ; 5.920  ; Rise       ; RefreshClock                                                    ;
+; o_ADV_Clk   ; i_Clk        ; 5.787 ;        ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+; o_Blue[*]   ; i_Clk        ; 7.753 ; 7.881  ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Blue[0]  ; i_Clk        ; 8.221 ; 8.458  ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Blue[1]  ; i_Clk        ; 7.753 ; 7.881  ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Blue[2]  ; i_Clk        ; 7.995 ; 8.285  ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Blue[3]  ; i_Clk        ; 8.046 ; 8.339  ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Blue[4]  ; i_Clk        ; 8.027 ; 8.253  ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Blue[5]  ; i_Clk        ; 7.954 ; 8.151  ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Blue[6]  ; i_Clk        ; 8.106 ; 8.331  ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Blue[7]  ; i_Clk        ; 7.951 ; 8.128  ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+; o_Green[*]  ; i_Clk        ; 7.778 ; 8.198  ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Green[0] ; i_Clk        ; 7.778 ; 8.198  ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Green[1] ; i_Clk        ; 8.861 ; 9.786  ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Green[2] ; i_Clk        ; 9.245 ; 10.468 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Green[3] ; i_Clk        ; 9.377 ; 10.653 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Green[4] ; i_Clk        ; 8.036 ; 8.492  ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Green[5] ; i_Clk        ; 8.652 ; 9.641  ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Green[6] ; i_Clk        ; 8.516 ; 9.293  ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Green[7] ; i_Clk        ; 8.807 ; 9.722  ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+; o_HS        ; i_Clk        ; 6.975 ; 7.313  ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+; o_Red[*]    ; i_Clk        ; 7.732 ; 8.142  ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Red[0]   ; i_Clk        ; 8.020 ; 8.819  ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Red[1]   ; i_Clk        ; 7.987 ; 8.768  ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Red[2]   ; i_Clk        ; 8.018 ; 8.827  ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Red[3]   ; i_Clk        ; 8.004 ; 8.805  ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Red[4]   ; i_Clk        ; 8.049 ; 8.896  ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Red[5]   ; i_Clk        ; 7.923 ; 8.142  ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Red[6]   ; i_Clk        ; 7.983 ; 8.257  ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Red[7]   ; i_Clk        ; 7.732 ; 8.518  ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+; o_VS        ; i_Clk        ; 8.856 ; 10.311 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+; o_ADV_Clk   ; i_Clk        ;       ; 5.779  ; Fall       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
++-------------+--------------+-------+--------+------------+-----------------------------------------------------------------+
 
 
 ----------------------------------------------
@@ -786,8 +786,8 @@ No synchronizer chains to report.
 +-----------------------------------------------------------------+--------+---------------+
 ; Clock                                                           ; Slack  ; End Point TNS ;
 +-----------------------------------------------------------------+--------+---------------+
-; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; -2.440 ; -2.440        ;
-; RefreshClock                                                    ; -0.624 ; -12.208       ;
+; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; -2.114 ; -2.114        ;
+; RefreshClock                                                    ; -0.681 ; -13.749       ;
 +-----------------------------------------------------------------+--------+---------------+
 
 
@@ -796,8 +796,8 @@ No synchronizer chains to report.
 +-----------------------------------------------------------------+--------+---------------+
 ; Clock                                                           ; Slack  ; End Point TNS ;
 +-----------------------------------------------------------------+--------+---------------+
-; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; -0.436 ; -0.436        ;
-; RefreshClock                                                    ; 0.313  ; 0.000         ;
+; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; -0.598 ; -0.598        ;
+; RefreshClock                                                    ; 0.315  ; 0.000         ;
 +-----------------------------------------------------------------+--------+---------------+
 
 
@@ -818,10 +818,10 @@ No paths to report.
 +-----------------------------------------------------------------+--------+---------------+
 ; Clock                                                           ; Slack  ; End Point TNS ;
 +-----------------------------------------------------------------+--------+---------------+
-; RefreshClock                                                    ; 0.088  ; 0.000         ;
+; RefreshClock                                                    ; 0.125  ; 0.000         ;
 ; u0|pll_0|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]   ; 1.666  ; 0.000         ;
 ; i_Clk                                                           ; 9.632  ; 0.000         ;
-; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 19.539 ; 0.000         ;
+; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 19.541 ; 0.000         ;
 +-----------------------------------------------------------------+--------+---------------+
 
 
@@ -830,10 +830,10 @@ No paths to report.
 +-------------+--------------+-------+-------+------------+-----------------+
 ; Data Port   ; Clock Port   ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-------------+--------------+-------+-------+------------+-----------------+
-; i_Btn_Down  ; RefreshClock ; 4.013 ; 3.862 ; Rise       ; RefreshClock    ;
-; i_Btn_Left  ; RefreshClock ; 3.173 ; 4.016 ; Rise       ; RefreshClock    ;
-; i_Btn_Right ; RefreshClock ; 2.852 ; 3.259 ; Rise       ; RefreshClock    ;
-; i_Btn_Up    ; RefreshClock ; 4.314 ; 4.142 ; Rise       ; RefreshClock    ;
+; i_Btn_Down  ; RefreshClock ; 2.255 ; 2.927 ; Rise       ; RefreshClock    ;
+; i_Btn_Left  ; RefreshClock ; 2.970 ; 3.794 ; Rise       ; RefreshClock    ;
+; i_Btn_Right ; RefreshClock ; 2.367 ; 2.951 ; Rise       ; RefreshClock    ;
+; i_Btn_Up    ; RefreshClock ; 2.837 ; 3.619 ; Rise       ; RefreshClock    ;
 +-------------+--------------+-------+-------+------------+-----------------+
 
 
@@ -842,10 +842,10 @@ No paths to report.
 +-------------+--------------+--------+--------+------------+-----------------+
 ; Data Port   ; Clock Port   ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +-------------+--------------+--------+--------+------------+-----------------+
-; i_Btn_Down  ; RefreshClock ; -3.014 ; -2.992 ; Rise       ; RefreshClock    ;
-; i_Btn_Left  ; RefreshClock ; -2.048 ; -2.806 ; Rise       ; RefreshClock    ;
-; i_Btn_Right ; RefreshClock ; -2.242 ; -2.728 ; Rise       ; RefreshClock    ;
-; i_Btn_Up    ; RefreshClock ; -1.708 ; -2.486 ; Rise       ; RefreshClock    ;
+; i_Btn_Down  ; RefreshClock ; -1.740 ; -2.400 ; Rise       ; RefreshClock    ;
+; i_Btn_Left  ; RefreshClock ; -1.867 ; -2.468 ; Rise       ; RefreshClock    ;
+; i_Btn_Right ; RefreshClock ; -1.850 ; -2.401 ; Rise       ; RefreshClock    ;
+; i_Btn_Up    ; RefreshClock ; -1.770 ; -2.498 ; Rise       ; RefreshClock    ;
 +-------------+--------------+--------+--------+------------+-----------------+
 
 
@@ -854,63 +854,63 @@ No paths to report.
 +-------------+--------------+--------+--------+------------+-----------------------------------------------------------------+
 ; Data Port   ; Clock Port   ; Rise   ; Fall   ; Clock Edge ; Clock Reference                                                 ;
 +-------------+--------------+--------+--------+------------+-----------------------------------------------------------------+
-; o_Blue[*]   ; RefreshClock ; 10.819 ; 11.166 ; Rise       ; RefreshClock                                                    ;
-;  o_Blue[0]  ; RefreshClock ; 9.695  ; 9.942  ; Rise       ; RefreshClock                                                    ;
-;  o_Blue[1]  ; RefreshClock ; 10.381 ; 11.117 ; Rise       ; RefreshClock                                                    ;
-;  o_Blue[2]  ; RefreshClock ; 10.540 ; 10.752 ; Rise       ; RefreshClock                                                    ;
-;  o_Blue[3]  ; RefreshClock ; 10.819 ; 11.132 ; Rise       ; RefreshClock                                                    ;
-;  o_Blue[4]  ; RefreshClock ; 10.524 ; 10.849 ; Rise       ; RefreshClock                                                    ;
-;  o_Blue[5]  ; RefreshClock ; 10.762 ; 11.166 ; Rise       ; RefreshClock                                                    ;
-;  o_Blue[6]  ; RefreshClock ; 10.691 ; 11.008 ; Rise       ; RefreshClock                                                    ;
-;  o_Blue[7]  ; RefreshClock ; 10.568 ; 10.844 ; Rise       ; RefreshClock                                                    ;
-; o_Green[*]  ; RefreshClock ; 11.214 ; 11.006 ; Rise       ; RefreshClock                                                    ;
-;  o_Green[0] ; RefreshClock ; 11.069 ; 10.645 ; Rise       ; RefreshClock                                                    ;
-;  o_Green[1] ; RefreshClock ; 11.061 ; 10.665 ; Rise       ; RefreshClock                                                    ;
-;  o_Green[2] ; RefreshClock ; 11.065 ; 10.688 ; Rise       ; RefreshClock                                                    ;
-;  o_Green[3] ; RefreshClock ; 11.214 ; 10.903 ; Rise       ; RefreshClock                                                    ;
-;  o_Green[4] ; RefreshClock ; 11.031 ; 10.599 ; Rise       ; RefreshClock                                                    ;
-;  o_Green[5] ; RefreshClock ; 10.801 ; 11.006 ; Rise       ; RefreshClock                                                    ;
-;  o_Green[6] ; RefreshClock ; 10.684 ; 10.904 ; Rise       ; RefreshClock                                                    ;
-;  o_Green[7] ; RefreshClock ; 10.932 ; 10.480 ; Rise       ; RefreshClock                                                    ;
-; o_Red[*]    ; RefreshClock ; 10.872 ; 11.234 ; Rise       ; RefreshClock                                                    ;
-;  o_Red[0]   ; RefreshClock ; 10.830 ; 10.454 ; Rise       ; RefreshClock                                                    ;
-;  o_Red[1]   ; RefreshClock ; 10.811 ; 10.416 ; Rise       ; RefreshClock                                                    ;
-;  o_Red[2]   ; RefreshClock ; 10.756 ; 10.332 ; Rise       ; RefreshClock                                                    ;
-;  o_Red[3]   ; RefreshClock ; 10.872 ; 10.482 ; Rise       ; RefreshClock                                                    ;
-;  o_Red[4]   ; RefreshClock ; 10.700 ; 10.256 ; Rise       ; RefreshClock                                                    ;
-;  o_Red[5]   ; RefreshClock ; 10.531 ; 11.234 ; Rise       ; RefreshClock                                                    ;
-;  o_Red[6]   ; RefreshClock ; 10.467 ; 11.179 ; Rise       ; RefreshClock                                                    ;
-;  o_Red[7]   ; RefreshClock ; 10.851 ; 10.542 ; Rise       ; RefreshClock                                                    ;
+; o_Blue[*]   ; RefreshClock ; 12.774 ; 13.010 ; Rise       ; RefreshClock                                                    ;
+;  o_Blue[0]  ; RefreshClock ; 12.774 ; 13.010 ; Rise       ; RefreshClock                                                    ;
+;  o_Blue[1]  ; RefreshClock ; 12.278 ; 12.411 ; Rise       ; RefreshClock                                                    ;
+;  o_Blue[2]  ; RefreshClock ; 12.611 ; 12.869 ; Rise       ; RefreshClock                                                    ;
+;  o_Blue[3]  ; RefreshClock ; 12.679 ; 12.932 ; Rise       ; RefreshClock                                                    ;
+;  o_Blue[4]  ; RefreshClock ; 12.369 ; 12.566 ; Rise       ; RefreshClock                                                    ;
+;  o_Blue[5]  ; RefreshClock ; 12.296 ; 12.458 ; Rise       ; RefreshClock                                                    ;
+;  o_Blue[6]  ; RefreshClock ; 12.455 ; 12.649 ; Rise       ; RefreshClock                                                    ;
+;  o_Blue[7]  ; RefreshClock ; 12.298 ; 12.438 ; Rise       ; RefreshClock                                                    ;
+; o_Green[*]  ; RefreshClock ; 10.903 ; 12.016 ; Rise       ; RefreshClock                                                    ;
+;  o_Green[0] ; RefreshClock ; 9.360  ; 9.740  ; Rise       ; RefreshClock                                                    ;
+;  o_Green[1] ; RefreshClock ; 10.336 ; 11.175 ; Rise       ; RefreshClock                                                    ;
+;  o_Green[2] ; RefreshClock ; 10.766 ; 11.859 ; Rise       ; RefreshClock                                                    ;
+;  o_Green[3] ; RefreshClock ; 10.903 ; 12.016 ; Rise       ; RefreshClock                                                    ;
+;  o_Green[4] ; RefreshClock ; 9.456  ; 9.922  ; Rise       ; RefreshClock                                                    ;
+;  o_Green[5] ; RefreshClock ; 10.173 ; 11.041 ; Rise       ; RefreshClock                                                    ;
+;  o_Green[6] ; RefreshClock ; 10.044 ; 10.757 ; Rise       ; RefreshClock                                                    ;
+;  o_Green[7] ; RefreshClock ; 10.341 ; 11.139 ; Rise       ; RefreshClock                                                    ;
+; o_Red[*]    ; RefreshClock ; 12.594 ; 13.101 ; Rise       ; RefreshClock                                                    ;
+;  o_Red[0]   ; RefreshClock ; 11.228 ; 12.607 ; Rise       ; RefreshClock                                                    ;
+;  o_Red[1]   ; RefreshClock ; 11.247 ; 12.607 ; Rise       ; RefreshClock                                                    ;
+;  o_Red[2]   ; RefreshClock ; 11.218 ; 12.654 ; Rise       ; RefreshClock                                                    ;
+;  o_Red[3]   ; RefreshClock ; 11.339 ; 12.770 ; Rise       ; RefreshClock                                                    ;
+;  o_Red[4]   ; RefreshClock ; 11.595 ; 13.101 ; Rise       ; RefreshClock                                                    ;
+;  o_Red[5]   ; RefreshClock ; 12.538 ; 12.718 ; Rise       ; RefreshClock                                                    ;
+;  o_Red[6]   ; RefreshClock ; 12.594 ; 12.842 ; Rise       ; RefreshClock                                                    ;
+;  o_Red[7]   ; RefreshClock ; 10.834 ; 12.150 ; Rise       ; RefreshClock                                                    ;
 ; o_ADV_Clk   ; i_Clk        ; 6.238  ;        ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-; o_Blue[*]   ; i_Clk        ; 12.336 ; 12.802 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Blue[0]  ; i_Clk        ; 11.319 ; 11.554 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Blue[1]  ; i_Clk        ; 12.122 ; 12.802 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Blue[2]  ; i_Clk        ; 12.057 ; 12.288 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Blue[3]  ; i_Clk        ; 12.336 ; 12.668 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Blue[4]  ; i_Clk        ; 12.069 ; 12.387 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Blue[5]  ; i_Clk        ; 12.308 ; 12.703 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Blue[6]  ; i_Clk        ; 12.241 ; 12.550 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Blue[7]  ; i_Clk        ; 12.118 ; 12.385 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-; o_Green[*]  ; i_Clk        ; 12.731 ; 13.010 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Green[0] ; i_Clk        ; 12.586 ; 12.752 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Green[1] ; i_Clk        ; 12.578 ; 12.772 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Green[2] ; i_Clk        ; 12.582 ; 12.795 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Green[3] ; i_Clk        ; 12.731 ; 13.010 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Green[4] ; i_Clk        ; 12.548 ; 12.706 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Green[5] ; i_Clk        ; 12.318 ; 12.621 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Green[6] ; i_Clk        ; 12.201 ; 12.489 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Green[7] ; i_Clk        ; 12.449 ; 12.587 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-; o_HS        ; i_Clk        ; 7.278  ; 7.690  ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-; o_Red[*]    ; i_Clk        ; 12.389 ; 12.947 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Red[0]   ; i_Clk        ; 12.347 ; 12.537 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Red[1]   ; i_Clk        ; 12.328 ; 12.656 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Red[2]   ; i_Clk        ; 12.273 ; 12.402 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Red[3]   ; i_Clk        ; 12.389 ; 12.572 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Red[4]   ; i_Clk        ; 12.217 ; 12.513 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Red[5]   ; i_Clk        ; 12.205 ; 12.896 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Red[6]   ; i_Clk        ; 12.193 ; 12.947 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Red[7]   ; i_Clk        ; 12.368 ; 12.800 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-; o_VS        ; i_Clk        ; 8.182  ; 9.013  ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+; o_Blue[*]   ; i_Clk        ; 14.776 ; 15.012 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Blue[0]  ; i_Clk        ; 14.776 ; 15.012 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Blue[1]  ; i_Clk        ; 14.280 ; 14.413 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Blue[2]  ; i_Clk        ; 14.613 ; 14.871 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Blue[3]  ; i_Clk        ; 14.681 ; 14.934 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Blue[4]  ; i_Clk        ; 14.371 ; 14.568 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Blue[5]  ; i_Clk        ; 14.298 ; 14.460 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Blue[6]  ; i_Clk        ; 14.457 ; 14.651 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Blue[7]  ; i_Clk        ; 14.300 ; 14.440 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+; o_Green[*]  ; i_Clk        ; 12.905 ; 14.018 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Green[0] ; i_Clk        ; 11.362 ; 11.742 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Green[1] ; i_Clk        ; 12.338 ; 13.177 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Green[2] ; i_Clk        ; 12.768 ; 13.861 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Green[3] ; i_Clk        ; 12.905 ; 14.018 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Green[4] ; i_Clk        ; 11.458 ; 11.924 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Green[5] ; i_Clk        ; 12.175 ; 13.043 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Green[6] ; i_Clk        ; 12.046 ; 12.759 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Green[7] ; i_Clk        ; 12.343 ; 13.141 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+; o_HS        ; i_Clk        ; 7.278  ; 7.603  ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+; o_Red[*]    ; i_Clk        ; 14.596 ; 15.103 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Red[0]   ; i_Clk        ; 12.880 ; 14.609 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Red[1]   ; i_Clk        ; 12.899 ; 14.609 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Red[2]   ; i_Clk        ; 12.870 ; 14.656 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Red[3]   ; i_Clk        ; 12.991 ; 14.772 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Red[4]   ; i_Clk        ; 13.247 ; 15.103 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Red[5]   ; i_Clk        ; 14.540 ; 14.720 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Red[6]   ; i_Clk        ; 14.596 ; 14.844 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Red[7]   ; i_Clk        ; 12.486 ; 14.152 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+; o_VS        ; i_Clk        ; 9.206  ; 10.421 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
 ; o_ADV_Clk   ; i_Clk        ;        ; 6.185  ; Fall       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
 +-------------+--------------+--------+--------+------------+-----------------------------------------------------------------+
 
@@ -920,63 +920,63 @@ No paths to report.
 +-------------+--------------+-------+-------+------------+-----------------------------------------------------------------+
 ; Data Port   ; Clock Port   ; Rise  ; Fall  ; Clock Edge ; Clock Reference                                                 ;
 +-------------+--------------+-------+-------+------------+-----------------------------------------------------------------+
-; o_Blue[*]   ; RefreshClock ; 4.380 ; 4.607 ; Rise       ; RefreshClock                                                    ;
-;  o_Blue[0]  ; RefreshClock ; 4.380 ; 4.607 ; Rise       ; RefreshClock                                                    ;
-;  o_Blue[1]  ; RefreshClock ; 5.070 ; 5.708 ; Rise       ; RefreshClock                                                    ;
-;  o_Blue[2]  ; RefreshClock ; 4.767 ; 4.979 ; Rise       ; RefreshClock                                                    ;
-;  o_Blue[3]  ; RefreshClock ; 5.020 ; 5.315 ; Rise       ; RefreshClock                                                    ;
-;  o_Blue[4]  ; RefreshClock ; 4.803 ; 5.069 ; Rise       ; RefreshClock                                                    ;
-;  o_Blue[5]  ; RefreshClock ; 5.019 ; 5.350 ; Rise       ; RefreshClock                                                    ;
-;  o_Blue[6]  ; RefreshClock ; 4.943 ; 5.175 ; Rise       ; RefreshClock                                                    ;
-;  o_Blue[7]  ; RefreshClock ; 4.852 ; 5.073 ; Rise       ; RefreshClock                                                    ;
-; o_Green[*]  ; RefreshClock ; 4.817 ; 5.046 ; Rise       ; RefreshClock                                                    ;
-;  o_Green[0] ; RefreshClock ; 5.106 ; 5.640 ; Rise       ; RefreshClock                                                    ;
-;  o_Green[1] ; RefreshClock ; 5.098 ; 5.660 ; Rise       ; RefreshClock                                                    ;
-;  o_Green[2] ; RefreshClock ; 5.093 ; 5.658 ; Rise       ; RefreshClock                                                    ;
-;  o_Green[3] ; RefreshClock ; 5.231 ; 5.861 ; Rise       ; RefreshClock                                                    ;
-;  o_Green[4] ; RefreshClock ; 5.070 ; 5.597 ; Rise       ; RefreshClock                                                    ;
-;  o_Green[5] ; RefreshClock ; 4.956 ; 5.172 ; Rise       ; RefreshClock                                                    ;
-;  o_Green[6] ; RefreshClock ; 4.817 ; 5.046 ; Rise       ; RefreshClock                                                    ;
-;  o_Green[7] ; RefreshClock ; 4.981 ; 5.489 ; Rise       ; RefreshClock                                                    ;
-; o_Red[*]    ; RefreshClock ; 4.879 ; 5.345 ; Rise       ; RefreshClock                                                    ;
-;  o_Red[0]   ; RefreshClock ; 5.063 ; 5.504 ; Rise       ; RefreshClock                                                    ;
-;  o_Red[1]   ; RefreshClock ; 4.879 ; 5.455 ; Rise       ; RefreshClock                                                    ;
-;  o_Red[2]   ; RefreshClock ; 4.933 ; 5.377 ; Rise       ; RefreshClock                                                    ;
-;  o_Red[3]   ; RefreshClock ; 4.934 ; 5.478 ; Rise       ; RefreshClock                                                    ;
-;  o_Red[4]   ; RefreshClock ; 4.952 ; 5.345 ; Rise       ; RefreshClock                                                    ;
-;  o_Red[5]   ; RefreshClock ; 5.195 ; 5.846 ; Rise       ; RefreshClock                                                    ;
-;  o_Red[6]   ; RefreshClock ; 5.138 ; 5.686 ; Rise       ; RefreshClock                                                    ;
-;  o_Red[7]   ; RefreshClock ; 5.040 ; 5.570 ; Rise       ; RefreshClock                                                    ;
+; o_Blue[*]   ; RefreshClock ; 4.862 ; 4.960 ; Rise       ; RefreshClock                                                    ;
+;  o_Blue[0]  ; RefreshClock ; 5.309 ; 5.483 ; Rise       ; RefreshClock                                                    ;
+;  o_Blue[1]  ; RefreshClock ; 4.862 ; 4.960 ; Rise       ; RefreshClock                                                    ;
+;  o_Blue[2]  ; RefreshClock ; 5.061 ; 5.309 ; Rise       ; RefreshClock                                                    ;
+;  o_Blue[3]  ; RefreshClock ; 5.120 ; 5.351 ; Rise       ; RefreshClock                                                    ;
+;  o_Blue[4]  ; RefreshClock ; 5.092 ; 5.289 ; Rise       ; RefreshClock                                                    ;
+;  o_Blue[5]  ; RefreshClock ; 5.030 ; 5.198 ; Rise       ; RefreshClock                                                    ;
+;  o_Blue[6]  ; RefreshClock ; 5.171 ; 5.358 ; Rise       ; RefreshClock                                                    ;
+;  o_Blue[7]  ; RefreshClock ; 5.034 ; 5.178 ; Rise       ; RefreshClock                                                    ;
+; o_Green[*]  ; RefreshClock ; 4.751 ; 4.875 ; Rise       ; RefreshClock                                                    ;
+;  o_Green[0] ; RefreshClock ; 4.751 ; 4.875 ; Rise       ; RefreshClock                                                    ;
+;  o_Green[1] ; RefreshClock ; 5.661 ; 6.227 ; Rise       ; RefreshClock                                                    ;
+;  o_Green[2] ; RefreshClock ; 6.092 ; 6.870 ; Rise       ; RefreshClock                                                    ;
+;  o_Green[3] ; RefreshClock ; 6.289 ; 7.055 ; Rise       ; RefreshClock                                                    ;
+;  o_Green[4] ; RefreshClock ; 4.895 ; 5.112 ; Rise       ; RefreshClock                                                    ;
+;  o_Green[5] ; RefreshClock ; 5.654 ; 6.200 ; Rise       ; RefreshClock                                                    ;
+;  o_Green[6] ; RefreshClock ; 5.372 ; 5.818 ; Rise       ; RefreshClock                                                    ;
+;  o_Green[7] ; RefreshClock ; 5.667 ; 6.203 ; Rise       ; RefreshClock                                                    ;
+; o_Red[*]    ; RefreshClock ; 4.823 ; 5.185 ; Rise       ; RefreshClock                                                    ;
+;  o_Red[0]   ; RefreshClock ; 5.104 ; 5.541 ; Rise       ; RefreshClock                                                    ;
+;  o_Red[1]   ; RefreshClock ; 5.059 ; 5.502 ; Rise       ; RefreshClock                                                    ;
+;  o_Red[2]   ; RefreshClock ; 5.078 ; 5.545 ; Rise       ; RefreshClock                                                    ;
+;  o_Red[3]   ; RefreshClock ; 5.078 ; 5.530 ; Rise       ; RefreshClock                                                    ;
+;  o_Red[4]   ; RefreshClock ; 5.151 ; 5.622 ; Rise       ; RefreshClock                                                    ;
+;  o_Red[5]   ; RefreshClock ; 5.003 ; 5.185 ; Rise       ; RefreshClock                                                    ;
+;  o_Red[6]   ; RefreshClock ; 5.051 ; 5.290 ; Rise       ; RefreshClock                                                    ;
+;  o_Red[7]   ; RefreshClock ; 4.823 ; 5.280 ; Rise       ; RefreshClock                                                    ;
 ; o_ADV_Clk   ; i_Clk        ; 5.612 ;       ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-; o_Blue[*]   ; i_Clk        ; 6.977 ; 7.204 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Blue[0]  ; i_Clk        ; 6.977 ; 7.204 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Blue[1]  ; i_Clk        ; 7.547 ; 8.171 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Blue[2]  ; i_Clk        ; 7.287 ; 7.721 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Blue[3]  ; i_Clk        ; 7.540 ; 8.058 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Blue[4]  ; i_Clk        ; 7.373 ; 7.861 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Blue[5]  ; i_Clk        ; 7.590 ; 8.142 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Blue[6]  ; i_Clk        ; 7.514 ; 7.969 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Blue[7]  ; i_Clk        ; 7.424 ; 7.867 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-; o_Green[*]  ; i_Clk        ; 7.584 ; 7.813 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Green[0] ; i_Clk        ; 7.839 ; 8.240 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Green[1] ; i_Clk        ; 7.831 ; 8.260 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Green[2] ; i_Clk        ; 7.826 ; 8.258 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Green[3] ; i_Clk        ; 7.964 ; 8.461 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Green[4] ; i_Clk        ; 7.803 ; 8.197 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Green[5] ; i_Clk        ; 7.723 ; 7.939 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Green[6] ; i_Clk        ; 7.584 ; 7.813 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Green[7] ; i_Clk        ; 7.714 ; 8.089 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-; o_HS        ; i_Clk        ; 6.533 ; 6.866 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-; o_Red[*]    ; i_Clk        ; 7.588 ; 7.916 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Red[0]   ; i_Clk        ; 7.705 ; 8.043 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Red[1]   ; i_Clk        ; 7.744 ; 8.144 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Red[2]   ; i_Clk        ; 7.611 ; 7.916 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Red[3]   ; i_Clk        ; 7.692 ; 8.067 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Red[4]   ; i_Clk        ; 7.710 ; 7.994 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Red[5]   ; i_Clk        ; 7.653 ; 8.282 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Red[6]   ; i_Clk        ; 7.588 ; 8.233 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Red[7]   ; i_Clk        ; 7.798 ; 8.219 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-; o_VS        ; i_Clk        ; 7.366 ; 8.083 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+; o_Blue[*]   ; i_Clk        ; 7.282 ; 7.380 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Blue[0]  ; i_Clk        ; 7.729 ; 7.903 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Blue[1]  ; i_Clk        ; 7.282 ; 7.380 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Blue[2]  ; i_Clk        ; 7.481 ; 7.729 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Blue[3]  ; i_Clk        ; 7.540 ; 7.771 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Blue[4]  ; i_Clk        ; 7.512 ; 7.709 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Blue[5]  ; i_Clk        ; 7.450 ; 7.618 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Blue[6]  ; i_Clk        ; 7.591 ; 7.778 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Blue[7]  ; i_Clk        ; 7.454 ; 7.598 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+; o_Green[*]  ; i_Clk        ; 7.256 ; 7.633 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Green[0] ; i_Clk        ; 7.256 ; 7.633 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Green[1] ; i_Clk        ; 8.305 ; 9.039 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Green[2] ; i_Clk        ; 8.679 ; 9.627 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Green[3] ; i_Clk        ; 8.776 ; 9.780 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Green[4] ; i_Clk        ; 7.511 ; 7.899 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Green[5] ; i_Clk        ; 8.123 ; 8.908 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Green[6] ; i_Clk        ; 7.988 ; 8.605 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Green[7] ; i_Clk        ; 8.280 ; 8.984 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+; o_HS        ; i_Clk        ; 6.553 ; 6.829 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+; o_Red[*]    ; i_Clk        ; 7.243 ; 7.605 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Red[0]   ; i_Clk        ; 7.524 ; 8.151 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Red[1]   ; i_Clk        ; 7.479 ; 8.112 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Red[2]   ; i_Clk        ; 7.498 ; 8.155 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Red[3]   ; i_Clk        ; 7.498 ; 8.140 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Red[4]   ; i_Clk        ; 7.571 ; 8.232 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Red[5]   ; i_Clk        ; 7.423 ; 7.605 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Red[6]   ; i_Clk        ; 7.471 ; 7.710 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Red[7]   ; i_Clk        ; 7.243 ; 7.890 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+; o_VS        ; i_Clk        ; 8.327 ; 9.413 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
 ; o_ADV_Clk   ; i_Clk        ;       ; 5.555 ; Fall       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
 +-------------+--------------+-------+-------+------------+-----------------------------------------------------------------+
 
@@ -992,16 +992,16 @@ No synchronizer chains to report.
 +------------------------------------------------------------------+---------+--------+----------+---------+---------------------+
 ; Clock                                                            ; Setup   ; Hold   ; Recovery ; Removal ; Minimum Pulse Width ;
 +------------------------------------------------------------------+---------+--------+----------+---------+---------------------+
-; Worst-case Slack                                                 ; -3.452  ; -1.458 ; N/A      ; N/A     ; -0.394              ;
-;  RefreshClock                                                    ; -1.926  ; 0.313  ; N/A      ; N/A     ; -0.394              ;
+; Worst-case Slack                                                 ; -3.103  ; -1.665 ; N/A      ; N/A     ; -0.394              ;
+;  RefreshClock                                                    ; -1.958  ; 0.315  ; N/A      ; N/A     ; -0.394              ;
 ;  i_Clk                                                           ; N/A     ; N/A    ; N/A      ; N/A     ; 9.632               ;
 ;  u0|pll_0|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]   ; N/A     ; N/A    ; N/A      ; N/A     ; 1.666               ;
-;  u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; -3.452  ; -1.458 ; N/A      ; N/A     ; 19.250              ;
-; Design-wide TNS                                                  ; -45.922 ; -1.458 ; 0.0      ; 0.0     ; -15.005             ;
-;  RefreshClock                                                    ; -42.938 ; 0.000  ; N/A      ; N/A     ; -15.005             ;
+;  u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; -3.103  ; -1.665 ; N/A      ; N/A     ; 19.250              ;
+; Design-wide TNS                                                  ; -46.934 ; -1.665 ; 0.0      ; 0.0     ; -14.485             ;
+;  RefreshClock                                                    ; -44.291 ; 0.000  ; N/A      ; N/A     ; -14.485             ;
 ;  i_Clk                                                           ; N/A     ; N/A    ; N/A      ; N/A     ; 0.000               ;
 ;  u0|pll_0|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]   ; N/A     ; N/A    ; N/A      ; N/A     ; 0.000               ;
-;  u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; -3.452  ; -1.458 ; N/A      ; N/A     ; 0.000               ;
+;  u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; -3.103  ; -1.665 ; N/A      ; N/A     ; 0.000               ;
 +------------------------------------------------------------------+---------+--------+----------+---------+---------------------+
 
 
@@ -1010,10 +1010,10 @@ No synchronizer chains to report.
 +-------------+--------------+-------+-------+------------+-----------------+
 ; Data Port   ; Clock Port   ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-------------+--------------+-------+-------+------------+-----------------+
-; i_Btn_Down  ; RefreshClock ; 6.767 ; 6.151 ; Rise       ; RefreshClock    ;
-; i_Btn_Left  ; RefreshClock ; 5.923 ; 6.636 ; Rise       ; RefreshClock    ;
-; i_Btn_Right ; RefreshClock ; 5.353 ; 5.505 ; Rise       ; RefreshClock    ;
-; i_Btn_Up    ; RefreshClock ; 7.373 ; 6.723 ; Rise       ; RefreshClock    ;
+; i_Btn_Down  ; RefreshClock ; 4.268 ; 4.805 ; Rise       ; RefreshClock    ;
+; i_Btn_Left  ; RefreshClock ; 5.584 ; 6.289 ; Rise       ; RefreshClock    ;
+; i_Btn_Right ; RefreshClock ; 4.367 ; 4.758 ; Rise       ; RefreshClock    ;
+; i_Btn_Up    ; RefreshClock ; 5.377 ; 6.010 ; Rise       ; RefreshClock    ;
 +-------------+--------------+-------+-------+------------+-----------------+
 
 
@@ -1022,10 +1022,10 @@ No synchronizer chains to report.
 +-------------+--------------+--------+--------+------------+-----------------+
 ; Data Port   ; Clock Port   ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +-------------+--------------+--------+--------+------------+-----------------+
-; i_Btn_Down  ; RefreshClock ; -3.014 ; -2.992 ; Rise       ; RefreshClock    ;
-; i_Btn_Left  ; RefreshClock ; -2.048 ; -2.806 ; Rise       ; RefreshClock    ;
-; i_Btn_Right ; RefreshClock ; -2.242 ; -2.728 ; Rise       ; RefreshClock    ;
-; i_Btn_Up    ; RefreshClock ; -1.708 ; -2.486 ; Rise       ; RefreshClock    ;
+; i_Btn_Down  ; RefreshClock ; -1.740 ; -2.400 ; Rise       ; RefreshClock    ;
+; i_Btn_Left  ; RefreshClock ; -1.867 ; -2.468 ; Rise       ; RefreshClock    ;
+; i_Btn_Right ; RefreshClock ; -1.850 ; -2.401 ; Rise       ; RefreshClock    ;
+; i_Btn_Up    ; RefreshClock ; -1.770 ; -2.498 ; Rise       ; RefreshClock    ;
 +-------------+--------------+--------+--------+------------+-----------------+
 
 
@@ -1034,63 +1034,63 @@ No synchronizer chains to report.
 +-------------+--------------+--------+--------+------------+-----------------------------------------------------------------+
 ; Data Port   ; Clock Port   ; Rise   ; Fall   ; Clock Edge ; Clock Reference                                                 ;
 +-------------+--------------+--------+--------+------------+-----------------------------------------------------------------+
-; o_Blue[*]   ; RefreshClock ; 19.061 ; 19.477 ; Rise       ; RefreshClock                                                    ;
-;  o_Blue[0]  ; RefreshClock ; 17.528 ; 17.826 ; Rise       ; RefreshClock                                                    ;
-;  o_Blue[1]  ; RefreshClock ; 18.457 ; 19.419 ; Rise       ; RefreshClock                                                    ;
-;  o_Blue[2]  ; RefreshClock ; 18.822 ; 18.968 ; Rise       ; RefreshClock                                                    ;
-;  o_Blue[3]  ; RefreshClock ; 19.061 ; 19.457 ; Rise       ; RefreshClock                                                    ;
-;  o_Blue[4]  ; RefreshClock ; 18.632 ; 19.020 ; Rise       ; RefreshClock                                                    ;
-;  o_Blue[5]  ; RefreshClock ; 18.967 ; 19.477 ; Rise       ; RefreshClock                                                    ;
-;  o_Blue[6]  ; RefreshClock ; 18.903 ; 19.311 ; Rise       ; RefreshClock                                                    ;
-;  o_Blue[7]  ; RefreshClock ; 18.633 ; 18.998 ; Rise       ; RefreshClock                                                    ;
-; o_Green[*]  ; RefreshClock ; 19.848 ; 19.275 ; Rise       ; RefreshClock                                                    ;
-;  o_Green[0] ; RefreshClock ; 19.552 ; 18.813 ; Rise       ; RefreshClock                                                    ;
-;  o_Green[1] ; RefreshClock ; 19.559 ; 18.826 ; Rise       ; RefreshClock                                                    ;
-;  o_Green[2] ; RefreshClock ; 19.528 ; 18.891 ; Rise       ; RefreshClock                                                    ;
-;  o_Green[3] ; RefreshClock ; 19.848 ; 19.241 ; Rise       ; RefreshClock                                                    ;
-;  o_Green[4] ; RefreshClock ; 19.502 ; 18.748 ; Rise       ; RefreshClock                                                    ;
-;  o_Green[5] ; RefreshClock ; 19.167 ; 19.275 ; Rise       ; RefreshClock                                                    ;
-;  o_Green[6] ; RefreshClock ; 18.953 ; 19.119 ; Rise       ; RefreshClock                                                    ;
-;  o_Green[7] ; RefreshClock ; 19.271 ; 18.532 ; Rise       ; RefreshClock                                                    ;
-; o_Red[*]    ; RefreshClock ; 19.093 ; 19.723 ; Rise       ; RefreshClock                                                    ;
-;  o_Red[0]   ; RefreshClock ; 18.981 ; 18.490 ; Rise       ; RefreshClock                                                    ;
-;  o_Red[1]   ; RefreshClock ; 19.029 ; 18.397 ; Rise       ; RefreshClock                                                    ;
-;  o_Red[2]   ; RefreshClock ; 18.984 ; 18.370 ; Rise       ; RefreshClock                                                    ;
-;  o_Red[3]   ; RefreshClock ; 19.084 ; 18.513 ; Rise       ; RefreshClock                                                    ;
-;  o_Red[4]   ; RefreshClock ; 18.776 ; 18.188 ; Rise       ; RefreshClock                                                    ;
-;  o_Red[5]   ; RefreshClock ; 18.767 ; 19.668 ; Rise       ; RefreshClock                                                    ;
-;  o_Red[6]   ; RefreshClock ; 18.751 ; 19.723 ; Rise       ; RefreshClock                                                    ;
-;  o_Red[7]   ; RefreshClock ; 19.093 ; 18.621 ; Rise       ; RefreshClock                                                    ;
+; o_Blue[*]   ; RefreshClock ; 21.910 ; 22.186 ; Rise       ; RefreshClock                                                    ;
+;  o_Blue[0]  ; RefreshClock ; 21.910 ; 22.186 ; Rise       ; RefreshClock                                                    ;
+;  o_Blue[1]  ; RefreshClock ; 21.094 ; 21.225 ; Rise       ; RefreshClock                                                    ;
+;  o_Blue[2]  ; RefreshClock ; 21.706 ; 21.992 ; Rise       ; RefreshClock                                                    ;
+;  o_Blue[3]  ; RefreshClock ; 21.750 ; 22.076 ; Rise       ; RefreshClock                                                    ;
+;  o_Blue[4]  ; RefreshClock ; 21.349 ; 21.532 ; Rise       ; RefreshClock                                                    ;
+;  o_Blue[5]  ; RefreshClock ; 21.214 ; 21.349 ; Rise       ; RefreshClock                                                    ;
+;  o_Blue[6]  ; RefreshClock ; 21.431 ; 21.652 ; Rise       ; RefreshClock                                                    ;
+;  o_Blue[7]  ; RefreshClock ; 21.196 ; 21.344 ; Rise       ; RefreshClock                                                    ;
+; o_Green[*]  ; RefreshClock ; 19.410 ; 20.821 ; Rise       ; RefreshClock                                                    ;
+;  o_Green[0] ; RefreshClock ; 17.343 ; 17.703 ; Rise       ; RefreshClock                                                    ;
+;  o_Green[1] ; RefreshClock ; 18.712 ; 19.765 ; Rise       ; RefreshClock                                                    ;
+;  o_Green[2] ; RefreshClock ; 19.305 ; 20.821 ; Rise       ; RefreshClock                                                    ;
+;  o_Green[3] ; RefreshClock ; 19.410 ; 20.756 ; Rise       ; RefreshClock                                                    ;
+;  o_Green[4] ; RefreshClock ; 17.631 ; 18.138 ; Rise       ; RefreshClock                                                    ;
+;  o_Green[5] ; RefreshClock ; 18.365 ; 19.391 ; Rise       ; RefreshClock                                                    ;
+;  o_Green[6] ; RefreshClock ; 18.182 ; 19.083 ; Rise       ; RefreshClock                                                    ;
+;  o_Green[7] ; RefreshClock ; 18.615 ; 19.649 ; Rise       ; RefreshClock                                                    ;
+; o_Red[*]    ; RefreshClock ; 21.678 ; 22.379 ; Rise       ; RefreshClock                                                    ;
+;  o_Red[0]   ; RefreshClock ; 19.586 ; 21.596 ; Rise       ; RefreshClock                                                    ;
+;  o_Red[1]   ; RefreshClock ; 19.662 ; 21.559 ; Rise       ; RefreshClock                                                    ;
+;  o_Red[2]   ; RefreshClock ; 19.612 ; 21.700 ; Rise       ; RefreshClock                                                    ;
+;  o_Red[3]   ; RefreshClock ; 19.809 ; 21.859 ; Rise       ; RefreshClock                                                    ;
+;  o_Red[4]   ; RefreshClock ; 20.185 ; 22.379 ; Rise       ; RefreshClock                                                    ;
+;  o_Red[5]   ; RefreshClock ; 21.548 ; 21.752 ; Rise       ; RefreshClock                                                    ;
+;  o_Red[6]   ; RefreshClock ; 21.678 ; 21.938 ; Rise       ; RefreshClock                                                    ;
+;  o_Red[7]   ; RefreshClock ; 18.925 ; 20.792 ; Rise       ; RefreshClock                                                    ;
 ; o_ADV_Clk   ; i_Clk        ; 11.064 ;        ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-; o_Blue[*]   ; i_Clk        ; 22.040 ; 22.486 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Blue[0]  ; i_Clk        ; 20.507 ; 20.805 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Blue[1]  ; i_Clk        ; 21.576 ; 22.486 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Blue[2]  ; i_Clk        ; 21.801 ; 21.947 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Blue[3]  ; i_Clk        ; 22.040 ; 22.436 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Blue[4]  ; i_Clk        ; 21.611 ; 21.999 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Blue[5]  ; i_Clk        ; 21.946 ; 22.456 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Blue[6]  ; i_Clk        ; 21.882 ; 22.290 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Blue[7]  ; i_Clk        ; 21.612 ; 21.977 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-; o_Green[*]  ; i_Clk        ; 22.827 ; 22.712 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Green[0] ; i_Clk        ; 22.531 ; 22.284 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Green[1] ; i_Clk        ; 22.538 ; 22.297 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Green[2] ; i_Clk        ; 22.507 ; 22.362 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Green[3] ; i_Clk        ; 22.827 ; 22.712 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Green[4] ; i_Clk        ; 22.481 ; 22.219 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Green[5] ; i_Clk        ; 22.146 ; 22.284 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Green[6] ; i_Clk        ; 21.932 ; 22.098 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Green[7] ; i_Clk        ; 22.250 ; 22.003 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-; o_HS        ; i_Clk        ; 13.196 ; 13.720 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-; o_Red[*]    ; i_Clk        ; 22.072 ; 22.842 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Red[0]   ; i_Clk        ; 21.960 ; 21.931 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Red[1]   ; i_Clk        ; 22.008 ; 22.207 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Red[2]   ; i_Clk        ; 21.963 ; 21.797 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Red[3]   ; i_Clk        ; 22.063 ; 21.953 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Red[4]   ; i_Clk        ; 21.755 ; 21.980 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Red[5]   ; i_Clk        ; 21.766 ; 22.661 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Red[6]   ; i_Clk        ; 21.870 ; 22.842 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Red[7]   ; i_Clk        ; 22.072 ; 22.413 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-; o_VS        ; i_Clk        ; 14.359 ; 15.451 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+; o_Blue[*]   ; i_Clk        ; 25.200 ; 25.476 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Blue[0]  ; i_Clk        ; 25.200 ; 25.476 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Blue[1]  ; i_Clk        ; 24.384 ; 24.515 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Blue[2]  ; i_Clk        ; 24.996 ; 25.282 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Blue[3]  ; i_Clk        ; 25.040 ; 25.366 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Blue[4]  ; i_Clk        ; 24.639 ; 24.822 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Blue[5]  ; i_Clk        ; 24.504 ; 24.639 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Blue[6]  ; i_Clk        ; 24.721 ; 24.942 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Blue[7]  ; i_Clk        ; 24.486 ; 24.634 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+; o_Green[*]  ; i_Clk        ; 22.567 ; 24.040 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Green[0] ; i_Clk        ; 20.633 ; 20.993 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Green[1] ; i_Clk        ; 21.858 ; 22.879 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Green[2] ; i_Clk        ; 22.410 ; 23.925 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Green[3] ; i_Clk        ; 22.567 ; 24.040 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Green[4] ; i_Clk        ; 20.736 ; 21.221 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Green[5] ; i_Clk        ; 21.492 ; 22.645 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Green[6] ; i_Clk        ; 21.400 ; 22.279 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Green[7] ; i_Clk        ; 21.761 ; 22.794 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+; o_HS        ; i_Clk        ; 13.337 ; 13.676 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+; o_Red[*]    ; i_Clk        ; 24.968 ; 25.669 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Red[0]   ; i_Clk        ; 22.535 ; 24.886 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Red[1]   ; i_Clk        ; 22.611 ; 24.849 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Red[2]   ; i_Clk        ; 22.561 ; 24.990 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Red[3]   ; i_Clk        ; 22.758 ; 25.149 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Red[4]   ; i_Clk        ; 23.134 ; 25.669 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Red[5]   ; i_Clk        ; 24.838 ; 25.042 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Red[6]   ; i_Clk        ; 24.968 ; 25.228 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Red[7]   ; i_Clk        ; 21.874 ; 24.082 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+; o_VS        ; i_Clk        ; 15.745 ; 17.417 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
 ; o_ADV_Clk   ; i_Clk        ;        ; 10.944 ; Fall       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
 +-------------+--------------+--------+--------+------------+-----------------------------------------------------------------+
 
@@ -1100,63 +1100,63 @@ No synchronizer chains to report.
 +-------------+--------------+-------+-------+------------+-----------------------------------------------------------------+
 ; Data Port   ; Clock Port   ; Rise  ; Fall  ; Clock Edge ; Clock Reference                                                 ;
 +-------------+--------------+-------+-------+------------+-----------------------------------------------------------------+
-; o_Blue[*]   ; RefreshClock ; 4.380 ; 4.607 ; Rise       ; RefreshClock                                                    ;
-;  o_Blue[0]  ; RefreshClock ; 4.380 ; 4.607 ; Rise       ; RefreshClock                                                    ;
-;  o_Blue[1]  ; RefreshClock ; 5.070 ; 5.708 ; Rise       ; RefreshClock                                                    ;
-;  o_Blue[2]  ; RefreshClock ; 4.767 ; 4.979 ; Rise       ; RefreshClock                                                    ;
-;  o_Blue[3]  ; RefreshClock ; 5.020 ; 5.315 ; Rise       ; RefreshClock                                                    ;
-;  o_Blue[4]  ; RefreshClock ; 4.803 ; 5.069 ; Rise       ; RefreshClock                                                    ;
-;  o_Blue[5]  ; RefreshClock ; 5.019 ; 5.350 ; Rise       ; RefreshClock                                                    ;
-;  o_Blue[6]  ; RefreshClock ; 4.943 ; 5.175 ; Rise       ; RefreshClock                                                    ;
-;  o_Blue[7]  ; RefreshClock ; 4.852 ; 5.073 ; Rise       ; RefreshClock                                                    ;
-; o_Green[*]  ; RefreshClock ; 4.817 ; 5.046 ; Rise       ; RefreshClock                                                    ;
-;  o_Green[0] ; RefreshClock ; 5.106 ; 5.640 ; Rise       ; RefreshClock                                                    ;
-;  o_Green[1] ; RefreshClock ; 5.098 ; 5.660 ; Rise       ; RefreshClock                                                    ;
-;  o_Green[2] ; RefreshClock ; 5.093 ; 5.658 ; Rise       ; RefreshClock                                                    ;
-;  o_Green[3] ; RefreshClock ; 5.231 ; 5.861 ; Rise       ; RefreshClock                                                    ;
-;  o_Green[4] ; RefreshClock ; 5.070 ; 5.597 ; Rise       ; RefreshClock                                                    ;
-;  o_Green[5] ; RefreshClock ; 4.956 ; 5.172 ; Rise       ; RefreshClock                                                    ;
-;  o_Green[6] ; RefreshClock ; 4.817 ; 5.046 ; Rise       ; RefreshClock                                                    ;
-;  o_Green[7] ; RefreshClock ; 4.981 ; 5.489 ; Rise       ; RefreshClock                                                    ;
-; o_Red[*]    ; RefreshClock ; 4.879 ; 5.345 ; Rise       ; RefreshClock                                                    ;
-;  o_Red[0]   ; RefreshClock ; 5.063 ; 5.504 ; Rise       ; RefreshClock                                                    ;
-;  o_Red[1]   ; RefreshClock ; 4.879 ; 5.455 ; Rise       ; RefreshClock                                                    ;
-;  o_Red[2]   ; RefreshClock ; 4.933 ; 5.377 ; Rise       ; RefreshClock                                                    ;
-;  o_Red[3]   ; RefreshClock ; 4.934 ; 5.478 ; Rise       ; RefreshClock                                                    ;
-;  o_Red[4]   ; RefreshClock ; 4.952 ; 5.345 ; Rise       ; RefreshClock                                                    ;
-;  o_Red[5]   ; RefreshClock ; 5.195 ; 5.846 ; Rise       ; RefreshClock                                                    ;
-;  o_Red[6]   ; RefreshClock ; 5.138 ; 5.686 ; Rise       ; RefreshClock                                                    ;
-;  o_Red[7]   ; RefreshClock ; 5.040 ; 5.570 ; Rise       ; RefreshClock                                                    ;
+; o_Blue[*]   ; RefreshClock ; 4.862 ; 4.960 ; Rise       ; RefreshClock                                                    ;
+;  o_Blue[0]  ; RefreshClock ; 5.309 ; 5.483 ; Rise       ; RefreshClock                                                    ;
+;  o_Blue[1]  ; RefreshClock ; 4.862 ; 4.960 ; Rise       ; RefreshClock                                                    ;
+;  o_Blue[2]  ; RefreshClock ; 5.061 ; 5.309 ; Rise       ; RefreshClock                                                    ;
+;  o_Blue[3]  ; RefreshClock ; 5.120 ; 5.351 ; Rise       ; RefreshClock                                                    ;
+;  o_Blue[4]  ; RefreshClock ; 5.092 ; 5.289 ; Rise       ; RefreshClock                                                    ;
+;  o_Blue[5]  ; RefreshClock ; 5.030 ; 5.198 ; Rise       ; RefreshClock                                                    ;
+;  o_Blue[6]  ; RefreshClock ; 5.171 ; 5.358 ; Rise       ; RefreshClock                                                    ;
+;  o_Blue[7]  ; RefreshClock ; 5.034 ; 5.178 ; Rise       ; RefreshClock                                                    ;
+; o_Green[*]  ; RefreshClock ; 4.751 ; 4.875 ; Rise       ; RefreshClock                                                    ;
+;  o_Green[0] ; RefreshClock ; 4.751 ; 4.875 ; Rise       ; RefreshClock                                                    ;
+;  o_Green[1] ; RefreshClock ; 5.661 ; 6.227 ; Rise       ; RefreshClock                                                    ;
+;  o_Green[2] ; RefreshClock ; 6.092 ; 6.870 ; Rise       ; RefreshClock                                                    ;
+;  o_Green[3] ; RefreshClock ; 6.289 ; 7.055 ; Rise       ; RefreshClock                                                    ;
+;  o_Green[4] ; RefreshClock ; 4.895 ; 5.112 ; Rise       ; RefreshClock                                                    ;
+;  o_Green[5] ; RefreshClock ; 5.654 ; 6.200 ; Rise       ; RefreshClock                                                    ;
+;  o_Green[6] ; RefreshClock ; 5.372 ; 5.818 ; Rise       ; RefreshClock                                                    ;
+;  o_Green[7] ; RefreshClock ; 5.667 ; 6.203 ; Rise       ; RefreshClock                                                    ;
+; o_Red[*]    ; RefreshClock ; 4.823 ; 5.185 ; Rise       ; RefreshClock                                                    ;
+;  o_Red[0]   ; RefreshClock ; 5.104 ; 5.541 ; Rise       ; RefreshClock                                                    ;
+;  o_Red[1]   ; RefreshClock ; 5.059 ; 5.502 ; Rise       ; RefreshClock                                                    ;
+;  o_Red[2]   ; RefreshClock ; 5.078 ; 5.545 ; Rise       ; RefreshClock                                                    ;
+;  o_Red[3]   ; RefreshClock ; 5.078 ; 5.530 ; Rise       ; RefreshClock                                                    ;
+;  o_Red[4]   ; RefreshClock ; 5.151 ; 5.622 ; Rise       ; RefreshClock                                                    ;
+;  o_Red[5]   ; RefreshClock ; 5.003 ; 5.185 ; Rise       ; RefreshClock                                                    ;
+;  o_Red[6]   ; RefreshClock ; 5.051 ; 5.290 ; Rise       ; RefreshClock                                                    ;
+;  o_Red[7]   ; RefreshClock ; 4.823 ; 5.280 ; Rise       ; RefreshClock                                                    ;
 ; o_ADV_Clk   ; i_Clk        ; 5.612 ;       ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-; o_Blue[*]   ; i_Clk        ; 6.977 ; 7.204 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Blue[0]  ; i_Clk        ; 6.977 ; 7.204 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Blue[1]  ; i_Clk        ; 7.547 ; 8.171 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Blue[2]  ; i_Clk        ; 7.287 ; 7.721 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Blue[3]  ; i_Clk        ; 7.540 ; 8.058 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Blue[4]  ; i_Clk        ; 7.373 ; 7.861 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Blue[5]  ; i_Clk        ; 7.590 ; 8.142 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Blue[6]  ; i_Clk        ; 7.514 ; 7.969 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Blue[7]  ; i_Clk        ; 7.424 ; 7.867 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-; o_Green[*]  ; i_Clk        ; 7.584 ; 7.813 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Green[0] ; i_Clk        ; 7.839 ; 8.240 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Green[1] ; i_Clk        ; 7.831 ; 8.260 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Green[2] ; i_Clk        ; 7.826 ; 8.258 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Green[3] ; i_Clk        ; 7.964 ; 8.461 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Green[4] ; i_Clk        ; 7.803 ; 8.197 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Green[5] ; i_Clk        ; 7.723 ; 7.939 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Green[6] ; i_Clk        ; 7.584 ; 7.813 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Green[7] ; i_Clk        ; 7.714 ; 8.089 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-; o_HS        ; i_Clk        ; 6.533 ; 6.866 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-; o_Red[*]    ; i_Clk        ; 7.588 ; 7.916 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Red[0]   ; i_Clk        ; 7.705 ; 8.043 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Red[1]   ; i_Clk        ; 7.744 ; 8.144 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Red[2]   ; i_Clk        ; 7.611 ; 7.916 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Red[3]   ; i_Clk        ; 7.692 ; 8.067 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Red[4]   ; i_Clk        ; 7.710 ; 7.994 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Red[5]   ; i_Clk        ; 7.653 ; 8.282 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Red[6]   ; i_Clk        ; 7.588 ; 8.233 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-;  o_Red[7]   ; i_Clk        ; 7.798 ; 8.219 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
-; o_VS        ; i_Clk        ; 7.366 ; 8.083 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+; o_Blue[*]   ; i_Clk        ; 7.282 ; 7.380 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Blue[0]  ; i_Clk        ; 7.729 ; 7.903 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Blue[1]  ; i_Clk        ; 7.282 ; 7.380 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Blue[2]  ; i_Clk        ; 7.481 ; 7.729 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Blue[3]  ; i_Clk        ; 7.540 ; 7.771 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Blue[4]  ; i_Clk        ; 7.512 ; 7.709 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Blue[5]  ; i_Clk        ; 7.450 ; 7.618 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Blue[6]  ; i_Clk        ; 7.591 ; 7.778 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Blue[7]  ; i_Clk        ; 7.454 ; 7.598 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+; o_Green[*]  ; i_Clk        ; 7.256 ; 7.633 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Green[0] ; i_Clk        ; 7.256 ; 7.633 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Green[1] ; i_Clk        ; 8.305 ; 9.039 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Green[2] ; i_Clk        ; 8.679 ; 9.627 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Green[3] ; i_Clk        ; 8.776 ; 9.780 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Green[4] ; i_Clk        ; 7.511 ; 7.899 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Green[5] ; i_Clk        ; 8.123 ; 8.908 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Green[6] ; i_Clk        ; 7.988 ; 8.605 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Green[7] ; i_Clk        ; 8.280 ; 8.984 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+; o_HS        ; i_Clk        ; 6.553 ; 6.829 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+; o_Red[*]    ; i_Clk        ; 7.243 ; 7.605 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Red[0]   ; i_Clk        ; 7.524 ; 8.151 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Red[1]   ; i_Clk        ; 7.479 ; 8.112 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Red[2]   ; i_Clk        ; 7.498 ; 8.155 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Red[3]   ; i_Clk        ; 7.498 ; 8.140 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Red[4]   ; i_Clk        ; 7.571 ; 8.232 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Red[5]   ; i_Clk        ; 7.423 ; 7.605 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Red[6]   ; i_Clk        ; 7.471 ; 7.710 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+;  o_Red[7]   ; i_Clk        ; 7.243 ; 7.890 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
+; o_VS        ; i_Clk        ; 8.327 ; 9.413 ; Rise       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
 ; o_ADV_Clk   ; i_Clk        ;       ; 5.555 ; Fall       ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;
 +-------------+--------------+-------+-------+------------+-----------------------------------------------------------------+
 
@@ -1207,10 +1207,10 @@ No synchronizer chains to report.
 ; i_Mode[1]   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; i_Mode[2]   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; i_VGA_Reset ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
-; i_Btn_Left  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
-; i_Btn_Right ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; i_Btn_Up    ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; i_Btn_Down  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; i_Btn_Left  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; i_Btn_Right ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; i_Clk       ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; i_Rst       ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 +-------------+--------------+-----------------+-----------------+
@@ -1369,9 +1369,9 @@ No synchronizer chains to report.
 +-----------------------------------------------------------------+-----------------------------------------------------------------+----------+----------+----------+----------+
 ; From Clock                                                      ; To Clock                                                        ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +-----------------------------------------------------------------+-----------------------------------------------------------------+----------+----------+----------+----------+
-; RefreshClock                                                    ; RefreshClock                                                    ; 143      ; 0        ; 0        ; 0        ;
+; RefreshClock                                                    ; RefreshClock                                                    ; 139      ; 0        ; 0        ; 0        ;
 ; RefreshClock                                                    ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 1        ; 1        ; 0        ; 0        ;
-; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 4293     ; 0        ; 0        ; 0        ;
+; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 3511     ; 0        ; 0        ; 0        ;
 +-----------------------------------------------------------------+-----------------------------------------------------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -1381,9 +1381,9 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +-----------------------------------------------------------------+-----------------------------------------------------------------+----------+----------+----------+----------+
 ; From Clock                                                      ; To Clock                                                        ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +-----------------------------------------------------------------+-----------------------------------------------------------------+----------+----------+----------+----------+
-; RefreshClock                                                    ; RefreshClock                                                    ; 143      ; 0        ; 0        ; 0        ;
+; RefreshClock                                                    ; RefreshClock                                                    ; 139      ; 0        ; 0        ; 0        ;
 ; RefreshClock                                                    ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 1        ; 1        ; 0        ; 0        ;
-; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 4293     ; 0        ; 0        ; 0        ;
+; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 3511     ; 0        ; 0        ; 0        ;
 +-----------------------------------------------------------------+-----------------------------------------------------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -1408,9 +1408,9 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; Illegal Clocks                  ; 0     ; 0    ;
 ; Unconstrained Clocks            ; 0     ; 0    ;
 ; Unconstrained Input Ports       ; 5     ; 5    ;
-; Unconstrained Input Port Paths  ; 139   ; 139  ;
+; Unconstrained Input Port Paths  ; 133   ; 133  ;
 ; Unconstrained Output Ports      ; 27    ; 27   ;
-; Unconstrained Output Port Paths ; 1361  ; 1361 ;
+; Unconstrained Output Port Paths ; 1237  ; 1237 ;
 +---------------------------------+-------+------+
 
 
@@ -1420,13 +1420,13 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
     Info: Version 14.0.0 Build 200 06/17/2014 SJ Web Edition
-    Info: Processing started: Sat May 19 23:11:02 2018
+    Info: Processing started: Sat May 19 23:42:23 2018
 Info: Command: quartus_sta VGA_Controller -c VGA_Controller
 Info: qsta_default_script.tcl version: #1
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (21077): Low junction temperature is 0 degrees C
 Info (21077): High junction temperature is 85 degrees C
-Warning (335093): TimeQuest Timing Analyzer is analyzing 28 combinational loops as latches.
+Warning (335093): TimeQuest Timing Analyzer is analyzing 34 combinational loops as latches.
 Critical Warning (332012): Synopsys Design Constraints File file not found: 'VGA_Controller.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
 Info (332142): No user constrained generated clocks found in the design. Calling "derive_pll_clocks -create_base_clocks"
 Info (332110): Deriving PLL clocks
@@ -1446,25 +1446,25 @@ Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow 1100mV 85C Model
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
-Info (332146): Worst-case setup slack is -3.452
+Info (332146): Worst-case setup slack is -3.103
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -3.452              -3.452 u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
-    Info (332119):    -1.840             -41.577 RefreshClock 
-Info (332146): Worst-case hold slack is -1.127
+    Info (332119):    -3.103              -3.103 u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):    -1.925             -43.522 RefreshClock 
+Info (332146): Worst-case hold slack is -1.321
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -1.127              -1.127 u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
-    Info (332119):     0.663               0.000 RefreshClock 
+    Info (332119):    -1.321              -1.321 u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     0.676               0.000 RefreshClock 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -0.394
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.394             -15.005 RefreshClock 
+    Info (332119):    -0.394             -14.485 RefreshClock 
     Info (332119):     1.666               0.000 u0|pll_0|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0] 
     Info (332119):     9.900               0.000 i_Clk 
-    Info (332119):    19.291               0.000 u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):    19.300               0.000 u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
 Info: Analyzing Slow 1100mV 0C Model
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
@@ -1475,22 +1475,22 @@ Info (332097): The following timing edges are non-unate.  TimeQuest will assume 
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
-Info (332146): Worst-case setup slack is -2.984
+Info (332146): Worst-case setup slack is -2.643
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -2.984              -2.984 u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
-    Info (332119):    -1.926             -42.938 RefreshClock 
-Info (332146): Worst-case hold slack is -1.458
+    Info (332119):    -2.643              -2.643 u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):    -1.958             -44.291 RefreshClock 
+Info (332146): Worst-case hold slack is -1.665
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -1.458              -1.458 u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
-    Info (332119):     0.657               0.000 RefreshClock 
+    Info (332119):    -1.665              -1.665 u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     0.672               0.000 RefreshClock 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -0.394
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.394             -14.869 RefreshClock 
+    Info (332119):    -0.394             -14.343 RefreshClock 
     Info (332119):     1.666               0.000 u0|pll_0|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0] 
     Info (332119):     9.926               0.000 i_Clk 
     Info (332119):    19.250               0.000 u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
@@ -1504,25 +1504,25 @@ Info (332097): The following timing edges are non-unate.  TimeQuest will assume 
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
-Info (332146): Worst-case setup slack is -3.305
+Info (332146): Worst-case setup slack is -2.918
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -3.305              -3.305 u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
-    Info (332119):    -0.689             -13.669 RefreshClock 
-Info (332146): Worst-case hold slack is -0.039
+    Info (332119):    -2.918              -2.918 u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):    -0.781             -15.599 RefreshClock 
+Info (332146): Worst-case hold slack is -0.218
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.039              -0.039 u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
-    Info (332119):     0.346               0.000 RefreshClock 
+    Info (332119):    -0.218              -0.218 u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     0.341               0.000 RefreshClock 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332146): Worst-case minimum pulse width slack is 0.068
+Info (332146): Worst-case minimum pulse width slack is 0.111
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.068               0.000 RefreshClock 
+    Info (332119):     0.111               0.000 RefreshClock 
     Info (332119):     1.666               0.000 u0|pll_0|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0] 
     Info (332119):     9.643               0.000 i_Clk 
-    Info (332119):    19.547               0.000 u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):    19.551               0.000 u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
 Info: Analyzing Fast 1100mV 0C Model
 Info (332097): The following timing edges are non-unate.  TimeQuest will assume pos-unate behavior for these edges in the clock network.
     Info (332098): Cell: u0|pll_0|altera_pll_i|general[0].gpll~FRACTIONAL_PLL  from: refclkin  to: fbclk
@@ -1531,31 +1531,31 @@ Info (332097): The following timing edges are non-unate.  TimeQuest will assume 
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
-Info (332146): Worst-case setup slack is -2.440
+Info (332146): Worst-case setup slack is -2.114
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -2.440              -2.440 u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
-    Info (332119):    -0.624             -12.208 RefreshClock 
-Info (332146): Worst-case hold slack is -0.436
+    Info (332119):    -2.114              -2.114 u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):    -0.681             -13.749 RefreshClock 
+Info (332146): Worst-case hold slack is -0.598
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.436              -0.436 u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
-    Info (332119):     0.313               0.000 RefreshClock 
+    Info (332119):    -0.598              -0.598 u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     0.315               0.000 RefreshClock 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332146): Worst-case minimum pulse width slack is 0.088
+Info (332146): Worst-case minimum pulse width slack is 0.125
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.088               0.000 RefreshClock 
+    Info (332119):     0.125               0.000 RefreshClock 
     Info (332119):     1.666               0.000 u0|pll_0|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0] 
     Info (332119):     9.632               0.000 i_Clk 
-    Info (332119):    19.539               0.000 u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):    19.541               0.000 u0|pll_0|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 6 warnings
-    Info: Peak virtual memory: 1025 megabytes
-    Info: Processing ended: Sat May 19 23:11:23 2018
-    Info: Elapsed time: 00:00:21
-    Info: Total CPU time (on all processors): 00:00:20
+    Info: Peak virtual memory: 1055 megabytes
+    Info: Processing ended: Sat May 19 23:42:43 2018
+    Info: Elapsed time: 00:00:20
+    Info: Total CPU time (on all processors): 00:00:21
 
 

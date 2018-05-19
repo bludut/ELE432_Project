@@ -141,9 +141,9 @@ begin
 		
 		-----------------------			Headlight Genarator			-----------------------
 		if(i_Dist_Ena = '1' and 
-			(signed(i_Row_Num) <= (signed(i_Pos_Y) + 5) and (signed(i_Row_Num) >= signed(s_Pos_HL_L_Y))) and 
-			(((signed(i_Column_Num) <= (signed(i_Pos_X) +5+10)) and (signed(i_Column_Num) >= signed(s_Pos_HL_L_X))) or		-- Left
-			 ((signed(i_Column_Num) <= (signed(i_Pos_X) +35+10))and (signed(i_Column_Num) >= signed(s_Pos_HL_R_X)))))then  	-- Right
+			(signed(i_Row_Num) <= (signed(i_Pos_Y) + 5) and ((i_Row_Num) >= (s_Pos_HL_L_Y))) and 
+			(((signed(i_Column_Num) <= (signed(i_Pos_X) +5+10)) and ((i_Column_Num) >= (s_Pos_HL_L_X))) or		-- Left
+			 ((signed(i_Column_Num) <= (signed(i_Pos_X) +35+10))and ((i_Column_Num) >= (s_Pos_HL_R_X)))))then  	-- Right
 				o_Disp_Ena <= '1';
 				o_Red <=(others => '1');
 				o_Green <=(others => '1');
@@ -152,10 +152,10 @@ begin
 					
 		-----------------------				Gear Genarator	 		----------------------- 
 		elsif(i_Dist_Ena = '1' and 
-			(((signed(i_Row_Num) <= (signed(i_Pos_Y) +10+15)) and (signed(i_Row_Num) >= signed(s_Pos_Gear_LU_Y))) or		-- Up and Down
-			 ((signed(i_Row_Num) <= (signed(i_Pos_Y) +50+15)) and (signed(i_Row_Num) >= signed(s_Pos_Gear_LD_Y)))) and
-			(((signed(i_Column_Num) <= (signed(i_Pos_X) +0+5)) and (signed(i_Column_Num) >= signed(s_Pos_Gear_LU_X))) or	-- Left and Right
-			 ((signed(i_Column_Num) <= (signed(i_Pos_X) +45+5)) and (signed(i_Column_Num) >= signed(s_Pos_Gear_RU_X)))))then
+			(((signed(i_Row_Num) <= (signed(i_Pos_Y) +10+15)) and ((i_Row_Num) >= (s_Pos_Gear_LU_Y))) or		-- Up and Down
+			 ((signed(i_Row_Num) <= (signed(i_Pos_Y) +50+15)) and ((i_Row_Num) >= (s_Pos_Gear_LD_Y)))) and
+			(((signed(i_Column_Num) <= (signed(i_Pos_X) +0+5)) and ((i_Column_Num) >= (s_Pos_Gear_LU_X))) or	-- Left and Right
+			 ((signed(i_Column_Num) <= (signed(i_Pos_X) +45+5)) and ((i_Column_Num) >= (s_Pos_Gear_RU_X)))))then
 				o_Disp_Ena <= '1';
 				o_Red <=("10011111");
 				o_Green <=("10011111");
@@ -164,12 +164,12 @@ begin
 		
 		-----------------------				Car Genarator			-----------------------
 		elsif(i_Dist_Ena = '1' and 
-			(signed(i_Row_Num) <= (signed(i_Pos_Y) + 0+75) and (signed(i_Row_Num) >= signed(s_Pos_Car_Y))) and 
-			((signed(i_Column_Num) <= (signed(i_Pos_X) +5+40)) and (signed(i_Column_Num) >= signed(s_Pos_Car_X))))then  	
+			(signed(i_Row_Num) <= (signed(i_Pos_Y) + 0+75) and ((i_Row_Num) >= (s_Pos_Car_Y))) and 
+			((signed(i_Column_Num) <= (signed(i_Pos_X) +5+40)) and ((i_Column_Num) >= (s_Pos_Car_X))))then  	
 				o_Disp_Ena <= '1';
 				o_Red <=(others => '1');
-				o_Green <=(others => '1');
-				o_Blue <=(others => '1');	
+				o_Green <=(others => '0');
+				o_Blue <=(others => '0');	
 				
 		else
 				o_Disp_Ena <= '0';

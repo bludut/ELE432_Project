@@ -1,5 +1,5 @@
 Assembler report for VGA_Controller
-Sat May 19 23:10:58 2018
+Sat May 19 23:42:19 2018
 Quartus II 64-Bit Version 14.0.0 Build 200 06/17/2014 SJ Web Edition
 
 
@@ -10,7 +10,7 @@ Quartus II 64-Bit Version 14.0.0 Build 200 06/17/2014 SJ Web Edition
   2. Assembler Summary
   3. Assembler Settings
   4. Assembler Generated Files
-  5. Assembler Device Options: C:/Users/KAYA/Desktop/VGA_Test/ALL_1/001_VGA_Controller/output_files/VGA_Controller.sof
+  5. Assembler Device Options: C:/Users/KAYA/Desktop/Codes/ELE432_VHDL_Codes/ELE432_Project/____DENEME/ALL_1/001_VGA_Controller/output_files/VGA_Controller.sof
   6. Assembler Messages
 
 
@@ -38,7 +38,7 @@ agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Sat May 19 23:10:58 2018 ;
+; Assembler Status      ; Successful - Sat May 19 23:42:19 2018 ;
 ; Revision Name         ; VGA_Controller                        ;
 ; Top-level Entity Name ; Vga_Top_Design                        ;
 ; Family                ; Cyclone V                             ;
@@ -53,24 +53,24 @@ agreement for further details.
 +--------+---------+---------------+
 
 
-+-----------------------------------------------------------------------------------------+
-; Assembler Generated Files                                                               ;
-+-----------------------------------------------------------------------------------------+
-; File Name                                                                               ;
-+-----------------------------------------------------------------------------------------+
-; C:/Users/KAYA/Desktop/VGA_Test/ALL_1/001_VGA_Controller/output_files/VGA_Controller.sof ;
-+-----------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------+
+; Assembler Generated Files                                                                                                        ;
++----------------------------------------------------------------------------------------------------------------------------------+
+; File Name                                                                                                                        ;
++----------------------------------------------------------------------------------------------------------------------------------+
+; C:/Users/KAYA/Desktop/Codes/ELE432_VHDL_Codes/ELE432_Project/____DENEME/ALL_1/001_VGA_Controller/output_files/VGA_Controller.sof ;
++----------------------------------------------------------------------------------------------------------------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------+
-; Assembler Device Options: C:/Users/KAYA/Desktop/VGA_Test/ALL_1/001_VGA_Controller/output_files/VGA_Controller.sof ;
-+----------------+--------------------------------------------------------------------------------------------------+
-; Option         ; Setting                                                                                          ;
-+----------------+--------------------------------------------------------------------------------------------------+
-; Device         ; 5CSEMA5F31C6                                                                                     ;
-; JTAG usercode  ; 0x00BB9CDF                                                                                       ;
-; Checksum       ; 0x00BB9CDF                                                                                       ;
-+----------------+--------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Assembler Device Options: C:/Users/KAYA/Desktop/Codes/ELE432_VHDL_Codes/ELE432_Project/____DENEME/ALL_1/001_VGA_Controller/output_files/VGA_Controller.sof ;
++----------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+; Option         ; Setting                                                                                                                                   ;
++----------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+; Device         ; 5CSEMA5F31C6                                                                                                                              ;
+; JTAG usercode  ; 0x00BC67F6                                                                                                                                ;
+; Checksum       ; 0x00BC67F6                                                                                                                                ;
++----------------+-------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +--------------------+
@@ -79,13 +79,13 @@ agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Assembler
     Info: Version 14.0.0 Build 200 06/17/2014 SJ Web Edition
-    Info: Processing started: Sat May 19 23:10:29 2018
+    Info: Processing started: Sat May 19 23:41:54 2018
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off VGA_Controller -c VGA_Controller
 Info (115030): Assembler is generating device programming files
 Info: Quartus II 64-Bit Assembler was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 732 megabytes
-    Info: Processing ended: Sat May 19 23:10:58 2018
-    Info: Elapsed time: 00:00:29
+    Info: Peak virtual memory: 726 megabytes
+    Info: Processing ended: Sat May 19 23:42:19 2018
+    Info: Elapsed time: 00:00:25
     Info: Total CPU time (on all processors): 00:00:25
 
 

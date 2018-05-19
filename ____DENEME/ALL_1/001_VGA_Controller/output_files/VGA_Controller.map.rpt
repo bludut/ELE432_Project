@@ -1,5 +1,5 @@
 Analysis & Synthesis report for VGA_Controller
-Sat May 19 23:08:48 2018
+Sat May 19 23:40:27 2018
 Quartus II 64-Bit Version 14.0.0 Build 200 06/17/2014 SJ Web Edition
 
 
@@ -55,7 +55,7 @@ agreement for further details.
 +------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                 ;
 +---------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sat May 19 23:08:48 2018      ;
+; Analysis & Synthesis Status     ; Successful - Sat May 19 23:40:27 2018      ;
 ; Quartus II 64-Bit Version       ; 14.0.0 Build 200 06/17/2014 SJ Web Edition ;
 ; Revision Name                   ; VGA_Controller                             ;
 ; Top-level Entity Name           ; Vga_Top_Design                             ;
@@ -181,19 +181,19 @@ agreement for further details.
 +----------------------------+-------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                                            ;
-+--------------------------------------------------------+-----------------+------------------------+----------------------------------------------------------------------------------------------------------------+--------------+
-; File Name with User-Entered Path                       ; Used in Netlist ; File Type              ; File Name with Absolute Path                                                                                   ; Library      ;
-+--------------------------------------------------------+-----------------+------------------------+----------------------------------------------------------------------------------------------------------------+--------------+
-; Pll_50_to_25/synthesis/Pll_50_to_25.vhd                ; yes             ; User VHDL File         ; C:/Users/KAYA/Desktop/VGA_Test/ALL_1/001_VGA_Controller/Pll_50_to_25/synthesis/Pll_50_to_25.vhd                ; Pll_50_to_25 ;
-; Pll_50_to_25/synthesis/submodules/Pll_50_to_25_pll_0.v ; yes             ; User Verilog HDL File  ; C:/Users/KAYA/Desktop/VGA_Test/ALL_1/001_VGA_Controller/Pll_50_to_25/synthesis/submodules/Pll_50_to_25_pll_0.v ; Pll_50_to_25 ;
-; Vga_Top_Design.vhd                                     ; yes             ; User VHDL File         ; C:/Users/KAYA/Desktop/VGA_Test/ALL_1/001_VGA_Controller/Vga_Top_Design.vhd                                     ;              ;
-; Vga_Test.vhd                                           ; yes             ; User VHDL File         ; C:/Users/KAYA/Desktop/VGA_Test/ALL_1/001_VGA_Controller/Vga_Test.vhd                                           ;              ;
-; Vga_Controller.vhd                                     ; yes             ; User VHDL File         ; C:/Users/KAYA/Desktop/VGA_Test/ALL_1/001_VGA_Controller/Vga_Controller.vhd                                     ;              ;
-; Road_Generator.vhd                                     ; yes             ; User VHDL File         ; C:/Users/KAYA/Desktop/VGA_Test/ALL_1/001_VGA_Controller/Road_Generator.vhd                                     ;              ;
-; altera_pll.v                                           ; yes             ; Megafunction           ; c:/altera/14.0/quartus/libraries/megafunctions/altera_pll.v                                                    ;              ;
-+--------------------------------------------------------+-----------------+------------------------+----------------------------------------------------------------------------------------------------------------+--------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                                                                     ;
++--------------------------------------------------------+-----------------+------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; File Name with User-Entered Path                       ; Used in Netlist ; File Type              ; File Name with Absolute Path                                                                                                                            ; Library      ;
++--------------------------------------------------------+-----------------+------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; Pll_50_to_25/synthesis/Pll_50_to_25.vhd                ; yes             ; User VHDL File         ; C:/Users/KAYA/Desktop/Codes/ELE432_VHDL_Codes/ELE432_Project/____DENEME/ALL_1/001_VGA_Controller/Pll_50_to_25/synthesis/Pll_50_to_25.vhd                ; Pll_50_to_25 ;
+; Pll_50_to_25/synthesis/submodules/Pll_50_to_25_pll_0.v ; yes             ; User Verilog HDL File  ; C:/Users/KAYA/Desktop/Codes/ELE432_VHDL_Codes/ELE432_Project/____DENEME/ALL_1/001_VGA_Controller/Pll_50_to_25/synthesis/submodules/Pll_50_to_25_pll_0.v ; Pll_50_to_25 ;
+; Vga_Top_Design.vhd                                     ; yes             ; User VHDL File         ; C:/Users/KAYA/Desktop/Codes/ELE432_VHDL_Codes/ELE432_Project/____DENEME/ALL_1/001_VGA_Controller/Vga_Top_Design.vhd                                     ;              ;
+; Vga_Test.vhd                                           ; yes             ; User VHDL File         ; C:/Users/KAYA/Desktop/Codes/ELE432_VHDL_Codes/ELE432_Project/____DENEME/ALL_1/001_VGA_Controller/Vga_Test.vhd                                           ;              ;
+; Vga_Controller.vhd                                     ; yes             ; User VHDL File         ; C:/Users/KAYA/Desktop/Codes/ELE432_VHDL_Codes/ELE432_Project/____DENEME/ALL_1/001_VGA_Controller/Vga_Controller.vhd                                     ;              ;
+; Road_Generator.vhd                                     ; yes             ; User VHDL File         ; C:/Users/KAYA/Desktop/Codes/ELE432_VHDL_Codes/ELE432_Project/____DENEME/ALL_1/001_VGA_Controller/Road_Generator.vhd                                     ;              ;
+; altera_pll.v                                           ; yes             ; Megafunction           ; c:/altera/14.0/quartus/libraries/megafunctions/altera_pll.v                                                                                             ;              ;
++--------------------------------------------------------+-----------------+------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
 
 
 +-----------------------------------------------------------------+
@@ -201,14 +201,14 @@ agreement for further details.
 +---------------------------------------------+-------------------+
 ; Resource                                    ; Usage             ;
 +---------------------------------------------+-------------------+
-; Estimate of Logic utilization (ALMs needed) ; 413               ;
+; Estimate of Logic utilization (ALMs needed) ; 444               ;
 ;                                             ;                   ;
-; Combinational ALUT usage for logic          ; 610               ;
+; Combinational ALUT usage for logic          ; 653               ;
 ;     -- 7 input functions                    ; 1                 ;
-;     -- 6 input functions                    ; 205               ;
-;     -- 5 input functions                    ; 39                ;
-;     -- 4 input functions                    ; 38                ;
-;     -- <=3 input functions                  ; 327               ;
+;     -- 6 input functions                    ; 223               ;
+;     -- 5 input functions                    ; 50                ;
+;     -- 4 input functions                    ; 39                ;
+;     -- <=3 input functions                  ; 340               ;
 ;                                             ;                   ;
 ; Dedicated logic registers                   ; 90                ;
 ;                                             ;                   ;
@@ -219,8 +219,8 @@ agreement for further details.
 ;                                             ;                   ;
 ; Maximum fan-out node                        ; i_VGA_Reset~input ;
 ; Maximum fan-out                             ; 90                ;
-; Total fan-out                               ; 2802              ;
-; Average fan-out                             ; 3.60              ;
+; Total fan-out                               ; 3004              ;
+; Average fan-out                             ; 3.65              ;
 +---------------------------------------------+-------------------+
 
 
@@ -229,13 +229,13 @@ agreement for further details.
 +------------------------------------+-------------------+--------------+-------------------+------------+------+--------------+----------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node         ; LC Combinationals ; LC Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                              ; Library Name ;
 +------------------------------------+-------------------+--------------+-------------------+------------+------+--------------+----------------------------------------------------------------------------------+--------------+
-; |Vga_Top_Design                    ; 610 (72)          ; 90 (47)      ; 0                 ; 0          ; 39   ; 0            ; |Vga_Top_Design                                                                  ; work         ;
+; |Vga_Top_Design                    ; 653 (77)          ; 90 (47)      ; 0                 ; 0          ; 39   ; 0            ; |Vga_Top_Design                                                                  ; work         ;
 ;    |Pll_50_to_25:u0|               ; 0 (0)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |Vga_Top_Design|Pll_50_to_25:u0                                                  ; pll_50_to_25 ;
 ;       |Pll_50_to_25_pll_0:pll_0|   ; 0 (0)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |Vga_Top_Design|Pll_50_to_25:u0|Pll_50_to_25_pll_0:pll_0                         ; Pll_50_to_25 ;
 ;          |altera_pll:altera_pll_i| ; 0 (0)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |Vga_Top_Design|Pll_50_to_25:u0|Pll_50_to_25_pll_0:pll_0|altera_pll:altera_pll_i ; work         ;
-;    |Road_Generator:u3|             ; 32 (32)           ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |Vga_Top_Design|Road_Generator:u3                                                ; work         ;
+;    |Road_Generator:u3|             ; 35 (35)           ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |Vga_Top_Design|Road_Generator:u3                                                ; work         ;
 ;    |Vga_Controller:u1|             ; 47 (47)           ; 43 (43)      ; 0                 ; 0          ; 0    ; 0            ; |Vga_Top_Design|Vga_Controller:u1                                                ; work         ;
-;    |Vga_Test:u2|                   ; 459 (459)         ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |Vga_Top_Design|Vga_Test:u2                                                      ; work         ;
+;    |Vga_Test:u2|                   ; 494 (494)         ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |Vga_Top_Design|Vga_Test:u2                                                      ; work         ;
 +------------------------------------+-------------------+--------------+-------------------+------------+------+--------------+----------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -265,8 +265,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Road_Generator:u3|o_Red[6]                          ; GND                 ; yes                    ;
 ; Vga_Test:u2|o_Red[6]                                ; GND                 ; yes                    ;
 ; Road_Generator:u3|o_Red[7]                          ; GND                 ; yes                    ;
+; Vga_Test:u2|o_Green[0]                              ; GND                 ; yes                    ;
+; Vga_Test:u2|o_Green[1]                              ; GND                 ; yes                    ;
+; Vga_Test:u2|o_Green[2]                              ; GND                 ; yes                    ;
+; Vga_Test:u2|o_Green[3]                              ; GND                 ; yes                    ;
+; Vga_Test:u2|o_Green[4]                              ; GND                 ; yes                    ;
 ; Vga_Test:u2|o_Green[5]                              ; GND                 ; yes                    ;
 ; Vga_Test:u2|o_Green[6]                              ; GND                 ; yes                    ;
+; Vga_Test:u2|o_Green[7]                              ; GND                 ; yes                    ;
 ; Road_Generator:u3|o_Blue[0]                         ; GND                 ; yes                    ;
 ; Vga_Test:u2|o_Blue[0]                               ; GND                 ; yes                    ;
 ; Road_Generator:u3|o_Blue[1]                         ; GND                 ; yes                    ;
@@ -283,7 +289,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Vga_Test:u2|o_Blue[6]                               ; GND                 ; yes                    ;
 ; Road_Generator:u3|o_Blue[7]                         ; GND                 ; yes                    ;
 ; Vga_Test:u2|o_Blue[7]                               ; GND                 ; yes                    ;
-; Number of user-specified and inferred latches = 28  ;                     ;                        ;
+; Number of user-specified and inferred latches = 34  ;                     ;                        ;
 +-----------------------------------------------------+---------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
@@ -321,7 +327,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; 3:1                ; 10 bits   ; 20 LEs        ; 0 LEs                ; 20 LEs                 ; Yes        ; |Vga_Top_Design|Y_Pos[2]                       ;
 ; 3:1                ; 10 bits   ; 20 LEs        ; 0 LEs                ; 20 LEs                 ; Yes        ; |Vga_Top_Design|X_Pos[0]                       ;
 ; 3:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |Vga_Top_Design|o_Red                          ;
-; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |Vga_Top_Design|o_Red                          ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |Vga_Top_Design|o_Blue                         ;
 ; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |Vga_Top_Design|Vga_Controller:u1|v_Vert_Count ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
 
@@ -683,28 +689,28 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     ENA CLR           ; 20                          ;
 ;     ENA CLR SCLR      ; 9                           ;
 ;     ENA CLR SCLR SLD  ; 9                           ;
-; arriav_lcell_comb     ; 612                         ;
+; arriav_lcell_comb     ; 655                         ;
 ;     arith             ; 259                         ;
 ;         0 data inputs ; 7                           ;
 ;         1 data inputs ; 166                         ;
 ;         2 data inputs ; 86                          ;
 ;     extend            ; 1                           ;
 ;         7 data inputs ; 1                           ;
-;     normal            ; 345                         ;
+;     normal            ; 388                         ;
 ;         0 data inputs ; 2                           ;
 ;         1 data inputs ; 1                           ;
-;         2 data inputs ; 26                          ;
-;         3 data inputs ; 34                          ;
-;         4 data inputs ; 38                          ;
-;         5 data inputs ; 39                          ;
-;         6 data inputs ; 205                         ;
+;         2 data inputs ; 30                          ;
+;         3 data inputs ; 43                          ;
+;         4 data inputs ; 39                          ;
+;         5 data inputs ; 50                          ;
+;         6 data inputs ; 223                         ;
 ;     shared            ; 7                           ;
 ;         2 data inputs ; 7                           ;
 ; boundary_port         ; 39                          ;
 ; generic_pll           ; 1                           ;
 ;                       ;                             ;
-; Max LUT depth         ; 10.50                       ;
-; Average LUT depth     ; 7.27                        ;
+; Max LUT depth         ; 10.60                       ;
+; Average LUT depth     ; 7.33                        ;
 +-----------------------+-----------------------------+
 
 
@@ -713,7 +719,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:03     ;
+; Top            ; 00:00:04     ;
 +----------------+--------------+
 
 
@@ -723,7 +729,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 14.0.0 Build 200 06/17/2014 SJ Web Edition
-    Info: Processing started: Sat May 19 23:08:40 2018
+    Info: Processing started: Sat May 19 23:40:18 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off VGA_Controller -c VGA_Controller
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file pll_50_to_25/synthesis/pll_50_to_25.vhd
@@ -894,15 +900,15 @@ Warning (21074): Design contains 3 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "i_Mode[0]"
     Warning (15610): No output dependent on input pin "i_Mode[1]"
     Warning (15610): No output dependent on input pin "i_Mode[2]"
-Info (21057): Implemented 688 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 731 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 10 input pins
     Info (21059): Implemented 29 output pins
-    Info (21061): Implemented 648 logic cells
+    Info (21061): Implemented 691 logic cells
     Info (21065): Implemented 1 PLLs
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 29 warnings
-    Info: Peak virtual memory: 722 megabytes
-    Info: Processing ended: Sat May 19 23:08:48 2018
-    Info: Elapsed time: 00:00:08
-    Info: Total CPU time (on all processors): 00:00:08
+    Info: Peak virtual memory: 737 megabytes
+    Info: Processing ended: Sat May 19 23:40:27 2018
+    Info: Elapsed time: 00:00:09
+    Info: Total CPU time (on all processors): 00:00:09
 
 
